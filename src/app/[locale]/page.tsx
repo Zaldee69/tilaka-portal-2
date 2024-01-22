@@ -5,6 +5,8 @@ import {
   useMessages
 } from 'next-intl';
 import LoginForm from '@/components/form/LoginForm';
+import { buttonVariants } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Home({ params }: { params: { locale: string } }) {
   const t = useTranslations('Login');
@@ -30,9 +32,8 @@ export default function Home({ params }: { params: { locale: string } }) {
           <LoginForm />
         </NextIntlClientProvider>
         <p className="text-sm text-gray-3 absolute bottom-10 md:bottom-5">
-          {/* <Trans
-            i18nKey="login.verifyPdf"
-            components={[
+          {t.rich('verifyPdf', {
+            link: (chunks) => (
               <Link
                 key={0}
                 href="#"
@@ -40,9 +41,11 @@ export default function Home({ params }: { params: { locale: string } }) {
                   className: '!p-0 !text-primary font-bold',
                   variant: 'link'
                 })}
-              />
-            ]}
-          /> */}
+              >
+                {chunks}
+              </Link>
+            )
+          })}
         </p>
       </div>
       {/* right side */}

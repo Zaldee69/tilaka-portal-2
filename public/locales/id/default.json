@@ -5,7 +5,7 @@
     "forgotPasswordLink": "Lupa Password",
     "forgotTilakanameLink": "Lupa Tilakaname",
     "claimIdentityBtn": "Klaim Identitas",
-    "verifyPdf": "Verifikasi PDF Anda <0>Disini</0>",
+    "verifyPdf": "Verifikasi PDF Anda <link>Disini</link>",
     "form": {
       "tilakaname": {
         "placeholder": "Tilakaname atau Email"

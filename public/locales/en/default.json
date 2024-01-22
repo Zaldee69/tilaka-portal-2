@@ -5,7 +5,7 @@
     "forgotPasswordLink": "Forgot Password",
     "forgotTilakanameLink": "Forgot Tilakaname",
     "claimIdentityBtn": "Claim Identity",
-    "verifyPdf": "Verify your PDF <0>Here</0>",
+    "verifyPdf": "Verify your PDF <link>Here</link>",
     "form": {
       "tilakaname": {
         "placeholder": "Tilakaname or Email"
