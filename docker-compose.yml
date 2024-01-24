@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  portal-tilaka:
+    image: portal-tilaka
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    networks:
+      - portal-tilaka
+    container_name: portal-tilaka
+networks:
+  portal-tilaka:
