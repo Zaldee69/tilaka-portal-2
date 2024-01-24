@@ -1,6 +1,6 @@
 {
   "Login": {
-    "title": "Selamat datang!",
+    "title": "Selamat Datang!",
     "subtitle": "Gunakan akun Tilaka Anda untuk masuk",
     "forgotPasswordLink": "Lupa Password",
     "forgotTilakanameLink": "Lupa Tilakaname",
@@ -15,7 +15,7 @@
       "message": {
         "error": {
           "tilakaNameOrEmaildEmpty": "Tilakaname atau email tidak boleh kosong",
-          "tilakaNameOrEmailNotValid": "Masukkan tilakaname atau email yang valid",
+          "tilakaNameOrEmailNotValid": "Masukkan Tilakaname atau email yang valid",
           "passwordEmpty": "Password tidak boleh kosong"
         },
         "success": {}

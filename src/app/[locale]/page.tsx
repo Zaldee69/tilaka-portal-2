@@ -26,7 +26,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           priority
           className="md:absolute left-10"
         />
-        <h2 className="text-gray-2 mt-28 md:mt-44">{t('title')}</h2>
+        <h2 className="text-gray-2 mt-28 md:mt-32">{t('title')}</h2>
         <p className="text-sm text-gray-3 pb-12 pt-3">{t('subtitle')}</p>
         <NextIntlClientProvider locale={params.locale} messages={messages}>
           <LoginForm />

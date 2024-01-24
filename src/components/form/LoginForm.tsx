@@ -163,7 +163,7 @@ const LoginForm = () => {
   function renderButtons() {
     return (
       <>
-        <Button type="submit" className="w-full my-4">
+        <Button type="submit" className="w-full mb-4 mt-6">
           {t('form.submit')}
         </Button>
         {renderClaimIdentityButton()}
