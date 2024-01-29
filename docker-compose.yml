@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  portal-tilaka:
+  tilaka-portal:
     image: $IMAGE_TAG
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -9,7 +9,7 @@ services:
       - 3000:3000
     restart: unless-stopped
     networks:
-      - portal-tilaka
-    container_name: portal-tilaka
+      - tilaka-portal
+    container_name: tilaka-portal
 networks:
-  portal-tilaka:
+  tilaka-portal:
