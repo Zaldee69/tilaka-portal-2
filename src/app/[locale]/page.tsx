@@ -78,7 +78,7 @@ export default function Home({
       </div>
 
       {/* right side */}
-      <div className="w-[55%] hidden lg:block relative xl:h-screen">
+      <div className="w-[55%] hidden lg:block relative xl:min-h-screen">
         <Image
           src="/images/big-image.png"
           alt="Banner"
