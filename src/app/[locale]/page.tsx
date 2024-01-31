@@ -40,7 +40,7 @@ export default function Home({
         <NextIntlClientProvider locale={params.locale} messages={messages}>
           <LoginForm />
         </NextIntlClientProvider>
-        <div className="mt-[calc(25vh-6rem)] sm:mt-[25vh] pb-10 text-center">
+        <div className="mt-[calc(25vh-6rem)] sm:mt-[22vh] pb-10 text-center">
           <p className="text-sm text-gray-3">
             {t.rich('verifyPdf', {
               link: (chunks) => (
@@ -78,7 +78,7 @@ export default function Home({
       </div>
 
       {/* right side */}
-      <div className="w-[55%] hidden lg:block relative xl:min-h-screen">
+      <div className="w-[55%] hidden lg:block relative min-h-screen">
         <Image
           src="/images/big-image.png"
           alt="Banner"
