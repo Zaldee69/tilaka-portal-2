@@ -78,7 +78,12 @@ const LoginForm = () => {
                   {...field}
                   onChange={(e) => {
                     const { value } = e.target;
-                    form.setValue('tilakaName', value);
+                    const noWhiteSpace = /\s/g;
+
+                    form.setValue(
+                      'tilakaName',
+                      value.replace(noWhiteSpace, '')
+                    );
 
                     if (emailRegex.test(value) || tilakaNameRegex.test(value)) {
                       form.clearErrors();
