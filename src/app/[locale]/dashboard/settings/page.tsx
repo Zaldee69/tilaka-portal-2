@@ -4,8 +4,8 @@ import React from 'react';
 import { CertIcon, EditIcon } from '../../../../../public/icons/icons';
 import { Link } from '@/navigation';
 import { Check, Dot } from 'lucide-react';
-import ChangePasswordDialog from './dialog/ChangePassword';
-import ChangeAutheticationModeDialog from './dialog/ChangeAutheticationMode';
+import ChangePasswordDialog from '../../../../components/dialog/ChangePassword';
+import ChangeAutheticationModeDialog from '../../../../components/dialog/ChangeAutheticationMode';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const Page = ({
