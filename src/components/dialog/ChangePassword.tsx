@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@/components/ui/button';
 import React, { useState } from 'react';
-import { KeyIcon, SecurityIcon } from '../../../../../../public/icons/icons';
+import { KeyIcon, SecurityIcon } from '../../../public/icons/icons';
 import { useTranslations } from 'next-intl';
 import {
   AlertDialog,
