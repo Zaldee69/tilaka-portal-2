@@ -290,7 +290,7 @@ const DataTable = ({
               </TableHead>
               <TableHead>{d('table.document')}</TableHead>
               <TableHead>{d('table.initiator')}</TableHead>
-              <TableHead>{d('table.signer')}</TableHead>
+              <TableHead className="w-[50px]">{d('table.signer')}</TableHead>
               <TableHead>{d('table.status')}</TableHead>
               <TableHead></TableHead>
             </TableRow>
@@ -344,7 +344,7 @@ const DataTable = ({
                   </TableCell>
                   <TableCell>
                     <Badge
-                      className={`w-fit flex-none px-1.5 ${getBadgeLabelAndColor(row.status, 'row').color}`}
+                      className={`w-fit text-nowrap px-1.5 ${getBadgeLabelAndColor(row.status, 'row').color}`}
                     >
                       {getBadgeLabelAndColor(row.status, 'row').label}
                     </Badge>
