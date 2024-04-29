@@ -105,11 +105,11 @@
     "certificate": "Certificate",
     "dialog": {
       "authMethod": {
-        "title": "Authentication",
+        "title": "Authentication Method",
         "subtitle": "Select your Authentication method",
         "method": {
-          "otp": "Send OTP via email",
-          "fr": "Verification via FR"
+          "otp": "OTP via email",
+          "fr": "Face Recognition (FR)"
         },
         "cancelButton": "Cancel",
         "confirmButton": "Submit"
