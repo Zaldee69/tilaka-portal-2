@@ -43,6 +43,7 @@
       "signer": "Penandatangan",
       "status": "Status",
       "from": "dari",
+      "or": "atau",
       "search": "Cari",
       "importantToday": "Penting Hari ini",
       "signerStatus": {
@@ -178,7 +179,7 @@
       "error": "Error",
       "expired": "Kedaluwarsa",
       "validTo": "Berlaku hingga",
-      "validFrom": "Berlaku dari"
+      "validFrom": "Berlaku mulai"
     }
   }
 }
