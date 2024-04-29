@@ -105,11 +105,11 @@
     "certificate": "Sertifikat",
     "dialog": {
       "authMethod": {
-        "title": "Otentikasi",
-        "subtitle": "Pilih metode Otentikasi Anda",
+        "title": "Metode Otentikasi",
+        "subtitle": "Pilih Metode Otentikasi Anda",
         "method": {
-          "otp": "Kirim OTP via email",
-          "fr": "Verifikasi via FR"
+          "otp": "OTP melalui email",
+          "fr": "Face Recognition (FR)"
         },
         "cancelButton": "Batal",
         "confirmButton": "Simpan"

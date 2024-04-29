@@ -22,7 +22,7 @@ import Collapsible from '@/components/Collapsible';
 import DataTable from '@/components/DataTable';
 import { Link as CustomLink, Link } from '@/navigation';
 import NextLink from 'next/link';
-import { SquareArrowOutUpRight } from 'lucide-react';
+import { CircleArrowRight, SquareArrowOutUpRight } from 'lucide-react';
 import ChangeAutheticationModeDialog from '@/components/dialog/ChangeAutheticationMode';
 
 const Page = () => {
@@ -103,7 +103,7 @@ const Page = () => {
             showSeeAllButton={true}
             actions={
               <Link className="w-fit" href="/dashboard/documents">
-                <SquareArrowOutUpRight className="text-primary h-5 w-5 " />
+                <CircleArrowRight className="text-primary h-6 w-6" />
               </Link>
             }
             data={[
