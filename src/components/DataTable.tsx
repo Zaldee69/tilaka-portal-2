@@ -156,7 +156,7 @@ const DataTable = ({
           ? data.map((row) => (
               <div
                 key={row.date}
-                className="border rounded-xl py-2 px-3 mt-3 border-gray-6 flex justify-between"
+                className="border rounded-xl py-2 px-3 border-gray-6 flex justify-between"
               >
                 <div className="flex flex-col gap-2">
                   <Badge
@@ -183,28 +183,31 @@ const DataTable = ({
                         className="rounded-[10px] p-2"
                         align="end"
                       >
-                        <DropdownMenuItem>
-                          {d('table.actions.view')}
-                        </DropdownMenuItem>
-                        {row.status !== 'done' && (
-                          <DropdownMenuItem>
-                            {d('table.actions.sign')}
-                          </DropdownMenuItem>
-                        )}
-                        <DropdownMenuItem>Download</DropdownMenuItem>
-                        <DropdownMenuItem>Audit Trail</DropdownMenuItem>
-                        {row.initiator.email === 'wahab1@gmail.com' ? (
-                          <DropdownMenuItem onClick={() => setIsOpen(true)}>
-                            {d('table.actions.cancel')}
-                          </DropdownMenuItem>
-                        ) : (
-                          row.status !== 'done' && (
+                        {row.status !== 'denied' && (
+                          <>
                             <DropdownMenuItem>
-                              {' '}
-                              {d('table.actions.deny')}
+                              {d('table.actions.view')}
                             </DropdownMenuItem>
-                          )
+                            {row.status !== 'done' && (
+                              <DropdownMenuItem>
+                                {d('table.actions.sign')}
+                              </DropdownMenuItem>
+                            )}
+                            <DropdownMenuItem>Download</DropdownMenuItem>
+                            {row.initiator.email === 'wahab1@gmail.com' ? (
+                              <DropdownMenuItem onClick={() => setIsOpen(true)}>
+                                {d('table.actions.cancel')}
+                              </DropdownMenuItem>
+                            ) : (
+                              row.status !== 'done' && (
+                                <DropdownMenuItem>
+                                  {d('table.actions.deny')}
+                                </DropdownMenuItem>
+                              )
+                            )}
+                          </>
                         )}
+                        <DropdownMenuItem>Audit Trail</DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
                   )}
@@ -219,7 +222,7 @@ const DataTable = ({
                     <PopoverContent className="w-96">
                       <Input
                         autoFocus={false}
-                        placeholder={'Tilaka Name atau Email'}
+                        placeholder={`Tilaka Name ${d('table.or')} Email`}
                         className="h-10 pl-3 w-full"
                         icon={<ContactIcon svgClassName="mt-2" />}
                       />
@@ -290,7 +293,7 @@ const DataTable = ({
               </TableHead>
               <TableHead>{d('table.document')}</TableHead>
               <TableHead>{d('table.initiator')}</TableHead>
-              <TableHead className="w-[50px]">{d('table.signer')}</TableHead>
+              <TableHead>{d('table.signer')}</TableHead>
               <TableHead>{d('table.status')}</TableHead>
               <TableHead></TableHead>
             </TableRow>
@@ -311,7 +314,7 @@ const DataTable = ({
                       <PopoverContent className="w-96">
                         <Input
                           autoFocus={false}
-                          placeholder={'Tilaka Name atau Email'}
+                          placeholder={`Tilaka Name ${d('table.or')} Email`}
                           className="h-10 pl-3 w-full"
                           icon={<ContactIcon svgClassName="mt-2" />}
                         />
