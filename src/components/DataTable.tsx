@@ -30,7 +30,7 @@ import {
   PermIdentityIcon,
   SupervisorAccountIcon
 } from '../../public/icons/icons';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 import {
@@ -44,6 +44,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import Pagination from './Pagination';
 import { Document } from '@/app/[locale]/dashboard/documents/page';
+import { Link } from '@/navigation';
 
 const DataTable = ({
   data,
@@ -257,12 +258,15 @@ const DataTable = ({
             ))
           : 'nothing'}
         {showSeeAllButton ? (
-          <Button
-            size="lg"
-            className="mt-5 w-full sign-button-shadow font-semibold"
+          <Link
+            href="/dashboard/documents"
+            className={buttonVariants({
+              className: 'mt-5 w-full sign-button-shadow font-semibold',
+              size: 'lg'
+            })}
           >
-            Lihat Semua
-          </Button>
+            {d('viewAll')}
+          </Link>
         ) : null}
       </div>
 

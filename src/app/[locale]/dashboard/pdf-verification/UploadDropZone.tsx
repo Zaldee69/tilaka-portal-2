@@ -111,7 +111,7 @@ const UploadDropZone = () => {
                       quality={100}
                       priority
                     />
-                    <h4 className="text-gray-2 md:mt-8 mt-4">
+                    <h4 className="text-gray-2 md:mt-8 mt-4 text-center">
                       {isUploading ? (
                         t('uploadZone.uploading.title')
                       ) : (
@@ -119,7 +119,7 @@ const UploadDropZone = () => {
                           {' '}
                           <p className="text-center ">
                             {t('uploadZone.unuploading.title')}
-                            <span className="p-0 text-primary font-bold md:text-start inline">
+                            <span className="p-0 text-primary font-bold  text-center inline">
                               {' '}
                               {t('uploadZone.unuploading.upload')}
                             </span>
@@ -127,7 +127,7 @@ const UploadDropZone = () => {
                         </>
                       )}
                     </h4>
-                    <p className="text-gray-3 mt-1 font-medium text-center md:text-start text-sm md:text-base">
+                    <p className="text-gray-3 mt-1 font-medium text-center  text-sm md:text-base">
                       {isUploading
                         ? t('uploadZone.uploading.subtitle')
                         : t('uploadZone.unuploading.subtitle')}
