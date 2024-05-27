@@ -66,3 +66,35 @@ export const generateArrayOfPageNumber = (
     );
   }
 };
+
+/**
+ *
+ * Convert file to base64. base64 size will be different from original file size,
+ * see [Encoded size increase](https://developer.mozilla.org/en-US/docs/Glossary/Base64#encoded_size_increase).
+ *
+ * @param file File
+ * @returns string
+ */
+export const fileToBase64 = (file: File): Promise<string> => {
+  return new Promise<string>((resolve) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result?.toString() || '');
+  });
+};
+
+export function getFileSize(size: number) {
+  const fSExt = ['Bytes', 'KB', 'MB', 'GB'];
+  let i = 0;
+  while (size > 900) {
+    size /= 1024;
+    i++;
+  }
+  if (i > 1) {
+    // If the size is in MB or GB
+    return `${Math.floor(size)} ${fSExt[i]}`;
+  } else {
+    // If the size is in Bytes or KB
+    return `${size.toFixed(2)} ${fSExt[i]}`;
+  }
+}
