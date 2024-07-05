@@ -84,10 +84,10 @@ const FRVerification = ({
     <div>
       <AlertDialog open={open} onOpenChange={setOpen}>
         {isUserMediaError ? (
-          <AlertDialogContent>
-            <AlertDialogHeader>
+          <AlertDialogContent className="py-6 max-w-sm gap-7">
+            <AlertDialogHeader className="text-center gap-3">
               <AlertDialogTitle>{c('title')}</AlertDialogTitle>
-              <AlertDialogDescription>
+              <AlertDialogDescription className="whitespace-pre-line">
                 {c.rich('subtitle', {
                   icon: () => <VideoOff className="inline" />
                 })}
@@ -108,10 +108,10 @@ const FRVerification = ({
                 />
               </AlertDialogDescription>
             </AlertDialogHeader>
-            <AlertDialogFooter>
+            <AlertDialogFooter className="!justify-center !items-center">
               <AlertDialogCancel
                 onClick={() => window.location.reload()}
-                className="px-0"
+                className="!px-10 bg-primary text-white"
               >
                 {c('submit')}
               </AlertDialogCancel>
@@ -151,7 +151,7 @@ const FRVerification = ({
               </div>
               <div
                 id="countdown-timer-fr"
-                className="absolute text-white top-5 right-5 md:right-10 flex justify-center"
+                className="absolute text-white bg-black/10 rounded-full top-5 right-5 md:right-10 flex justify-center"
               >
                 <CountdownCircleTimer
                   onComplete={() => {
