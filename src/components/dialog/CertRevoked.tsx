@@ -25,9 +25,9 @@ const CertRevokedDialog = () => {
   return (
     <>
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="pt-12 !justify-center max-w-sm">
+        <DialogContent className="!pt-[54px] !justify-center max-w-sm">
           <DialogHeader>
-            <DialogDescription className="text-center text-black">
+            <DialogDescription className="text-center md:whitespace-pre-line text-black">
               {t('content')}
             </DialogDescription>
           </DialogHeader>
@@ -40,7 +40,7 @@ const CertRevokedDialog = () => {
                   confirmationType: 'liveness'
                 });
               }}
-              className="font-semibold w-fit px-10"
+              className="font-semibold w-fit px-6"
             >
               {t('submit')}
             </Button>

@@ -162,7 +162,8 @@
       },
       "revokeConfirmation": {
         "title": "Hapus Sertifikat?",
-        "subtitle": "Dengan melakukan pencabutan sertifikat, maka sertifikat anda akan dicabut dari sistem Tilaka. Anda harus menerbitkan sertifikat baru jika ingin melakukan tanda tangan digital",
+        "subtitle": "Dengan melakukan pencabutan sertifikat, \n Sertifikat anda akan dicabut dari sistem Tilaka. \n Anda harus menerbitkan sertifikat baru jika ingin \n melakukan tanda tangan digital",
+        "subtitle1": "Dengan melakukan pencabutan sertifikat, Sertifikat anda akan dicabut dari sistem Tilaka. \n Anda harus menerbitkan sertifikat baru \n jika ingin melakukan tanda tangan digital",
         "revoke": "Cabut",
         "cancel": "Batal"
       }
@@ -179,7 +180,7 @@
         "reason4": "Pemindahan Departemen",
         "reason5": "Pindah Divisi"
       },
-      "submit": "Next"
+      "submit": "Lanjut"
     },
     "certificateContent": {
       "title": "Akun Tertaut",
@@ -338,20 +339,21 @@
   },
   "issuanceOnProcessDialog": {
     "content": "Penerbitan sertifikat Anda sedang dalam proses. Mohon periksa email secara berkala untuk informasi penerbitan sertifikat",
-    "submit": "Tutup"
+    "submit": "Tutup",
+    "frTitle": "Konfirmasi Data Sertifikat Baru"
   },
   "certRevokedDialog": {
-    "content": "Sertifikat Anda telah direvoke / expired. Silahkan klik tombol di bawah untuk membuat sertifikat baru.",
+    "content": "Sertifikat Anda telah direvoke / expired. \n Silahkan klik tombol di bawah untuk membuat \n sertifikat baru.",
     "submit": "Buat Sertifikat Baru"
   },
   "offlineDialog": {
-    "title": "Anda sedang offline",
+    "title": "Anda Sedang Offline",
     "subtitle": "Periksa kembali koneksi yang Anda gunakan untuk menggunakan layanan Tilaka",
     "submit": "Tutup"
   },
   "cannotAccessCameraDialog": {
-    "title": "Tidak dapat mengakses kamera",
-    "subtitle": "Tilaka memerlukan akses ke kamera Anda, klik ikon kamera <icon></icon> pada browser Anda untuk memberikan akses kamera",
+    "title": "Tidak Dapat Mengakses Kamera",
+    "subtitle": "Tilaka memerlukan akses ke kamera Anda. \n klik ikon kamera <icon></icon> pada browser Anda \n untuk memberikan akses kamera",
     "submit": "Coba Lagi"
   },
   "deviceNotSupportedDialog": {
@@ -362,25 +364,26 @@
   },
   "autoLoggedOutDialog": {
     "title": "Anda Keluar Otomatis",
-    "subtitle": "Batas waktu login Anda telah habis. Mohon lakukan login ulang dengan mengisi Kata Sandi",
+    "subtitle": "Batas waktu login Anda telah habis. Mohon lakukan login ulang dengan mengisi Tilaka Name dan \n Kata Sandi",
+    "subtitle1": "Batas waktu login Anda telah habis. Mohon lakukan login ulang dengan mengisi \n Tilaka Name dan Kata Sandi",
     "submit": "Tutup"
   },
   "changeSignatureDialog": {
     "title": "Ubah Tanda Tangan",
-    "subtitle": "Untuk kualitas tandatangan yang baik, unggah gambar dengan format PNG dengan background transparan atau putih",
+    "subtitle": "Untuk kualitas tandatangan yang baik, unggah gambar dengan format .JPG/.JPEG/.PNG dengan background transparan atau putih",
     "createSignature": "Buat Tanda Tangan",
     "uploadImage": "Upload Gambar",
     "nameInput": "Nama Lengkap",
     "initialsInput": "Inisial Paraf",
     "fontType": "Jenis Font",
     "signature": "Tanda Tangan",
-    "initial": "Initial",
+    "initial": "Paraf",
     "cancel": "Batal",
     "submit": "Simpan",
     "drawSignature": "Gambar Tanda Tangan",
     "drawInitials": "Gambar Paraf",
-    "uploadSignature": "Upload Tanda Tangan",
-    "uploadInitial": "Upload Paraf",
+    "uploadSignature": "Upload Tanda Tangan (Ukuran max. 10 MB)",
+    "uploadInitial": "Upload Paraf (Ukuran max. 10 MB)",
     "chooseImage": "Pilih Gambar"
   },
   "auditTrail": {
