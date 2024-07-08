@@ -74,7 +74,7 @@ const TnCDialog = () => {
             <div
               ref={contentRef}
               onScroll={handleScroll}
-              className="md:max-h-[400px] max-h-[250px] overflow-y-scroll text-sm px-2 pb-3"
+              className="md:max-h-[400px] max-h-[280px] overflow-y-scroll text-sm px-2 pb-3"
             >
               <div>
                 <p className="mt-3 mb-0 text-lg leading-6 font-bold">
@@ -588,7 +588,7 @@ const TnCDialog = () => {
               </div>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-2 justify-center ">
+          <div className="md:grid flex flex-col-reverse items-center md:grid-cols-2 gap-2 justify-center ">
             <Button
               onClick={() => stateSetter({ isOpen: false })}
               variant="ghost"
@@ -614,19 +614,13 @@ const TnCDialog = () => {
                 onClick={() => {
                   stateSetter({ isOpen: false });
                 }}
-                className={buttonVariants({
-                  variant: 'default',
-
-                  className: cn(
-                    'font-semibold !px-10 w-fit md:w-auto md:max-w-none max-w-[136px]',
-                    {
-                      'pointer-events-none opacity-85 ':
-                        !acceptCondition || !acceptTerm
-                    }
-                  )
-                })}
               >
-                Konfirmasi
+                <Button
+                  disabled={!acceptCondition || !acceptTerm}
+                  className="font-semibold !px-10 w-fit md:w-full md:max-w-none max-w-[136px]"
+                >
+                  Konfirmasi
+                </Button>
               </Link>
             )}
           </div>
