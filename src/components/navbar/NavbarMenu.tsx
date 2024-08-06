@@ -27,7 +27,7 @@ import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '../LanguageSwitcher';
 import { Link } from '@/navigation';
 
-const NavbarMenu = ({ searchParams }: { searchParams: {} }) => {
+const NavbarMenu = () => {
   const [showMenu, setShowMenu] = useState<
     'account-list' | 'notification' | 'search' | null
   >(null);
@@ -126,10 +126,7 @@ const NavbarMenu = ({ searchParams }: { searchParams: {} }) => {
             />
           </div>
         </Button>
-        <LanguageSwitcher
-          className="hidden md:flex"
-          searchparams={searchParams}
-        />
+        <LanguageSwitcher className="hidden md:flex" />
       </div>
       {menuPopUpWrapper()}
     </div>

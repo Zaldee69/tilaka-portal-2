@@ -1,51 +1,68 @@
 'use client';
+
 import React from 'react';
-import { usePathname } from 'next/navigation';
+import { useParams, usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
-interface LanguageSwitcherProps extends React.HTMLAttributes<HTMLDivElement> {
-  searchparams: {};
-}
+interface Props extends React.HTMLAttributes<HTMLDivElement> {}
 
-const LanguageSwitcher = React.forwardRef<
-  HTMLDivElement,
-  LanguageSwitcherProps
->(({ className, ...props }, ref) => {
-  const pathname = usePathname();
-  const redirectPathname = pathname.split('/').slice(2).join('/');
-  const locale = pathname.includes('id') ? 'en/' : 'id/';
-  const queryString = new URLSearchParams(props.searchparams as {}).toString();
+const LanguageSwitcher = React.forwardRef<HTMLDivElement, Props>(
+  ({ className, ...props }, ref) => {
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const redirectPathname = pathname.split('/').slice(2).join('/');
+    const locale = pathname.includes('/id/') ? 'en/' : 'id/';
+    const params = useParams();
 
-  const href = '/' + locale + (redirectPathname || '') + '?' + queryString;
+    // Create an object from searchParams
+    const searchParamsObj: { [key: string]: string } = {};
+    searchParams.forEach((value, key) => {
+      searchParamsObj[key] = value;
+    });
 
-  const renderLink = (localeValue: string, label: string) => (
-    <Link
-      key={localeValue}
-      href={href}
-      locale={localeValue}
-      className={cn('px-2 py-1 rounded-full text-white', {
-        'bg-white text-primary': pathname.includes(`/${localeValue}`)
-      })}
-    >
-      {label}
-    </Link>
-  );
+    // Merge useParams and searchParamsObj
+    const allParams = { ...params, ...searchParamsObj };
 
-  return (
-    <div
-      {...props}
-      ref={ref}
-      className={cn(
-        'flex items-center bg-primary rounded-full px-1 py-1 text-xs font-semibold',
-        className
-      )}
-    >
-      {renderLink('id', 'ID')}
-      {renderLink('en', 'EN')}
-    </div>
-  );
-});
+    // Remove the 'locale' parameter
+    const { locale: _, ...filteredParams } = allParams;
+
+    // Create a query string from the filtered parameters
+    const queryString = new URLSearchParams(filteredParams as any).toString();
+
+    const href =
+      '/' +
+      locale +
+      (redirectPathname || '') +
+      (queryString ? '?' + queryString : '');
+
+    const renderLink = (localeValue: string, label: string) => (
+      <Link
+        key={localeValue}
+        href={href}
+        className={cn('px-2 py-1 rounded-full text-white', {
+          'bg-white text-primary': pathname.includes(`/${localeValue}`)
+        })}
+      >
+        {label}
+      </Link>
+    );
+
+    return (
+      <div
+        {...props}
+        ref={ref}
+        className={cn(
+          'flex items-center bg-primary rounded-full px-1 py-1 text-xs font-semibold',
+          className
+        )}
+      >
+        {renderLink('id', 'ID')}
+        {renderLink('en', 'EN')}
+      </div>
+    );
+  }
+);
 
 LanguageSwitcher.displayName = 'LanguageSwitcher';
 

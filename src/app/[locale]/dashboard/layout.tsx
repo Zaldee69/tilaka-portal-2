@@ -8,7 +8,6 @@ import { TnCContextProvider } from '@/components/dialog/term-and-condition/TncCo
 import Navbar from '@/components/navbar/Navbar';
 import Sidebar from '@/components/sidebar';
 import { SidebarContextProvider } from '@/components/sidebar/SidebarContextProvider';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
 
 const DashboarLayout = ({
   children,
@@ -19,29 +18,26 @@ const DashboarLayout = ({
   params: { locale: string };
   searchParams: {};
 }) => {
-  const messages = useMessages();
   return (
-    <NextIntlClientProvider locale={params.locale} messages={messages}>
-      <SidebarContextProvider>
-        <TnCContextProvider>
-          <main className="relative">
-            <div className="flex">
-              <Sidebar />
-              <CertExpiredDialog />
-              <CertRevokedDialog />
-              <TnCDialog />
-              <NoInternetDialog />
-              <DeviceNotSupported />
-              <AutoLoggedOutDialog />
-              <div className="w-full">
-                <Navbar params={params} searchParams={searchParams} />
-                <div>{children}</div>
-              </div>
+    <SidebarContextProvider>
+      <TnCContextProvider>
+        <main className="relative">
+          <div className="flex">
+            <Sidebar />
+            <CertExpiredDialog />
+            <CertRevokedDialog />
+            <TnCDialog />
+            <NoInternetDialog />
+            <DeviceNotSupported />
+            <AutoLoggedOutDialog />
+            <div className="w-full">
+              <Navbar />
+              <div>{children}</div>
             </div>
-          </main>
-        </TnCContextProvider>
-      </SidebarContextProvider>
-    </NextIntlClientProvider>
+          </div>
+        </main>
+      </TnCContextProvider>
+    </SidebarContextProvider>
   );
 };
 

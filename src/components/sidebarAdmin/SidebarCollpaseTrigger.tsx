@@ -2,10 +2,10 @@
 import React, { useContext } from 'react';
 import { Button } from '../ui/button';
 import { Menu } from 'lucide-react';
-import { SidebarContext } from './SidebarContextProvider';
+import { SidebarAdminContext } from './SidebarAdminContextProvider';
 
 const SidebarCollpaseTrigger = () => {
-  const { state, stateSetter } = useContext(SidebarContext);
+  const { state, stateSetter } = useContext(SidebarAdminContext);
 
   return (
     <Button

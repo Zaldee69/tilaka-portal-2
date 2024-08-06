@@ -143,9 +143,11 @@ const SignatureOptions: React.FC<SignatureOptionsProps> = ({ t, s }) => (
   </div>
 );
 
-const Page: React.FC<PageProps> = ({ params, searchParams }) => {
+const Page: React.FC<PageProps> = ({ searchParams }) => {
   const t = useTranslations('Dashboard');
   const s = useTranslations('Settings');
+
+  console.log(searchParams);
 
   return (
     <div className="p-5 mx-auto">
@@ -160,10 +162,7 @@ const Page: React.FC<PageProps> = ({ params, searchParams }) => {
           />
           <ChangePasswordDialog />
           <ChangeAutheticationModeDialog />
-          <LanguageSwitcher
-            className="w-fit mt-3 md:hidden"
-            searchparams={searchParams}
-          />
+          <LanguageSwitcher className="w-fit mt-3 md:hidden" />
         </div>
         <div className="xl:w-[68%] pb-10 bg-white custom-shadow p-5 rounded-2xl">
           <h4>{s('certificateContent.title')}</h4>
