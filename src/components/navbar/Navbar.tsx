@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import NavbarMenu from './NavbarMenu';
-import { MobileSidebar } from '../sidebar/MobileSidebar';
+import { MobileSidebar } from '../sidebarAdmin/MobileSidebar';
 import { Input } from '../ui/input';
 import { SearchIcon } from '../../../public/icons/icons';
 import SidebarCollpaseTrigger from '../sidebar/SidebarCollpaseTrigger';

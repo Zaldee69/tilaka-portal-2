@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 
 import { Button } from '../ui/button';
-import { History, PlusCircle } from 'lucide-react';
+import { History, PlusCircle, UserRoundPlus, UsersRound } from 'lucide-react';
 import { Separator } from '../ui/separator';
 import { useTranslations } from 'next-intl';
 
@@ -14,7 +14,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   Icon: any;
 }
 
-const QuotaCard = ({ children, className, Icon, ...props }: Props) => {
+const UserQuotaCard = ({ children, className, Icon, ...props }: Props) => {
   const t = useTranslations('Dashboard');
 
   return (
@@ -36,11 +36,11 @@ const QuotaCard = ({ children, className, Icon, ...props }: Props) => {
           {children}
           <div className="text-white flex items-center justify-between mt-2">
             <p className="text-sm">
-              {t('usage')}: <span className="font-semibold">5</span>
+              {t('activeUser')}: <span className="font-semibold">5</span>
             </p>
             {props.expiry && (
               <p className="text-sm">
-                {t('validUntil')} {props.expiry}
+                {t('expiredContracts')} {props.expiry}
               </p>
             )}
           </div>
@@ -48,12 +48,12 @@ const QuotaCard = ({ children, className, Icon, ...props }: Props) => {
       </div>
       <div className="bg-white rounded-[8px] flex justify-around items-center mt-3 px-5">
         <Button variant="ghost" className="font-semibold text-primary px-0">
-          <PlusCircle className="mr-2" />
+          <UserRoundPlus className="mr-2" />
           {props.plusbuttontitle}
         </Button>
         <Separator orientation="vertical" className="h-8 bg-gray-6" />
         <Button variant="ghost" className="font-semibold text-primary px-0">
-          <History className="mr-2" />
+          <UsersRound className="mr-2" />
           {props.historybuttontitle}
         </Button>
       </div>
@@ -61,6 +61,6 @@ const QuotaCard = ({ children, className, Icon, ...props }: Props) => {
   );
 };
 
-QuotaCard.displayName = 'QuotaCard';
+UserQuotaCard.displayName = 'UserQuotaCard';
 
-export default QuotaCard;
+export default UserQuotaCard;

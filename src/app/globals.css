@@ -165,6 +165,10 @@
   background: linear-gradient(87.48deg, #349ac6 3.55%, #62a9f2 125.81%);
 }
 
+.admin-quota-card-bg-2 {
+  background: linear-gradient(87.48deg, #048090 3.55%, #2281c7 125.81%);
+}
+
 .doc-card-bg-1 {
   background: linear-gradient(125.17deg, #cde5fe 29.33%, #b9dcfe 104.17%);
 }
@@ -200,4 +204,12 @@
 .stamp-icon {
   width: 90% !important;
   height: 90% !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.gray-text {
+  color: #989898;
 }

@@ -2,7 +2,11 @@ import {
   DashboardIcon,
   DocumentIcon,
   SettingsIcon,
-  VerifiedIcon
+  VerifiedIcon,
+  PeopleIcon,
+  HistoryIcon,
+  PurchaseIcon,
+  UsersManagementIcon
 } from '../../public/icons/icons';
 
 export const accountList = [
@@ -110,6 +114,32 @@ export const sidebarLinks = [
     Icons: SettingsIcon,
     path: '/dashboard/settings',
     subPath: ['/certificate', '/revoke-certificate', '/audit-trail']
+  }
+];
+
+export const sidebarAdminLinks = [
+  {
+    title: 'sidebarAdmin.dashboard',
+    Icons: DashboardIcon,
+    path: '/admin/dashboard'
+  },
+  {
+    title: 'sidebarAdmin.userManagement',
+    Icons: UsersManagementIcon,
+    path: '/admin/dashboard/user-management',
+    subPath: ['/detail']
+  },
+  {
+    title: 'sidebarAdmin.history',
+    Icons: HistoryIcon,
+    path: '/admin/dashboard/history',
+    subPath: ['/certificate', '/signing']
+  },
+  {
+    title: 'sidebarAdmin.purchase',
+    Icons: PurchaseIcon,
+    path: '/admin/dashboard/purchase',
+    subPath: ['/quota', '/history']
   }
 ];
 

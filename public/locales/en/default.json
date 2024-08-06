@@ -37,6 +37,14 @@
       "settings": "Setting",
       "documentDetails": "Document Details"
     },
+    "sidebarAdmin": {
+      "signPdfButton": "Sign",
+      "dashboard": "Dashboard",
+      "userManagement": "Users Management",
+      "history": "History",
+      "purchase": "Purchase",
+      "documentDetails": "Document Details"
+    },
     "table": {
       "date": "Date",
       "document": "Document Name",
@@ -66,13 +74,46 @@
         "confirmButton": "Yes, Cancel It"
       }
     },
-    "sigantureBalance": "Signature Balance",
+    "tableAdmin": {
+      "date": "Date",
+      "document": "Document",
+      "initiator": "Initiator",
+      "signer": "Signer",
+      "status": "Status",
+      "from": "from",
+      "search": "Search",
+      "or": "or",
+      "importantToday": "Important Today",
+      "signerStatus": {
+        "signed": "Signed",
+        "waiting": "Waiting",
+        "sent": "Sent",
+        "denied": "Denied"
+      },
+      "actions": {
+        "view": "View",
+        "sign": "Sign",
+        "cancel": "Cancel Request",
+        "deny": "Deny"
+      },
+      "cancelDialog": {
+        "title": "Cancel Document",
+        "subtitle": "Signatures and documents will be canceled.",
+        "cancelButton": "Back",
+        "confirmButton": "Yes, Cancel It"
+      }
+    },
+    "sigantureBalance": "Signature Balance Available",
     "usage": "Usage",
+    "activeUser": "Active User",
     "history": "History",
+    "expiredContracts": "Expired Contracts",
     "stampBalance": "e-Meterai Balance",
+    "quotaBalance": "User Quota Balance Available",
     "DocNeedTobeSigned": "Documents to be Signed",
     "DocInProcess": "Documents In Progress",
     "DocCompleted": "Documents Completed",
+    "UserWillExpired": "User Will Expired",
     "mainAccount": "Main Account",
     "signing": "Signature",
     "signature": "Signature",
@@ -82,10 +123,17 @@
     "viewAllDoc": "View All Documents",
     "viewAll": "View All",
     "authMethod": "Authentication Method",
+    "verifMethod": "Verification Method",
     "help": "Need Help?",
     "activity": "Here's your activity summary with Tilaka",
     "validUntil": "Valid until",
-    "floatingCTA": "Sign Document"
+    "floatingCTA": "Sign Document",
+    "addUser": "Add User",
+    "userRegistration": "User Registration",
+    "signatureHistory": "Signature History",
+    "CertificateHistory": "Certificate History",
+    "QuotaPurchase": "Purchase quota",
+    "HistoryPurchase": "Purchase History"
   },
   "VerifyPdf": {
     "uploadZone": {
@@ -395,5 +443,26 @@
     "sign": "Sign",
     "time": "Time",
     "open": "Open"
+  },
+  "History": {
+    "certificate": {
+      "title": "Certificate History",
+      "validFrom": "Valid From",
+      "nameOrEmail": "Name / e-mail",
+      "company": "Company",
+      "name": "Name",
+      "email": "E-Mail",
+      "see": "View"
+    },
+    "signing": {
+      "title": "Signing History",
+      "document": "Document",
+      "date": "Date",
+      "initiator": "Initiator",
+      "signer": "Signer",
+      "search": "Search",
+      "sendReminder": "Send Reminder",
+      "or": "or"
+    }
   }
 }
