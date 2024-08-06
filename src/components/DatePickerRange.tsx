@@ -7,8 +7,12 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useTranslations } from 'next-intl';
 
-export function DatePickerRange() {
-  const t = useTranslations('Dashboard');
+interface Props {
+  placeholder: string;
+}
+
+export function DatePickerRange({ placeholder }: Props) {
+  const t = useTranslations(placeholder);
 
   const [date, setDate] = React.useState<{
     begin: Date | null;
@@ -34,7 +38,7 @@ export function DatePickerRange() {
         selected={date.begin}
         startDate={date.begin}
         endDate={date.end}
-        placeholderText={t('table.date')}
+        placeholderText={placeholder}
         onChange={onChangeHandler}
         selectsRange
         className=" h-10 pr-2 !w-full rounded-md border focus-visible:shadow focus-visible:shadow-primary/25 border-input bg-background pl-10 text-sm placeholder:text-[#BDBDBD] focus-visible:outline-none focus-visible:border-primary"

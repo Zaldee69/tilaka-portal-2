@@ -25,6 +25,7 @@ const config = {
         'gray-4': '#BDBDBD',
         'gray-6': '#F2F2F2',
         'secondary-1': '#F2F9FF',
+        'admin-primary': '#003D75',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

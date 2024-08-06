@@ -37,6 +37,14 @@
       "settings": "Pengaturan",
       "documentDetails": "Dokumen Detail"
     },
+    "sidebarAdmin": {
+      "signPdfButton": "Sign",
+      "dashboard": "Beranda",
+      "userManagement": "Manajemen Pengguna",
+      "history": "Riwayat",
+      "purchase": "Pembelian",
+      "documentDetails": "Document Details"
+    },
     "table": {
       "date": "Tanggal",
       "document": "Nama Dokumen",
@@ -66,13 +74,46 @@
         "confirmButton": "Ya, Batalkan"
       }
     },
-    "sigantureBalance": "Kuota Tandatangan",
+    "tableAdmin": {
+      "date": "Tanggal",
+      "document": "Dokumen",
+      "initiator": "Pembuat",
+      "signer": "Penandatangan",
+      "status": "Status",
+      "from": "dari",
+      "or": "atau",
+      "search": "Cari",
+      "importantToday": "Penting Hari ini",
+      "signerStatus": {
+        "signed": "Ditandatangani",
+        "waiting": "Menunggu",
+        "sent": "Terkirim",
+        "denied": "Ditolak"
+      },
+      "actions": {
+        "view": "Lihat",
+        "sign": "Tandatangan",
+        "cancel": "Batalkan",
+        "deny": "Tolak"
+      },
+      "cancelDialog": {
+        "title": "Batalkan Dokumen",
+        "subtitle": "Tandatangan dan dokumen akan dibatalkan.",
+        "cancelButton": "Kembali",
+        "confirmButton": "Ya, Batalkan"
+      }
+    },
+    "sigantureBalance": "Kuota Tandatangan Tersedia",
     "usage": "Kuota Terpakai",
+    "activeUser": "Pengguna Aktif",
     "history": "Riwayat",
+    "expiredContracts": "Habis Kontrak",
     "stampBalance": "Kuota e-Meterai",
+    "quotaBalance": "Kuota Pengguna Tersedia",
     "DocNeedTobeSigned": "Dokumen Perlu Ditandatangani",
     "DocInProcess": "Dokumen Dalam Proses",
     "DocCompleted": "Dokumen Selesai",
+    "UserWillExpired": "Pengguna akan Expired",
     "mainAccount": "Akun Utama",
     "signing": "Tandatangan",
     "signature": "Tanda Tangan",
@@ -82,10 +123,17 @@
     "viewAllDoc": "Lihat Semua Dokumen",
     "viewAll": "Lihat Semua",
     "authMethod": "Metode Otentikasi",
+    "verifMethod": "Metode Verifikasi",
     "help": "Butuh Bantuan?",
     "activity": "Berikut ringkasan aktivitasmu bersama Tilaka",
     "validUntil": "Aktif sampai",
-    "floatingCTA": "Tandatangan Dokumen"
+    "floatingCTA": "Tandatangan Dokumen",
+    "addUser": "Tambah Pengguna",
+    "userRegistration": "Daftar",
+    "signatureHistory": "Riwayat Tanda Tangan",
+    "CertificateHistory": "Riwayat Sertifikat",
+    "QuotaPurchase": "Beli Kuota",
+    "HistoryPurchase": "Riwayat Pembelian"
   },
   "VerifyPdf": {
     "uploadZone": {
@@ -395,5 +443,26 @@
     "sign": "Menandatangani",
     "time": "Waktu",
     "open": "Membuka"
+  },
+  "History": {
+    "certificate": {
+      "title": "Riwayat Sertifikat",
+      "validFrom": "Tanggal Penerbitan",
+      "nameOrEmail": "Nama / e-mail",
+      "company": "Perusahaan",
+      "name": "Nama",
+      "email": "E-Mail",
+      "see": "Lihat"
+    },
+    "signing": {
+      "title": "Riwayat Tandatangan",
+      "document": "Dokumen",
+      "date": "Tanggal",
+      "initiator": "Inisiator",
+      "signer": "Penandatangan",
+      "search": "Cari",
+      "sendReminder": "Kirim Pengingat",
+      "or": "atau"
+    }
   }
 }

@@ -10,7 +10,7 @@ import {
   DrawerTrigger
 } from '@/components/ui/drawer';
 import { Button, buttonVariants } from '@/components/ui/button';
-import { FilterAltIcon, SearchIcon } from '../../../../../public/icons/icons';
+import { SearchIcon } from '../../../../../../../../public/icons/icons';
 import { Input } from '@/components/ui/input';
 import { DatePickerRange } from '@/components/DatePickerRange';
 import { Settings2 } from 'lucide-react';
@@ -19,7 +19,7 @@ import { useTranslations } from 'next-intl';
 const MobileFilter = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const t = useTranslations('Dashboard');
+  const t = useTranslations('History.signing');
 
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
@@ -48,14 +48,14 @@ const MobileFilter = () => {
         </DrawerHeader>
 
         <div className="px-4 mt-3">
-          <h5 className="mb-2">{t('table.date')}</h5>
-          <DatePickerRange placeholder={t('table.date')} />
+          <h5 className="mb-2">{t('date')}</h5>
+          <DatePickerRange placeholder={t('date')} />
         </div>
 
         <div className="px-4 mt-3">
-          <h5>{t('table.document')}</h5>
+          <h5>{t('document')}</h5>
           <Input
-            placeholder={t('table.document')}
+            placeholder={t('document')}
             className="h-10 pl-12 pr-2 w-full mt-2"
             icon={<SearchIcon svgClassName="mt-2" />}
             iconPosition="left"
@@ -63,18 +63,18 @@ const MobileFilter = () => {
         </div>
 
         <div className="px-4 mt-3">
-          <h5>{t('table.initiator')}</h5>
+          <h5>{t('initiator')}</h5>
           <Input
-            placeholder={t('table.initiator')}
+            placeholder={t('initiator')}
             className="h-10 pl-12 pr-2 w-full mt-2"
             icon={<SearchIcon svgClassName="mt-2" />}
             iconPosition="left"
           />
         </div>
         <div className="px-4 mt-3">
-          <h5>{t('table.signer')}</h5>
+          <h5>{t('signer')}</h5>
           <Input
-            placeholder={t('table.signer')}
+            placeholder={t('signer')}
             className="h-10 pl-12 pr-2 w-full mt-2"
             icon={<SearchIcon svgClassName="mt-2" />}
             iconPosition="left"
