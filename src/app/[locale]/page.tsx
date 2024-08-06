@@ -33,7 +33,7 @@ export default function Home({
             quality={100}
             priority
           />
-          <LanguageSwitcher searchparams={searchParams} />
+          <LanguageSwitcher />
         </div>
         <h2 className="text-gray-2 mt-24">{t('title')}</h2>
         <p className="text-sm text-gray-3 pb-12 pt-3">{t('subtitle')}</p>
