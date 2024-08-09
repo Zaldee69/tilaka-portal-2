@@ -25,7 +25,7 @@ export function MobileAdminSidebar() {
       <SheetTrigger className="lg:hidden" asChild>
         <AlignJustify className="text-gray-3" />
       </SheetTrigger>
-      <SheetContent side="left">
+      <SheetContent side="left" className="overflow-y-auto">
         <SheetHeader className="mb-12">
           <SheetClose asChild>
             <AlignJustify className="text-gray-3" />
@@ -57,7 +57,7 @@ export function MobileAdminSidebar() {
           </div>
         </SheetHeader>
         <SidebarAdminLinks setOpen={setOpen} />
-        <div className="absolute bottom-5 left-10">
+        <div className="left-10 absolute -bottom-32 pb-5">
           <Link
             href="https://tilaka.id/ufaqs/"
             target="_blank"
