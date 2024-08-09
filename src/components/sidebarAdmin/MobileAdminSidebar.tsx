@@ -25,7 +25,7 @@ export function MobileAdminSidebar() {
       <SheetTrigger className="lg:hidden" asChild>
         <AlignJustify className="text-gray-3" />
       </SheetTrigger>
-      <SheetContent side="left" className="overflow-y-auto">
+      <SheetContent side="left" className="overflow-y-auto md:overflow-hidden">
         <SheetHeader className="mb-12">
           <SheetClose asChild>
             <AlignJustify className="text-gray-3" />
