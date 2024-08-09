@@ -448,15 +448,15 @@
     "certificate": {
       "title": "Certificate History",
       "validFrom": "Valid From",
-      "nameOrEmail": "Name / e-mail",
+      "nameOrEmail": "Name / email",
       "company": "Company",
       "name": "Name",
-      "email": "E-Mail",
+      "email": "Email",
       "see": "View"
     },
     "signing": {
       "title": "Signing History",
-      "document": "Document",
+      "document": "Document Name",
       "date": "Date",
       "initiator": "Initiator",
       "signer": "Signer",

@@ -2,23 +2,21 @@
 import React, { useContext } from 'react';
 import {
   BrushIcon,
+  PeopleCircleIcon,
   QuestionAnswerIcon,
-  StampIcon,
-  TilakaIcon,
-  WalletIcon
+  StampIcon
 } from '../../../public/icons/icons';
-import { Button, buttonVariants } from '../ui/button';
 import Image from 'next/image';
 import SidebarAdminLinks from './SidebarAdminLinks';
-import { SidebarContext } from '../sidebar/SidebarContextProvider';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useSpring, animated } from '@react-spring/web';
 import { Link } from '@/navigation';
 import { ExternalLink } from 'lucide-react';
+import { SidebarAdminContext } from './SidebarAdminContextProvider';
 
 const SidebarAdmin = () => {
-  const { state } = useContext(SidebarContext);
+  const { state } = useContext(SidebarAdminContext);
 
   const t = useTranslations('Dashboard');
 
@@ -80,7 +78,7 @@ const SidebarAdmin = () => {
             '!flex-col': !state.isOpen
           })}
         >
-          <div
+          {/* <div
             className={cn(
               ' flex items-center gap-2 bg-white custom-shadow h-8 px-4 rounded-[70px] w-fit mt-2',
               {
@@ -100,7 +98,7 @@ const SidebarAdmin = () => {
             >
               23
             </p>
-          </div>
+          </div> */}
           <div
             className={cn(
               ' flex items-center gap-2 bg-white custom-shadow h-8 px-4 rounded-[70px] w-fit mt-2',
@@ -109,7 +107,8 @@ const SidebarAdmin = () => {
               }
             )}
           >
-            <StampIcon
+            <PeopleCircleIcon
+              pathClassName="fill-black"
               svgClassName={cn('w-5 h-5', {
                 'h-4 w-4': !state.isOpen
               })}

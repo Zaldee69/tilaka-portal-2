@@ -219,7 +219,7 @@ const DataTable = ({
                     <PopoverContent className="w-96">
                       <Input
                         autoFocus={false}
-                        placeholder={`Tilaka Name ${d('or')} Email`}
+                        placeholder={`Tilaka Name ${d('table.or')} Email`}
                         className="h-10 pl-3 w-full"
                         icon={<ContactIcon svgClassName="mt-2" />}
                       />
@@ -274,7 +274,25 @@ const DataTable = ({
           <TableHeader>
             <TableRow className="text-gray-1">
               <TableHead>
-                <div className="flex items-center gap-3">{t('date')} </div>
+                <div className="flex items-center gap-2">
+                  {t('date')}{' '}
+                  <svg
+                    width="11"
+                    height="19"
+                    viewBox="0 0 11 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M10.9205 6.00469L5.78929 0.615691C5.64241 0.461436 5.3596 0.461436 5.21116 0.615691L0.0799114 6.00469C-0.110714 6.20564 0.0611615 6.5 0.368974 6.5H10.6315C10.9393 6.5 11.1112 6.20564 10.9205 6.00469Z"
+                      fill="#C1C7D0"
+                    />
+                    <path
+                      d="M10.6315 12.5H0.368974C0.0611615 12.5 -0.110714 12.7944 0.0799114 12.9953L5.21116 18.3843C5.35804 18.5386 5.64085 18.5386 5.78929 18.3843L10.9205 12.9953C11.1112 12.7944 10.9393 12.5 10.6315 12.5Z"
+                      fill="#5E6C84"
+                    />
+                  </svg>
+                </div>
               </TableHead>
               <TableHead>{t('document')}</TableHead>
               <TableHead>{t('initiator')}</TableHead>
@@ -299,7 +317,7 @@ const DataTable = ({
                       <PopoverContent className="w-96">
                         <Input
                           autoFocus={false}
-                          placeholder={`Tilaka Name ${d('or')} Email`}
+                          placeholder={`Tilaka Name ${d('table.or')} Email`}
                           className="h-10 pl-3 w-full"
                           icon={<ContactIcon svgClassName="mt-2" />}
                         />

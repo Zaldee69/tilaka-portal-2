@@ -31,85 +31,6 @@ import ChangeVerificationModeDialog from '@/components/dialog/ChangeVerification
 import ChangeSignatureAttribute from '@/components/dialog/ChangeSignatureAttribute';
 import UserQuotaCard from '@/components/card/UserQuotaCard';
 
-const ImportantTodayTable = ({ t }: { t: (key: string) => string }) => (
-  <div className="bg-white custom-shadow rounded-2xl mt-10 p-3 border border-gray-6">
-    <h4 className="mb-3">{t('table.importantToday')}</h4>
-    <DataTableAdmin
-      showSeeAllButton={true}
-      actions={
-        <Link className="w-fit" href="/dashboard/documents">
-          <SquareArrowOutUpRight className="text-primary h-5 w-5 " />
-        </Link>
-      }
-      data={[
-        {
-          date: '08-05-2023 16:47',
-          name: 'BAST Kasuari',
-          initiator: {
-            tilaka_name: 'wahab1',
-            email: 'wahab1@gmail.com'
-          },
-          signer: [
-            {
-              tilaka_name: 'husen123',
-              email: 'husen@kuru.com',
-              status: 'pending'
-            }
-          ],
-          status: 'draft'
-        },
-        {
-          date: '08-05-2023 16:47',
-          name: 'PKS Tilaka x PT. ABC',
-          initiator: {
-            tilaka_name: 'wahab2',
-            email: 'wahab2@gmail.com'
-          },
-          signer: [
-            {
-              tilaka_name: 'husen123',
-              email: 'husen@kuru.com',
-              status: 'signed'
-            },
-            {
-              tilaka_name: 'husen123',
-              email: 'menangkeri@kuru.com',
-              status: 'pending'
-            },
-            {
-              tilaka_name: 'husen123',
-              email: 'awan@kmanten.com',
-              status: 'sent'
-            },
-            {
-              tilaka_name: 'husen123',
-              email: 'awan@kmanten.com',
-              status: 'denied'
-            }
-          ],
-          status: 'on_progress'
-        },
-        {
-          date: '08-05-2023 16:47',
-          name: 'PKS Tilaka x PT. ABC',
-          initiator: {
-            tilaka_name: 'wahab3',
-            email: 'wahab3@gmail.com'
-          },
-          signer: [
-            {
-              tilaka_name: 'husen123',
-              email: 'husen@kuru.com',
-              status: 'signed'
-            }
-          ],
-          status: 'done'
-        }
-      ]}
-    />
-  </div>
-);
-
 const MainAccountSection = ({ t }: { t: (key: string) => string }) => (
   <Collapsible onlyShowOnMobile autoOpen title={t('mainAccount')}>
     <div className="flex items-center gap-5 cursor-pointer px-3 my-3">
@@ -302,16 +223,12 @@ const Page: React.FC = () => {
   const t = useTranslations('Dashboard');
 
   return (
-    <div className="px-5 relative flex flex-col xl:flex-row gap-3 w-full mb-10 mt-5 md:mb-0">
-      <div className="xl:w-[68%] pb-10">
+    <div className="px-5 relative w-full mb-10 mt-5 md:mb-0">
+      <div className="pb-10">
         <h1 className="text-gray-1">{t('sidebar.dashboard')}</h1>
         <GreetingSection t={t} />
         <QuotaCards t={t} />
         <DocumentInfoCards t={t} />
-        <ImportantTodayTable t={t} />
-      </div>
-      <div className="bg-white custom-shadow md:shadow-none right-0 md:sticky top-20 rounded-2xl md:mt-[52px] border border-gray-6 lg:mb-0 xl:w-[32%] h-fit md:pb-5">
-        <MainAccountSection t={t} />
       </div>
     </div>
   );

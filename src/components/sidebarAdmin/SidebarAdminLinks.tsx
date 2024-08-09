@@ -3,10 +3,10 @@ import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { sidebarAdminLinks } from '@/constants';
-import { SidebarContext } from '../sidebar/SidebarContextProvider';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '../ui/button';
 import CollapsibleAdmin from '../CollapsibleAdmin';
+import { SidebarAdminContext } from './SidebarAdminContextProvider';
 
 const sidebarMessages = {
   'sidebarAdmin.dashboard': 'Beranda',
@@ -20,7 +20,7 @@ const SidebarAdminLinks: React.FC<{
 }> = ({ setOpen }) => {
   const t = useTranslations('Dashboard');
   const path = usePathname();
-  const { state, stateSetter } = useContext(SidebarContext);
+  const { state, stateSetter } = useContext(SidebarAdminContext);
 
   const checkPathname = (href: string) => {
     const lastPathSegment = path?.split('/').pop();
