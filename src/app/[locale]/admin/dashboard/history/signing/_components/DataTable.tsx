@@ -97,36 +97,6 @@ const getBadgeLabelAndColor = (
   return { color: badgeProps.color, label: badgeProps.label };
 };
 
-function convertDateFormat(inputDate: string): string {
-  // Map month numbers to month names
-  const monthNames: string[] = [
-    'Januari',
-    'Februari',
-    'Maret',
-    'April',
-    'Mei',
-    'Juni',
-    'Juli',
-    'Agustus',
-    'September',
-    'Oktober',
-    'November',
-    'Desember'
-  ];
-
-  // Split the input date into date and time components
-  const [datePart, timePart] = inputDate.split(' ');
-
-  // Further split the date into day, month, and year
-  const [month, day, year] = datePart.split('-');
-
-  // Parse the month as an integer to get the month name
-  const monthName = monthNames[parseInt(month, 10) - 1];
-
-  // Construct and return the formatted date string
-  return `${monthName} ${day}, ${year} ${timePart}`;
-}
-
 const DataTable = ({
   data,
   showSeeAllButton = false,
@@ -305,7 +275,7 @@ const DataTable = ({
             {data.length ? (
               data.map((row) => (
                 <TableRow key={row.name}>
-                  <TableCell>{convertDateFormat(row.date)}</TableCell>
+                  <TableCell>{row.date}</TableCell>
                   <TableCell>{row.name}</TableCell>
                   <TableCell>{row.initiator.email}</TableCell>
                   <TableCell>

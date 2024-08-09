@@ -448,7 +448,7 @@
     "certificate": {
       "title": "Certificate History",
       "validFrom": "Valid From",
-      "nameOrEmail": "Name / email",
+      "nameOrEmail": "Name / Email",
       "company": "Company",
       "name": "Name",
       "email": "Email",
