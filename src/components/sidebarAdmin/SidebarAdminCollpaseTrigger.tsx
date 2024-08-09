@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 import { Menu } from 'lucide-react';
 import { SidebarAdminContext } from './SidebarAdminContextProvider';
 
-const SidebarCollpaseTrigger = () => {
+const SidebarAdminCollpaseTrigger = () => {
   const { state, stateSetter } = useContext(SidebarAdminContext);
 
   return (
@@ -18,4 +18,4 @@ const SidebarCollpaseTrigger = () => {
   );
 };
 
-export default SidebarCollpaseTrigger;
+export default SidebarAdminCollpaseTrigger;

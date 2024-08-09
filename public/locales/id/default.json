@@ -448,17 +448,17 @@
     "certificate": {
       "title": "Riwayat Sertifikat",
       "validFrom": "Tanggal Penerbitan",
-      "nameOrEmail": "Nama / e-mail",
+      "nameOrEmail": "Nama / email",
       "company": "Perusahaan",
       "name": "Nama",
-      "email": "E-Mail",
+      "email": "Email",
       "see": "Lihat"
     },
     "signing": {
       "title": "Riwayat Tandatangan",
-      "document": "Dokumen",
+      "document": "Nama Dokumen",
       "date": "Tanggal",
-      "initiator": "Inisiator",
+      "initiator": "Pembuat",
       "signer": "Penandatangan",
       "search": "Cari",
       "sendReminder": "Kirim Pengingat",

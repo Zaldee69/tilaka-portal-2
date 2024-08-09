@@ -76,21 +76,12 @@ export default function Page() {
           <div className="hidden md:flex">
             <DatePickerRange placeholder={h('validFrom')} />
           </div>
-          <Select onValueChange={onSelectChange}>
-            <SelectTrigger
-              icon={<FilterAltIcon fill="#000" />}
-              className={cn('hidden md:flex', {
-                'text-[#BDBDBD]': status.length < 1
-              })}
-            >
-              <SelectValue placeholder="Status" />
-            </SelectTrigger>
-            <SelectContent className="hidden md:flex">
-              <SelectItem value="dark">Revoke</SelectItem>
-              <SelectItem value="system">Active</SelectItem>
-              <SelectItem value="denied">Expired</SelectItem>
-            </SelectContent>
-          </Select>
+          <Input
+            placeholder={h('company')}
+            className="h-10 pl-12 pr-2 hidden md:flex"
+            icon={<SearchIcon svgClassName="mt-2 hidden md:block" />}
+            iconPosition="left"
+          />{' '}
           <div className="flex col-span-3 gap-2 md:col-auto">
             <div className="w-full">
               <Input
@@ -108,12 +99,21 @@ export default function Page() {
               <MobileFilter />
             </div>
           </div>
-          <Input
-            placeholder={h('company')}
-            className="h-10 pl-12 pr-2 hidden md:flex"
-            icon={<SearchIcon svgClassName="mt-2 hidden md:block" />}
-            iconPosition="left"
-          />{' '}
+          <Select onValueChange={onSelectChange}>
+            <SelectTrigger
+              icon={<FilterAltIcon fill="#000" />}
+              className={cn('hidden md:flex', {
+                'text-[#BDBDBD]': status.length < 1
+              })}
+            >
+              <SelectValue placeholder="Status" />
+            </SelectTrigger>
+            <SelectContent className="hidden md:flex">
+              <SelectItem value="dark">Revoke</SelectItem>
+              <SelectItem value="system">Active</SelectItem>
+              <SelectItem value="denied">Expired</SelectItem>
+            </SelectContent>
+          </Select>
           <div className="hidden col-span-1 md:flex gap-2">
             {' '}
             <Button className="px-7 font-semibold h-10">Filter</Button>
