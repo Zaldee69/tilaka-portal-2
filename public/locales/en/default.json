@@ -452,7 +452,10 @@
       "company": "Company",
       "name": "Name",
       "email": "Email",
-      "see": "View"
+      "see": "View",
+      "revoke": "Revoke",
+      "active": "Active",
+      "expired": "Expired"
     },
     "signing": {
       "title": "Signing History",

@@ -78,11 +78,33 @@ const SidebarAdmin = () => {
             '!flex-col': !state.isOpen
           })}
         >
-          {/* <div
+          <div
             className={cn(
-              ' flex items-center gap-2 bg-white custom-shadow h-8 px-4 rounded-[70px] w-fit mt-2',
+              ' flex items-center gap-2 bg-white custom-shadow h-8 px-2.5 rounded-[70px] w-fit mt-2',
               {
                 'px-2 gap-1 mt-5 mx-auto': !state.isOpen
+              }
+            )}
+          >
+            <PeopleCircleIcon
+              pathClassName="fill-black"
+              svgClassName={cn('w-5 h-5', {
+                'h-4 w-4': !state.isOpen
+              })}
+            />
+            <p
+              className={cn('font-medium text-sm ', {
+                '!text-xs': !state.isOpen
+              })}
+            >
+              27
+            </p>
+          </div>
+          <div
+            className={cn(
+              ' flex items-center gap-2 bg-white custom-shadow h-8 px-2.5 rounded-[70px] w-fit mt-2',
+              {
+                'px-2 gap-1 mx-auto': !state.isOpen
               }
             )}
           >
@@ -98,17 +120,17 @@ const SidebarAdmin = () => {
             >
               23
             </p>
-          </div> */}
+          </div>
+
           <div
             className={cn(
-              ' flex items-center gap-2 bg-white custom-shadow h-8 px-4 rounded-[70px] w-fit mt-2',
+              ' flex items-center gap-2 bg-white custom-shadow h-8 px-2.5 rounded-[70px] w-fit mt-2',
               {
                 'px-2 gap-1 mx-auto': !state.isOpen
               }
             )}
           >
-            <PeopleCircleIcon
-              pathClassName="fill-black"
+            <StampIcon
               svgClassName={cn('w-5 h-5', {
                 'h-4 w-4': !state.isOpen
               })}

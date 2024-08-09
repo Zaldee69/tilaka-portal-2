@@ -1908,6 +1908,7 @@ export const WomanIllustrationIcon = ({
     <svg
       width="216"
       height="124"
+      className="w-full"
       viewBox="0 0 216 124"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
