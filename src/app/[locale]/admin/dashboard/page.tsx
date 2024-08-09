@@ -157,7 +157,7 @@ const GreetingSection = ({ t }: { t: (key: string) => string }) => (
       </span>
       <p className="text-sm md:text-base mt-2">{t('activity')}</p>
     </div>
-    <div>
+    <div className="w-[290px] md:w-auto">
       <WomanIllustrationIcon />
     </div>
   </div>
@@ -165,17 +165,6 @@ const GreetingSection = ({ t }: { t: (key: string) => string }) => (
 
 const QuotaCards = ({ t }: { t: (key: string) => string }) => (
   <div className="flex flex-col md:flex-row gap-3">
-    <QuotaCard
-      Icon={BrushIcon}
-      plusbuttontitle="Topup"
-      historybuttontitle={t('history')}
-      className="quota-card-bg-1 w-full"
-      amount={20}
-      expiry="23 Juni 2024"
-      title={t('sigantureBalance')}
-    >
-      <Progress value={60} className="w-full" />
-    </QuotaCard>
     <UserQuotaCard
       Icon={PeopleCircleIcon}
       title={t('quotaBalance')}
@@ -187,6 +176,26 @@ const QuotaCards = ({ t }: { t: (key: string) => string }) => (
     >
       <Progress value={60} className="w-full" />
     </UserQuotaCard>
+    <QuotaCard
+      Icon={BrushIcon}
+      plusbuttontitle="Topup"
+      historybuttontitle={t('history')}
+      className="quota-card-bg-1 w-full"
+      amount={20}
+      expiry="23 Juni 2024"
+      title={t('sigantureBalance')}
+    >
+      <Progress value={60} className="w-full" />
+    </QuotaCard>
+
+    <QuotaCard
+      Icon={StampIcon}
+      title={t('stampBalance')}
+      plusbuttontitle="Topup"
+      historybuttontitle={t('history')}
+      className="quota-card-bg-2 w-full"
+      amount={10}
+    />
   </div>
 );
 

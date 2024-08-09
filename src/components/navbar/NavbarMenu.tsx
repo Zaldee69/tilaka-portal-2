@@ -25,7 +25,7 @@ import { RadioGroup, RadioGroupItem } from '../ui/radio-group';
 import { Separator } from '../ui/separator';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '../LanguageSwitcher';
-import { Link } from '@/navigation';
+import { Link, usePathname } from '@/navigation';
 
 const NavbarMenu = () => {
   const [showMenu, setShowMenu] = useState<
@@ -37,12 +37,21 @@ const NavbarMenu = () => {
     setShowMenu(null);
   };
 
+  const pathname = usePathname();
+
   const t = useTranslations('Navbar');
 
   useOnClickOutside(ref, handleClickOutside);
 
   const menuProps = useSpring({
-    height: showMenu === null ? 0 : showMenu === 'search' ? 80 : 270,
+    height:
+      showMenu === null
+        ? 0
+        : pathname.includes('/admin')
+          ? 70
+          : showMenu === 'search'
+            ? 80
+            : 270,
     paddingTop: showMenu !== null ? 12 : 0,
     paddingBottom: showMenu !== null ? 8 : 0,
     config: {
@@ -146,6 +155,8 @@ const SearchInput = ({ placeholder }: { placeholder: string }) => (
 const AccountListSelect = ({ logoutTitle }: { logoutTitle: string }) => {
   const [account, setAccount] = useState(accountList);
 
+  const pathname = usePathname();
+
   const handleChange = (value: string) => {
     const updateAccountList = accountList.map((account) => {
       if (account.email === value) {
@@ -160,51 +171,56 @@ const AccountListSelect = ({ logoutTitle }: { logoutTitle: string }) => {
 
   return (
     <div>
-      <ScrollArea className="h-[200px] px-5">
-        <RadioGroup
-          onValueChange={(value) => handleChange(value)}
-          className="w-full"
-          defaultValue="john.doe@example.com"
-        >
-          {account.map((account) => (
-            <div
-              key={account.id}
-              className={cn(
-                'flex items-center justify-between border p-2 rounded-md border-input  cursor-pointer',
-                {
-                  'border-primary': account.isPrimary
-                }
-              )}
-            >
-              <Label
-                className="flex justify-between items-center gap-3 cursor-pointer"
-                htmlFor={account.id}
+      {!pathname.includes('/admin') && (
+        <ScrollArea className="h-[200px] px-5 mb-2">
+          <RadioGroup
+            onValueChange={(value) => handleChange(value)}
+            className="w-full"
+            defaultValue="john.doe@example.com"
+          >
+            {account.map((account) => (
+              <div
+                key={account.id}
+                className={cn(
+                  'flex items-center justify-between border p-2 rounded-md border-input  cursor-pointer',
+                  {
+                    'border-primary': account.isPrimary
+                  }
+                )}
               >
-                <div className="p-1.5 bg-[#F2F9FF] rounded-lg">
-                  <CorporateIconBig />
-                </div>
-                <div>
-                  <p className="font-semibold truncate max-w-60">
-                    {account.email}
-                  </p>
-                  <p className="text-xs truncate max-w-60">{account.company}</p>
-                </div>
-              </Label>
-              <RadioGroupItem
-                className={cn({
-                  'border-primary/50': account.isPrimary
-                })}
-                value={account.email}
-                id={account.id}
-              />
-            </div>
-          ))}
-        </RadioGroup>
-      </ScrollArea>
+                <Label
+                  className="flex justify-between items-center gap-3 cursor-pointer"
+                  htmlFor={account.id}
+                >
+                  <div className="p-1.5 bg-[#F2F9FF] rounded-lg">
+                    <CorporateIconBig />
+                  </div>
+                  <div>
+                    <p className="font-semibold truncate max-w-60">
+                      {account.email}
+                    </p>
+                    <p className="text-xs truncate max-w-60">
+                      {account.company}
+                    </p>
+                  </div>
+                </Label>
+                <RadioGroupItem
+                  className={cn({
+                    'border-primary/50': account.isPrimary
+                  })}
+                  value={account.email}
+                  id={account.id}
+                />
+              </div>
+            ))}
+          </RadioGroup>
+        </ScrollArea>
+      )}
+
       <Link
         href="/"
         className={buttonVariants({
-          className: '!w-fit !px-4 group mt-2',
+          className: '!w-fit !px-4',
           variant: 'ghost'
         })}
       >

@@ -448,11 +448,14 @@
     "certificate": {
       "title": "Riwayat Sertifikat",
       "validFrom": "Tanggal Penerbitan",
-      "nameOrEmail": "Nama / email",
+      "nameOrEmail": "Nama / Email",
       "company": "Perusahaan",
       "name": "Nama",
       "email": "Email",
-      "see": "Lihat"
+      "see": "Lihat",
+      "revoke": "Cabut",
+      "active": "Aktif",
+      "expired": "Kedaluwarsa"
     },
     "signing": {
       "title": "Riwayat Tandatangan",

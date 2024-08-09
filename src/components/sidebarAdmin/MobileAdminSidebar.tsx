@@ -9,8 +9,10 @@ import {
 } from '@/components/ui/sheet';
 import { AlignJustify, ExternalLink } from 'lucide-react';
 import {
+  BrushIcon,
   PeopleCircleIcon,
-  QuestionAnswerIcon
+  QuestionAnswerIcon,
+  StampIcon
 } from '../../../public/icons/icons';
 import SidebarAdminLinks from './SidebarAdminLinks';
 import Link from 'next/link';
@@ -40,6 +42,14 @@ export function MobileAdminSidebar() {
                 pathClassName="fill-black"
                 svgClassName="w-5 h-5"
               />
+              <p className="font-medium text-sm md:text-base">27</p>
+            </div>
+            <div className=" flex items-center gap-2 bg-white custom-shadow h-9 px-6 rounded-[70px]">
+              <BrushIcon pathClassName="fill-black" svgClassName="w-5 h-5" />
+              <p className="font-medium text-sm md:text-base">27</p>
+            </div>
+            <div className=" flex items-center gap-2 bg-white custom-shadow h-9 px-6 rounded-[70px]">
+              <StampIcon pathClassName="fill-black" svgClassName="w-5 h-5" />
               <p className="font-medium text-sm md:text-base">27</p>
             </div>
           </div>

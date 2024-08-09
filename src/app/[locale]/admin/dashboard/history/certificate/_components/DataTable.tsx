@@ -94,15 +94,15 @@ const getBadgeLabelAndColor = (
   switch (status) {
     case 'revoke':
       badgeProps.color = 'bg-[#929292]';
-      badgeProps.label = 'Revoke';
+      badgeProps.label = d('revoke');
       break;
     case 'active':
       badgeProps.color = 'bg-[#3B9B1B]';
-      badgeProps.label = 'Active';
+      badgeProps.label = d('active');
       break;
     case 'expired':
       badgeProps.color = 'bg-[#BD0505]';
-      badgeProps.label = 'Expired';
+      badgeProps.label = d('expired');
       break;
 
     default:
