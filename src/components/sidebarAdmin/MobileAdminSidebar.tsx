@@ -36,19 +36,21 @@ export function MobileAdminSidebar() {
           <div className="text-center">
             <h5>Muhammad John Doe</h5>
           </div>
-          <div className="flex gap-2 justify-center">
-            <div className=" flex items-center gap-2 bg-white custom-shadow h-9 px-6 rounded-[70px]">
-              <PeopleCircleIcon
-                pathClassName="fill-black"
-                svgClassName="w-5 h-5"
-              />
-              <p className="font-medium text-sm md:text-base">27</p>
+          <div className="flex flex-col items-center gap-2 justify-center">
+            <div className="flex gap-2">
+              <div className=" flex items-center gap-2 bg-white custom-shadow h-9 px-6 rounded-[70px]">
+                <PeopleCircleIcon
+                  pathClassName="fill-black"
+                  svgClassName="w-5 h-5"
+                />
+                <p className="font-medium text-sm md:text-base">27</p>
+              </div>
+              <div className=" flex items-center gap-2 bg-white custom-shadow h-9 px-6 rounded-[70px]">
+                <BrushIcon pathClassName="fill-black" svgClassName="w-5 h-5" />
+                <p className="font-medium text-sm md:text-base">27</p>
+              </div>
             </div>
-            <div className=" flex items-center gap-2 bg-white custom-shadow h-9 px-6 rounded-[70px]">
-              <BrushIcon pathClassName="fill-black" svgClassName="w-5 h-5" />
-              <p className="font-medium text-sm md:text-base">27</p>
-            </div>
-            <div className=" flex items-center gap-2 bg-white custom-shadow h-9 px-6 rounded-[70px]">
+            <div className=" flex items-center gap-2 bg-white custom-shadow h-9 px-6 rounded-[70px] w-fit">
               <StampIcon pathClassName="fill-black" svgClassName="w-5 h-5" />
               <p className="font-medium text-sm md:text-base">27</p>
             </div>

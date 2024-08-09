@@ -73,58 +73,56 @@ const SidebarAdmin = () => {
         >
           <h5>Muhammad John Doe</h5>
         </div>
-        <div
-          className={cn('flex justify-center gap-2 md:flex-row flex-col', {
-            '!flex-col': !state.isOpen
-          })}
-        >
-          <div
-            className={cn(
-              ' flex items-center gap-2 bg-white custom-shadow h-8 px-2.5 rounded-[70px] w-fit mt-2',
-              {
-                'px-2 gap-1 mt-5 mx-auto': !state.isOpen
-              }
-            )}
-          >
-            <PeopleCircleIcon
-              pathClassName="fill-black"
-              svgClassName={cn('w-5 h-5', {
-                'h-4 w-4': !state.isOpen
-              })}
-            />
-            <p
-              className={cn('font-medium text-sm ', {
-                '!text-xs': !state.isOpen
-              })}
+        <div className={cn('flex justify-center gap-2 items-center flex-col')}>
+          <div className="flex gap-2">
+            <div
+              className={cn(
+                ' flex items-center gap-2 bg-white custom-shadow h-8 px-4 rounded-[70px] w-fit mt-2',
+                {
+                  'px-2 gap-1 mt-5 mx-auto': !state.isOpen
+                }
+              )}
             >
-              27
-            </p>
-          </div>
-          <div
-            className={cn(
-              ' flex items-center gap-2 bg-white custom-shadow h-8 px-2.5 rounded-[70px] w-fit mt-2',
-              {
-                'px-2 gap-1 mx-auto': !state.isOpen
-              }
-            )}
-          >
-            <BrushIcon
-              svgClassName={cn('w-5 h-5', {
-                'h-4 w-4': !state.isOpen
-              })}
-            />
-            <p
-              className={cn('font-medium text-sm ', {
-                '!text-xs': !state.isOpen
-              })}
+              <PeopleCircleIcon
+                pathClassName="fill-black"
+                svgClassName={cn('w-5 h-5', {
+                  'h-4 w-4': !state.isOpen
+                })}
+              />
+              <p
+                className={cn('font-medium text-sm ', {
+                  '!text-xs': !state.isOpen
+                })}
+              >
+                27
+              </p>
+            </div>
+            <div
+              className={cn(
+                ' flex items-center gap-2 bg-white custom-shadow h-8 px-4 rounded-[70px] w-fit mt-2',
+                {
+                  'px-2 gap-1 mx-auto': !state.isOpen
+                }
+              )}
             >
-              23
-            </p>
+              <BrushIcon
+                svgClassName={cn('w-5 h-5', {
+                  'h-4 w-4': !state.isOpen
+                })}
+              />
+              <p
+                className={cn('font-medium text-sm ', {
+                  '!text-xs': !state.isOpen
+                })}
+              >
+                23
+              </p>
+            </div>
           </div>
 
           <div
             className={cn(
-              ' flex items-center gap-2 bg-white custom-shadow h-8 px-2.5 rounded-[70px] w-fit mt-2',
+              ' flex items-center gap-2 bg-white custom-shadow h-8 px-4 rounded-[70px] w-fit mt-2',
               {
                 'px-2 gap-1 mx-auto': !state.isOpen
               }
