@@ -139,6 +139,14 @@
   box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.09);
 }
 
+.admin-secondary-shadow {
+  box-shadow: 0px 0px 14px 0px rgba(0, 61, 117, 0.1);
+}
+
+.admin-custom-shadow {
+  box-shadow: 0px 4px 14px 0px #0d5fb33b;
+}
+
 .sign-button-shadow {
   box-shadow: 0px 4px 14px 0px #0d5fb33b;
 }

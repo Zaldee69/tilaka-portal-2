@@ -346,6 +346,70 @@ export const DownloadIcon = ({
   );
 };
 
+export const HistoryCircleIcon = ({
+  svgClassName,
+  pathClassName,
+  width = 24,
+  height = 24,
+  fill = '#323232'
+}: IconProps) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={svgClassName}
+    >
+      <g clip-path="url(#clip0_1_437)">
+        <path
+          className={pathClassName}
+          d="M13.26 3C8.17003 2.86 4.00003 6.95 4.00003 12H2.21003C1.76003 12 1.54003 12.54 1.86003 12.85L4.65003 15.65C4.85003 15.85 5.16003 15.85 5.36003 15.65L8.15003 12.85C8.46003 12.54 8.24003 12 7.79003 12H6.00003C6.00003 8.1 9.18003 4.95 13.1 5C16.82 5.05 19.95 8.18 20 11.9C20.05 15.81 16.9 19 13 19C11.39 19 9.90003 18.45 8.72003 17.52C8.32003 17.21 7.76003 17.24 7.40003 17.6C6.98003 18.02 7.01003 18.73 7.48003 19.09C9.00003 20.29 10.91 21 13 21C18.05 21 22.14 16.83 22 11.74C21.87 7.05 17.95 3.13 13.26 3ZM12.75 8C12.34 8 12 8.34 12 8.75V12.43C12 12.78 12.19 13.11 12.49 13.29L15.61 15.14C15.97 15.35 16.43 15.23 16.64 14.88C16.85 14.52 16.73 14.06 16.38 13.85L13.5 12.14V8.74C13.5 8.34 13.16 8 12.75 8Z"
+          fill="#323232"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_437">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export const ShoppingCartIcon = ({
+  svgClassName,
+  pathClassName,
+  width = 24,
+  height = 24,
+  fill = '#323232'
+}: IconProps) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={svgClassName}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1_847)">
+        <path
+          className={pathClassName}
+          d="M7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM1 3C1 3.55 1.45 4 2 4H3L6.6 11.59L5.25 14.03C4.52 15.37 5.48 17 7 17H18C18.55 17 19 16.55 19 16C19 15.45 18.55 15 18 15H7L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C21.25 4.82 20.77 4 20.01 4H5.21L4.54 2.57C4.38 2.22 4.02 2 3.64 2H2C1.45 2 1 2.45 1 3ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z"
+          fill="#323232"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_847">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
 export const StampBackgroundIcon = ({
   svgClassName,
   pathClassName,
@@ -1398,6 +1462,38 @@ export const HistoryIcon = ({
   );
 };
 
+export const SendIcon = ({
+  svgClassName,
+  pathClassName,
+  width = 24,
+  height = 24,
+  fill = '#323232'
+}: IconProps) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill="none"
+      className={svgClassName}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1_1736)">
+        <path
+          className={pathClassName}
+          d="M3.4 20.4L20.85 12.92C21.66 12.57 21.66 11.43 20.85 11.08L3.4 3.60002C2.74 3.31002 2.01 3.80002 2.01 4.51002L2 9.12002C2 9.62002 2.37 10.05 2.87 10.11L17 12L2.87 13.88C2.37 13.95 2 14.38 2 14.88L2.01 19.49C2.01 20.2 2.74 20.69 3.4 20.4Z"
+          fill="#323232"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_1736">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
 export const PurchaseIcon = ({
   svgClassName,
   pathClassName,
@@ -1642,7 +1738,8 @@ export const SupervisorAccountIcon = ({
   svgClassName,
   width = 24,
   height = 24,
-  fill = '#323232'
+  fill = '#323232',
+  pathClassName
 }: IconProps) => {
   return (
     <svg
@@ -1655,6 +1752,7 @@ export const SupervisorAccountIcon = ({
     >
       <g clipPath="url(#clip0_1_897)">
         <path
+          className={pathClassName}
           d="M16.5 12C17.88 12 18.99 10.88 18.99 9.5C18.99 8.12 17.88 7 16.5 7C15.12 7 14 8.12 14 9.5C14 10.88 15.12 12 16.5 12ZM9 11C10.66 11 11.99 9.66 11.99 8C11.99 6.34 10.66 5 9 5C7.34 5 6 6.34 6 8C6 9.66 7.34 11 9 11ZM16.5 14C14.67 14 11 14.92 11 16.75V18C11 18.55 11.45 19 12 19H21C21.55 19 22 18.55 22 18V16.75C22 14.92 18.33 14 16.5 14ZM9 13C6.67 13 2 14.17 2 16.5V18C2 18.55 2.45 19 3 19H9V16.75C9 15.9 9.33 14.41 11.37 13.28C10.5 13.1 9.66 13 9 13Z"
           fill="#323232"
         />
@@ -1721,6 +1819,134 @@ export const AccountCircleIcon = ({
       </g>
       <defs>
         <clipPath id="clip0_1_32">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export const AddUserIcon = ({
+  svgClassName,
+  width = 24,
+  height = 24,
+  fill = '#323232',
+  pathClassName
+}: IconProps) => {
+  return (
+    <svg
+      className={svgClassName}
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1_4525)">
+        <path
+          className={pathClassName}
+          d="M15 12C17.21 12 19 10.21 19 8C19 5.79 17.21 4 15 4C12.79 4 11 5.79 11 8C11 10.21 12.79 12 15 12ZM6 10V8C6 7.45 5.55 7 5 7C4.45 7 4 7.45 4 8V10H2C1.45 10 1 10.45 1 11C1 11.55 1.45 12 2 12H4V14C4 14.55 4.45 15 5 15C5.55 15 6 14.55 6 14V12H8C8.55 12 9 11.55 9 11C9 10.45 8.55 10 8 10H6ZM15 14C12.33 14 7 15.34 7 18V19C7 19.55 7.45 20 8 20H22C22.55 20 23 19.55 23 19V18C23 15.34 17.67 14 15 14Z"
+          fill="#323232"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_4525">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export const DonutIcon = ({
+  svgClassName,
+  width = 24,
+  height = 24,
+  fill = '#323232',
+  pathClassName
+}: IconProps) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      className={svgClassName}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_737_24944)">
+        <path
+          className={pathClassName}
+          d="M14.07 5.31997C16.26 5.99997 18 7.73997 18.68 9.92997C18.87 10.56 19.44 11 20.09 11H20.13C21.13 11 21.85 10.04 21.56 9.08997C20.59 5.90997 18.08 3.39997 14.9 2.42997C13.96 2.13997 13 2.85997 13 3.85997V3.89997C13 4.55997 13.44 5.12997 14.07 5.31997ZM18.68 14.07C18 16.27 16.26 18 14.07 18.68C13.44 18.87 13 19.44 13 20.09V20.13C13 21.13 13.96 21.85 14.91 21.56C18.09 20.59 20.6 18.08 21.57 14.9C21.86 13.95 21.14 12.99 20.15 12.99H20.1C19.44 13 18.87 13.44 18.68 14.07ZM11 20.11C11 19.44 10.55 18.87 9.91 18.67C7.07 17.78 5 15.13 5 12C5 8.86997 7.07 6.21997 9.91 5.32997C10.55 5.12997 11 4.55997 11 3.88997V3.87997C11 2.87997 10.03 2.13997 9.07 2.43997C4.98 3.68997 2 7.49997 2 12C2 16.5 4.98 20.31 9.07 21.56C10.03 21.86 11 21.12 11 20.11Z"
+          fill="#828282"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_737_24944">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export const ListIcon = ({
+  svgClassName,
+  width = 24,
+  height = 24,
+  fill = '#323232',
+  pathClassName
+}: IconProps) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={svgClassName}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_1_530)">
+        <path
+          className={pathClassName}
+          d="M4 13C4.55 13 5 12.55 5 12C5 11.45 4.55 11 4 11C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM4 17C4.55 17 5 16.55 5 16C5 15.45 4.55 15 4 15C3.45 15 3 15.45 3 16C3 16.55 3.45 17 4 17ZM4 9C4.55 9 5 8.55 5 8C5 7.45 4.55 7 4 7C3.45 7 3 7.45 3 8C3 8.55 3.45 9 4 9ZM8 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13ZM8 17H20C20.55 17 21 16.55 21 16C21 15.45 20.55 15 20 15H8C7.45 15 7 15.45 7 16C7 16.55 7.45 17 8 17ZM7 8C7 8.55 7.45 9 8 9H20C20.55 9 21 8.55 21 8C21 7.45 20.55 7 20 7H8C7.45 7 7 7.45 7 8ZM4 13C4.55 13 5 12.55 5 12C5 11.45 4.55 11 4 11C3.45 11 3 11.45 3 12C3 12.55 3.45 13 4 13ZM4 17C4.55 17 5 16.55 5 16C5 15.45 4.55 15 4 15C3.45 15 3 15.45 3 16C3 16.55 3.45 17 4 17ZM4 9C4.55 9 5 8.55 5 8C5 7.45 4.55 7 4 7C3.45 7 3 7.45 3 8C3 8.55 3.45 9 4 9ZM8 13H20C20.55 13 21 12.55 21 12C21 11.45 20.55 11 20 11H8C7.45 11 7 11.45 7 12C7 12.55 7.45 13 8 13ZM8 17H20C20.55 17 21 16.55 21 16C21 15.45 20.55 15 20 15H8C7.45 15 7 15.45 7 16C7 16.55 7.45 17 8 17ZM7 8C7 8.55 7.45 9 8 9H20C20.55 9 21 8.55 21 8C21 7.45 20.55 7 20 7H8C7.45 7 7 7.45 7 8Z"
+          fill="#323232"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_1_530">
+          <rect width="24" height="24" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
+export const UnpublishedIcon = ({
+  svgClassName,
+  width = 24,
+  height = 24,
+  fill = '#323232',
+  pathClassName
+}: IconProps) => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      className={svgClassName}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clip-path="url(#clip0_737_24935)">
+        <path
+          className={pathClassName}
+          d="M20.4901 20.49L3.51012 3.51003C3.12012 3.12003 2.49012 3.12003 2.10012 3.51003C1.71012 3.90003 1.71012 4.53003 2.10012 4.92003L3.66012 6.48003C2.41012 8.36003 1.78012 10.69 2.07012 13.18C2.60012 17.72 6.28012 21.4 10.8101 21.92C13.3001 22.21 15.6201 21.58 17.5101 20.33L19.0701 21.89C19.4601 22.28 20.0901 22.28 20.4801 21.89C20.8801 21.51 20.8801 20.88 20.4901 20.49ZM9.88012 15.89L7.05012 13.06C6.66012 12.67 6.66012 12.04 7.05012 11.65C7.44012 11.26 8.07012 11.26 8.46012 11.65L10.5801 13.77L10.7601 13.59L12.1701 15L11.2901 15.88C10.9001 16.28 10.2701 16.28 9.88012 15.89ZM13.5901 10.76L6.49012 3.66003C8.37012 2.41003 10.7001 1.78003 13.1901 2.07003C17.7301 2.60003 21.4101 6.28003 21.9301 10.81C22.2201 13.3 21.5901 15.63 20.3401 17.51L15.0001 12.17L16.9401 10.23C17.3301 9.84003 17.3301 9.21003 16.9401 8.82003C16.5501 8.43003 15.9201 8.43003 15.5301 8.82003L13.5901 10.76Z"
+          fill="#828282"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_737_24935">
           <rect width="24" height="24" fill="white" />
         </clipPath>
       </defs>

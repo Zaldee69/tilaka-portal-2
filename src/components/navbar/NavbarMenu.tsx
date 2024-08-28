@@ -47,7 +47,7 @@ const NavbarMenu = () => {
     height:
       showMenu === null
         ? 0
-        : pathname.includes('/admin')
+        : pathname.includes('/admin') && showMenu !== 'notification'
           ? 70
           : showMenu === 'search'
             ? 80

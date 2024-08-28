@@ -132,7 +132,7 @@
     "userRegistration": "User Registration",
     "signatureHistory": "Signature History",
     "CertificateHistory": "Certificate History",
-    "QuotaPurchase": "Purchase quota",
+    "QuotaPurchase": "Purchase Quota",
     "HistoryPurchase": "Purchase History"
   },
   "VerifyPdf": {
@@ -466,6 +466,77 @@
       "search": "Search",
       "sendReminder": "Send Reminder",
       "or": "or"
+    }
+  },
+  "UserManagement": {
+    "title": "User Management",
+    "cardFilter": {
+      "all": "All Users",
+      "active": "Active Users",
+      "process": "User In Process",
+      "inactive": "Inactive Users"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "waitForRegistration": "Wait For Registration",
+      "expired": "Expired",
+      "pending": "Pending",
+      "accepted": "Accepted",
+      "verificationFailed": "Verification Failed",
+      "reVerificationRejected": "Reverification Rejected",
+      "rejected": "Rejected"
+    },
+    "date": "Select Registration Date",
+    "username": "User Name",
+    "regDate": "Registration Date",
+    "name": "Name",
+    "action": "Action",
+    "view": "View",
+    "addQuota": "Add Quota",
+    "resendInvitation": "Resend Invitation",
+    "addUser": "Add User"
+  },
+  "AddUser": {
+    "title": "Add User",
+    "userManagement": "Users Management",
+    "addUserCard": {
+      "title": "Register user by completing the following information",
+      "label": "Full name as stated on ID card",
+      "placeholder": "Example",
+      "information": "Ensure that full name matched ID card, including title and punctuation (if any). Registration with different name will be denied by system",
+      "add": "Add",
+      "submit": "Submit"
+    },
+    "addBulkUserCard": {
+      "title": "Add Bulk Users",
+      "downloadFormat": "Download Format",
+      "uploadCSV": "Upload CSV File",
+      "delete": "Delete"
+    },
+    "modal": {
+      "title": "User Successfully Added",
+      "text": "The registration link has been sent to all user emails. Please inform users to check their email to continue the registration process"
+    }
+  },
+  "PurchaseQuota": {
+    "title": "Purchase Quota",
+    "packageName": "Package Name",
+    "purchaseHistory": "Purchase History"
+  },
+  "PurchaseHistory": {
+    "title": "Purchase History",
+    "purchaseDate": "Purchase Date",
+    "packageName": "Package Name",
+    "date": "Date",
+    "price": "Price",
+    "myCart": "My Cart",
+    "totalPrice": "Total Price",
+    "search": "Search",
+    "status": {
+      "waitingForPayment": "Waiting For Payment",
+      "success": "Success",
+      "cancel": "Cancel"
     }
   }
 }

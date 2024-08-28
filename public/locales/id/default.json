@@ -467,5 +467,76 @@
       "sendReminder": "Kirim Pengingat",
       "or": "atau"
     }
+  },
+  "UserManagement": {
+    "title": "Manajemen Pengguna",
+    "cardFilter": {
+      "all": "Semua Pengguna",
+      "active": "Pengguna Aktif",
+      "process": "Dalam Proses",
+      "inactive": "Pengguna Tidak Aktif"
+    },
+    "status": {
+      "active": "Aktif",
+      "inactive": "Tidak Aktif",
+      "waitForRegistration": "Menunggu Registrasi",
+      "expired": "Kedaluwarsa",
+      "pending": "Pending",
+      "accepted": "Diterima",
+      "verificationFailed": "Gagal Verifikasi",
+      "reVerificationRejected": "Verifikasi Ulang Ditolak",
+      "rejected": "Ditolak"
+    },
+    "date": "Pilih Tanggal Pendaftaran",
+    "username": "Nama Pengguna",
+    "regDate": "Tanggal Pendaftaran",
+    "name": "Nama",
+    "action": "Aksi",
+    "view": "Lihat",
+    "addQuota": "Tambah Kuota",
+    "addUser": "Tambah Pengguna",
+    "resendInvitation": "Kirim Ulang Undangan"
+  },
+  "AddUser": {
+    "title": "Tambah Pengguna",
+    "userManagement": "Manajemen Pengguna",
+    "addUserCard": {
+      "title": "Daftarkan pengguna dengan mengisi informasi berikut",
+      "label": "Nama Lengkap Sesuai KTP",
+      "placeholder": "Contoh",
+      "information": "Pastikan penulisan nama sesuai dengan KTP pengguna, termasuk gelar dan tanda baca (jika ada). Nama yang tidak sesuai KTP akan ditolak oleh sistem.",
+      "add": "Tambah",
+      "submit": "Daftar"
+    },
+    "addBulkUserCard": {
+      "title": "Tambah Pengguna Sekaligus",
+      "downloadFormat": "Unduh Format",
+      "uploadCSV": "Unggah File CSV",
+      "delete": "Hapus"
+    },
+    "modal": {
+      "title": "Penambahan Pengguna Berhasil",
+      "text": "Link pendaftaran berhasil dikirim ke alamat email masing-masing calon pengguna. Mohon informasikan kepada calon pengguna untuk memeriksa pesan masuk dan lakukan proses registrasi."
+    }
+  },
+  "PurchaseQuota": {
+    "title": "Beli Kuota",
+    "packageName": "Nama Paket",
+    "purchaseHistory": "Riwayat Pembelian"
+  },
+  "PurchaseHistory": {
+    "title": "Riwayat Pembelian",
+    "purchaseDate": "Tanggal Pembelian",
+    "packageName": "Nama Paket",
+    "date": "Tanggal",
+    "price": "Harga",
+    "myCart": "Keranjang Saya",
+    "totalPrice": "Total Bayar",
+    "search": "Cari",
+    "status": {
+      "waitingForPayment": "Menunggu Pembayaran",
+      "success": "Berhasil",
+      "cancel": "Batal"
+    }
   }
 }
