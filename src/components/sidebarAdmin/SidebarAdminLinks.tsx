@@ -12,7 +12,8 @@ const sidebarMessages = {
   'sidebarAdmin.dashboard': 'Beranda',
   'sidebarAdmin.userManagement': 'Manajemen Pengguna',
   'sidebarAdmin.history': 'Riwayat',
-  'sidebarAdmin.purchase': 'Pembelian'
+  'sidebarAdmin.purchase': 'Pembelian',
+  'sidebar.settings': 'Pengaturan'
 };
 
 const SidebarAdminLinks: React.FC<{

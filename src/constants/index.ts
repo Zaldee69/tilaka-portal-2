@@ -127,7 +127,7 @@ export const sidebarAdminLinks = [
     title: 'sidebarAdmin.userManagement',
     Icons: UsersManagementIcon,
     path: '/admin/dashboard/user-management',
-    subPath: ['/detail']
+    subPath: ['/detail', '/add-user']
   },
   {
     title: 'sidebarAdmin.history',
@@ -140,6 +140,47 @@ export const sidebarAdminLinks = [
     Icons: PurchaseIcon,
     path: '/admin/dashboard/purchase',
     subPath: ['/quota', '/history']
+  },
+  {
+    title: 'sidebar.settings',
+    Icons: SettingsIcon,
+    path: '/admin/dashboard/settings',
+    subPath: ['/certificate', '/revoke-certificate', '/audit-trail']
+  }
+];
+
+export const PRICING = [
+  {
+    amount: 100,
+    price: 'Rp300.000'
+  },
+  {
+    amount: 400,
+    price: 'Rp800.000'
+  },
+  {
+    amount: 700,
+    price: 'Rp1.800.000'
+  },
+  {
+    amount: 1000,
+    price: 'Rp2.500.000'
+  },
+  {
+    amount: 2000,
+    price: 'Rp5.000.000'
+  },
+  {
+    amount: 3000,
+    price: 'Rp7.500.000'
+  },
+  {
+    amount: 3000,
+    price: 'Rp8.900.000'
+  },
+  {
+    amount: 0,
+    price: '0'
   }
 ];
 
