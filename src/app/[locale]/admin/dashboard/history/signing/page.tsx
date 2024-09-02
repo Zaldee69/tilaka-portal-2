@@ -199,9 +199,7 @@ export default function Page() {
           </Select>
           <div className="hidden col-span-1 md:flex gap-2">
             {' '}
-            <Button className="px-7 font-semibold h-10 bg-admin-primary">
-              Filter
-            </Button>
+            <Button className="px-7 font-semibold h-10">Filter</Button>
             <Button className="p-0 font-semibold" variant="ghost">
               Reset
             </Button>
