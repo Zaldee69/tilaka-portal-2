@@ -515,14 +515,24 @@
       "delete": "Hapus"
     },
     "modal": {
-      "title": "Penambahan Pengguna Berhasil",
+      "title": "Berhasil Tambah Pengguna",
       "text": "Link pendaftaran berhasil dikirim ke alamat email masing-masing calon pengguna. Mohon informasikan kepada calon pengguna untuk memeriksa pesan masuk dan lakukan proses registrasi."
+    },
+    "errorMessage": {
+      "email": {
+        "wrongFormat": "Format email tidak sesuai",
+        "empty": "Email tidak boleh kosong"
+      },
+      "fullname": {
+        "empty": "Nama lengkap harus minimal 4 karakter"
+      }
     }
   },
   "PurchaseQuota": {
     "title": "Beli Kuota",
-    "packageName": "Nama Paket",
-    "purchaseHistory": "Riwayat Pembelian"
+    "packageName": "Paket Kuota Tandatangan",
+    "purchaseHistory": "Riwayat Pembelian",
+    "signingQuota": "Kuota Tandatangan"
   },
   "PurchaseHistory": {
     "title": "Riwayat Pembelian",
@@ -533,6 +543,7 @@
     "myCart": "Keranjang Saya",
     "totalPrice": "Total Bayar",
     "search": "Cari",
+    "signature": "Tandatangan",
     "status": {
       "waitingForPayment": "Menunggu Pembayaran",
       "success": "Berhasil",

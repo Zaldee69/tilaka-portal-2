@@ -27,11 +27,11 @@ const SidebarAdminLinks: React.FC<{
     const lastPathSegment = path?.split('/').pop();
     const hrefLastSegment = href?.split('/').pop();
 
-    const isSubPath =
-      lastPathSegment &&
-      hrefLastSegment &&
-      lastPathSegment.includes(hrefLastSegment);
+    // Check if the last segment of the current path matches exactly with the href's last segment
+    const isIdenticalPathSegment =
+      lastPathSegment && hrefLastSegment && lastPathSegment === hrefLastSegment;
 
+    // Check if there is an exact match with subPath
     const isMatchingSubPath = sidebarAdminLinks.find(
       (link) =>
         link.path === href &&
@@ -39,7 +39,7 @@ const SidebarAdminLinks: React.FC<{
         link.subPath.some((sub) => `/${lastPathSegment}` === sub)
     );
 
-    return !isSubPath && !isMatchingSubPath;
+    return !isIdenticalPathSegment && !isMatchingSubPath;
   };
 
   return (
@@ -58,7 +58,7 @@ const SidebarAdminLinks: React.FC<{
                   })
                 }
                 className={cn(
-                  `w-full !justify-start group font-semibold !px-3 hover:!text-admin-primary  hover:!bg-secondary  p-2.5 rounded-xl ${checkPathname(item.path) ? 'bg-transparent !text-gray-1' : '!text-admin-primary bg-secondary'} `,
+                  `w-full !justify-start group font-semibold !px-3 hover:!text-primary  hover:!bg-secondary  p-2.5 rounded-xl ${checkPathname(item.path) ? 'bg-transparent !text-gray-1' : '!text-primary bg-secondary'} `,
                   {
                     '!justify-center': !state.isOpen,
                     hidden: state.isOpen,
@@ -73,9 +73,9 @@ const SidebarAdminLinks: React.FC<{
                     'mr-0': !state.isOpen
                   })}
                   pathClassName={cn(
-                    'group-hover:fill-admin-primary fill-[#828282] transition-colors',
+                    'group-hover:fill-primary fill-[#828282] transition-colors',
                     {
-                      'fill-admin-primary': !checkPathname(item.path)
+                      'fill-primary': !checkPathname(item.path)
                     }
                   )}
                 />
@@ -96,9 +96,9 @@ const SidebarAdminLinks: React.FC<{
                         'mr-0': !state.isOpen
                       })}
                       pathClassName={cn(
-                        'group-hover:fill-admin-primary fill-[#828282] transition-all',
+                        'group-hover:fill-primary fill-[#828282] transition-all',
                         {
-                          'fill-admin-primary': !checkPathname(item.path)
+                          'fill-primary': !checkPathname(item.path)
                         }
                       )}
                     />
@@ -114,7 +114,7 @@ const SidebarAdminLinks: React.FC<{
                       className={buttonVariants({
                         variant: 'secondary',
                         className: cn(
-                          `w-full !justify-start group font-semibold !px-3 hover:!text-admin-primary border border-transparent hover:border-[#E9F1FC] hover:bg-white ${checkPathname('/admin/dashboard/history/signing') ? 'bg-transparent !text-gray-1' : '!text-admin-primary bg-white border border-[#E9F1FC]'} `,
+                          `w-full !justify-start group font-semibold !px-3 hover:!text-primary border border-transparent hover:border-[#E9F1FC] hover:bg-white ${checkPathname('/admin/dashboard/history/signing') ? 'bg-transparent !text-gray-1' : '!text-primary bg-white border border-[#E9F1FC]'} `,
                           { '!justify-center': !state.isOpen }
                         )
                       })}
@@ -127,7 +127,7 @@ const SidebarAdminLinks: React.FC<{
                       className={buttonVariants({
                         variant: 'secondary',
                         className: cn(
-                          `w-full !justify-start group font-semibold mt-1 !px-3 hover:!text-admin-primary border border-transparent hover:border-[#E9F1FC] hover:bg-white ${checkPathname('/admin/dashboard/history/certificate') ? 'bg-transparent !text-gray-1' : '!text-admin-primary bg-white border border-[#E9F1FC]'} `,
+                          `w-full !justify-start group font-semibold mt-1 !px-3 hover:!text-primary border border-transparent hover:border-[#E9F1FC] hover:bg-white ${checkPathname('/admin/dashboard/history/certificate') ? 'bg-transparent !text-gray-1' : '!text-primary bg-white border border-[#E9F1FC]'} `,
                           { '!justify-center': !state.isOpen }
                         )
                       })}
@@ -144,7 +144,7 @@ const SidebarAdminLinks: React.FC<{
                       className={buttonVariants({
                         variant: 'secondary',
                         className: cn(
-                          `w-full !justify-start group font-semibold !px-3 hover:!text-admin-primary border border-transparent hover:border-[#E9F1FC] hover:bg-white ${checkPathname('/admin/dashboard/purchase/quota') ? 'bg-transparent !text-gray-1' : '!text-admin-primary bg-white border border-[#E9F1FC]'} `,
+                          `w-full !justify-start group font-semibold !px-3 hover:!text-primary border border-transparent hover:border-[#E9F1FC] hover:bg-white ${checkPathname('/admin/dashboard/purchase/quota') ? 'bg-transparent !text-gray-1' : '!text-primary bg-white border border-[#E9F1FC]'} `,
                           { '!justify-center': !state.isOpen }
                         )
                       })}
@@ -157,11 +157,11 @@ const SidebarAdminLinks: React.FC<{
                       className={buttonVariants({
                         variant: 'secondary',
                         className: cn(
-                          `w-full !justify-start group font-semibold mt-1 !px-3 hover:!text-admin-primary border border-transparent hover:border-[#E9F1FC] hover:bg-white ${checkPathname('/admin/dashboard/purchase/history') ? 'bg-transparent !text-gray-1' : '!text-admin-primary bg-white border border-[#E9F1FC]'} `,
+                          `w-full !justify-start group font-semibold mt-1 !px-3 hover:!text-primary border border-transparent hover:border-[#E9F1FC] hover:bg-white ${checkPathname('/admin/dashboard/purchase/histories') ? 'bg-transparent !text-gray-1' : '!text-primary bg-white border border-[#E9F1FC]'} `,
                           { '!justify-center': !state.isOpen }
                         )
                       })}
-                      href="/admin/dashboard/purchase/history"
+                      href="/admin/dashboard/purchase/histories"
                     >
                       {t('HistoryPurchase')}
                     </Link>
@@ -178,7 +178,7 @@ const SidebarAdminLinks: React.FC<{
             className={buttonVariants({
               variant: 'secondary',
               className: cn(
-                `w-full !justify-start group font-semibold !px-3 hover:!text-admin-primary hover:!bg-secondary ${checkPathname(item.path) ? 'bg-transparent !text-gray-1' : '!text-admin-primary'} `,
+                `w-full !justify-start group font-semibold !px-3 hover:!text-primary hover:!bg-secondary ${checkPathname(item.path) ? 'bg-transparent !text-gray-1' : '!text-primary'} `,
                 { '!justify-center': !state.isOpen }
               )
             })}
@@ -190,9 +190,9 @@ const SidebarAdminLinks: React.FC<{
                 'mr-0': !state.isOpen
               })}
               pathClassName={cn(
-                'group-hover:fill-admin-primary fill-[#828282] transition-colors',
+                'group-hover:fill-primary fill-[#828282] transition-colors',
                 {
-                  'fill-admin-primary': !checkPathname(item.path)
+                  'fill-primary': !checkPathname(item.path)
                 }
               )}
             />

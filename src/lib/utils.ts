@@ -129,14 +129,33 @@ export function getMobileOperatingSystem() {
 
 export const parseCSV = (file: File) => {
   return new Promise((resolve, reject) => {
-    Papa.parse(file, {
-      header: true,
-      complete: (results) => {
-        resolve(results.data);
-      },
-      error: (error) => {
-        reject(error);
-      }
-    });
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+      const text = event.target?.result as string;
+
+      // Normalize delimiters by replacing semicolons and pipes with commas
+      const normalizedText = text.replace(/;|\|/g, ',');
+
+      Papa.parse(normalizedText, {
+        delimiter: ',', // Use comma after normalization
+        header: true,
+        complete: (results) => {
+          console.log(results);
+          resolve(results.data);
+        },
+        error: (error: any) => {
+          console.log(error);
+          reject(error);
+        }
+      });
+    };
+
+    reader.onerror = (error) => {
+      console.log('File reading error:', error);
+      reject(error);
+    };
+
+    reader.readAsText(file); // Read the file content as text
   });
 };

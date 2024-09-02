@@ -517,12 +517,22 @@
     "modal": {
       "title": "User Successfully Added",
       "text": "The registration link has been sent to all user emails. Please inform users to check their email to continue the registration process"
+    },
+    "errorMessage": {
+      "email": {
+        "wrongFormat": "Incorrect email format",
+        "empty": "Email cannot be empty"
+      },
+      "fullname": {
+        "empty": "Full name must be at least 4 characters"
+      }
     }
   },
   "PurchaseQuota": {
     "title": "Purchase Quota",
-    "packageName": "Package Name",
-    "purchaseHistory": "Purchase History"
+    "packageName": "Signature Quota Package",
+    "purchaseHistory": "Purchase History",
+    "signingQuota": "Signing Quota"
   },
   "PurchaseHistory": {
     "title": "Purchase History",
@@ -533,6 +543,7 @@
     "myCart": "My Cart",
     "totalPrice": "Total Price",
     "search": "Search",
+    "signature": "Signature",
     "status": {
       "waitingForPayment": "Waiting For Payment",
       "success": "Success",

@@ -31,11 +31,16 @@ interface PageProps {
   searchParams: Record<string, any>;
 }
 
-const UserProfile: React.FC<UserProfileProps> = ({ name, email, nik, company }) => (
+const UserProfile: React.FC<UserProfileProps> = ({
+  name,
+  email,
+  nik,
+  company
+}) => (
   <div className="flex items-center justify-start gap-3">
-    {/* <div className="bg-primary rounded-full flex items-center justify-center w-20 h-20">
+    <div className="bg-primary rounded-full flex items-center justify-center w-20 h-20">
       <p className="text-white text-3xl font-bold">M</p>
-    </div> */}
+    </div>
     <div>
       <h5 className="text-gray-1">{name}</h5>
       <p className="text-gray-3 text-sm font-semibold mt-1">{email}</p>
@@ -147,9 +152,6 @@ const SignatureOptions: React.FC<SignatureOptionsProps> = ({ t, s }) => (
 
 const Page: React.FC<PageProps> = ({ searchParams }) => {
   const t = useTranslations('Dashboard');
-  const s = useTranslations('Settings');
-
-  console.log(searchParams);
 
   return (
     <div className="p-5 mx-auto">

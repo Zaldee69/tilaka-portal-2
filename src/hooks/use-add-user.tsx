@@ -2,9 +2,10 @@
 import { parseCSV } from '@/lib/utils';
 import {
   UserRegistrationProps,
-  UserRegistrationSchema
+  userRegistrationSchema
 } from '@/schemas/add-user.schema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { useFieldArray, useForm } from 'react-hook-form';
 
@@ -22,8 +23,11 @@ export const useAddUserForm = () => {
       email: ''
     }
   ]);
+
+  const t = useTranslations('AddUser');
+
   const methods = useForm<UserRegistrationProps>({
-    resolver: zodResolver(UserRegistrationSchema),
+    resolver: zodResolver(userRegistrationSchema(t)),
     defaultValues: {
       users: [{ fullname: '', email: '' }]
     },
@@ -48,7 +52,6 @@ export const useAddUserForm = () => {
   };
 
   const onDeleteUserCard = (index: number) => {
-    console.log(index);
     remove(index);
   };
 

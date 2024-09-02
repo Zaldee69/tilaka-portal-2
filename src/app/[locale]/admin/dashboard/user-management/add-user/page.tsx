@@ -9,7 +9,7 @@ import {
 import { Link } from '@/navigation';
 import React from 'react';
 import UserRegistrationForm from './_components/add-user-form';
-import AddUserProvider from '@/provider/add-user-provider';
+import AddUserProvider from '@/providers/add-user-provider';
 import AddBulkUser from './_components/add-bulk-user';
 import { useTranslations } from 'next-intl';
 
