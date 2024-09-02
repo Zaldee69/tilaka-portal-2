@@ -25,7 +25,7 @@ import { useState } from 'react';
 
 import Pagination from '@/components/Pagination';
 import { CancelScheduleIcon } from '../../../../../../../../public/icons/icons';
-import { Package } from '../page';
+import { Package } from '../../histories/page';
 
 const RejectConfirmationModal = ({
   isOpen,
