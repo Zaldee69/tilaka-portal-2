@@ -123,7 +123,7 @@ const Page = (props: Props) => {
         <Link href="/admin/dashboard/user-management/add-user">
           <Button
             size="lg"
-            className="bg-admin-primary text-white font-semibold gap-3 admin-custom-shadow max-[460px]:p-3 max-[460px]:h-11"
+            className="text-white font-semibold gap-3 admin-custom-shadow max-[460px]:p-3 max-[460px]:h-11"
           >
             <AddUserIcon pathClassName="fill-white" />{' '}
             <span className="hidden md:block">{t('addUser')}</span>

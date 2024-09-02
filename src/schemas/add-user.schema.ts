@@ -1,15 +1,24 @@
 import { z } from 'zod';
 
-// Update your schema to handle an array of users
-export const UserRegistrationSchema = z.object({
-  users: z.array(
-    z.object({
-      fullname: z.string().min(4, {
-        message: 'Nama lengkap harus minimal 4 karakter'
-      }),
-      email: z.string().email({ message: 'Format email salah' })
-    })
-  )
-});
+export const userRegistrationSchema = (t: (key: string) => string) =>
+  z.object({
+    users: z.array(
+      z.object({
+        fullname: z.string().min(4, {
+          message: t('errorMessage.fullname.empty')
+        }),
+        email: z
+          .string()
+          .min(1, {
+            message: t('errorMessage.email.empty')
+          })
+          .email({
+            message: t('errorMessage.email.wrongFormat')
+          })
+      })
+    )
+  });
 
-export type UserRegistrationProps = z.infer<typeof UserRegistrationSchema>;
+export type UserRegistrationProps = z.infer<
+  ReturnType<typeof userRegistrationSchema>
+>;

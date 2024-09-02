@@ -15,7 +15,7 @@ const Page = (props: Props) => {
       <div className="flex justify-between">
         <h1 className="text-gray-1">{t('title')}</h1>
         <Link
-          href="/admin/dashboard/purchase/history"
+          href="/admin/dashboard/purchase/histories"
           className={buttonVariants({
             className:
               'font-semibold gap-2 !px-4 !text-gray-1 bg-white admin-secondary-shadow border hover:!bg-white hover:border-transparent  border-[#DCE9F5]',
@@ -24,7 +24,7 @@ const Page = (props: Props) => {
           })}
         >
           <HistoryCircleIcon pathClassName="fill-gray-1" />{' '}
-          {t('purchaseHistory')}
+          <p className="hidden md:block">{t('purchaseHistory')}</p>
         </Link>
       </div>
       <p className="font-semibold">{t('packageName')}:</p>

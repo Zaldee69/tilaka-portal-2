@@ -82,7 +82,7 @@ const AddBulkUser = (props: Props) => {
               {d('delete')}
             </Button>
             <Button
-              className="w-fit bg-admin-primary font-semibold gap-2 px-6 admin-custom-shadow"
+              className="w-fit font-semibold gap-2 px-6 admin-custom-shadow"
               size="lg"
               type="submit"
             >

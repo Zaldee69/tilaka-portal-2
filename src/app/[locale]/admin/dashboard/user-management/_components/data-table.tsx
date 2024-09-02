@@ -126,7 +126,7 @@ const DataTable = ({
                   {row.status === 'wait_for_registration' ? (
                     <Button
                       size="sm"
-                      className="bg-admin-primary gap-2 font-semibold text-xs px-3 rounded-sm"
+                      className="gap-2 font-semibold text-xs px-3 rounded-sm"
                     >
                       <SendIcon pathClassName="fill-white" width={20} />
                     </Button>
@@ -223,7 +223,7 @@ const DataTable = ({
                           toast.success('Undangan berhasil dikirim')
                         }
                         size="sm"
-                        className="bg-admin-primary gap-2 font-semibold text-xs px-1.5 rounded-sm"
+                        className="gap-2 font-semibold text-xs px-1.5 rounded-sm"
                       >
                         <SendIcon pathClassName="fill-white" width={20} />
                         {d('resendInvitation')}

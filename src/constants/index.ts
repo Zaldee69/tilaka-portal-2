@@ -139,13 +139,12 @@ export const sidebarAdminLinks = [
     title: 'sidebarAdmin.purchase',
     Icons: PurchaseIcon,
     path: '/admin/dashboard/purchase',
-    subPath: ['/quota', '/history']
+    subPath: ['/quota', '/histories']
   },
   {
     title: 'sidebar.settings',
     Icons: SettingsIcon,
-    path: '/admin/dashboard/settings',
-    subPath: ['/certificate', '/revoke-certificate', '/audit-trail']
+    path: '/admin/dashboard/settings'
   }
 ];
 

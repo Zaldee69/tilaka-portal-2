@@ -37,21 +37,21 @@ function getData(): Package[] {
   return [
     {
       date: '08-05-2023 16:47',
-      name: 'Tandatangan 700',
+      name: '700',
       price: 'Rp1.900.000',
       totalPrice: 'Rp1.900.000',
       status: 'waiting_for_payment'
     },
     {
       date: '08-05-2023 16:47',
-      name: 'Tandatangan 700',
+      name: '700',
       price: 'Rp1.900.000',
       totalPrice: 'Rp1.900.000',
       status: 'success'
     },
     {
       date: '08-05-2023 16:47',
-      name: 'Tandatangan 700',
+      name: '700',
       price: 'Rp1.900.000',
       totalPrice: 'Rp1.900.000',
       status: 'cancel'
@@ -74,7 +74,7 @@ export default function Page() {
       <div className="flex justify-between">
         <h1 className="text-gray-1">{s('title')}</h1>
         <Link
-          href="/admin/dashboard/purchase/history"
+          href="/admin/dashboard/purchase/histories"
           className={buttonVariants({
             className:
               'font-semibold gap-2 !px-4 !text-gray-1 bg-white admin-secondary-shadow border hover:!bg-white hover:border-transparent  border-[#DCE9F5]',
@@ -82,7 +82,8 @@ export default function Page() {
             size: 'lg'
           })}
         >
-          <ShoppingCartIcon pathClassName="fill-gray-1" /> {s('myCart')}
+          <ShoppingCartIcon pathClassName="fill-gray-1" />{' '}
+          <p className="hidden md:block">{s('myCart')}</p>
         </Link>
       </div>
       <div className="flex justify-between mt-7 mb-2">
@@ -90,12 +91,7 @@ export default function Page() {
           <div className="hidden md:flex">
             <DatePickerRange placeholder={s('purchaseDate')} />
           </div>
-          <Input
-            placeholder={s('packageName')}
-            className="h-10 pl-12 pr-2 hidden md:flex"
-            icon={<SearchIcon svgClassName="mt-2 hidden md:block" />}
-            iconPosition="left"
-          />{' '}
+
           <div className="flex col-span-3 gap-2 md:col-auto">
             <div className="w-full">
               <Input
@@ -123,9 +119,11 @@ export default function Page() {
               <SelectValue placeholder="Status" />
             </SelectTrigger>
             <SelectContent className="hidden md:flex">
-              <SelectItem value="dark">Revoke</SelectItem>
-              <SelectItem value="system">Active</SelectItem>
-              <SelectItem value="denied">Expired</SelectItem>
+              <SelectItem value="dark">
+                {s('status.waitingForPayment')}
+              </SelectItem>
+              <SelectItem value="system">{s('status.success')}</SelectItem>
+              <SelectItem value="denied">{s('status.cancel')}</SelectItem>
             </SelectContent>
           </Select>
           <div className="hidden col-span-1 md:flex gap-2">

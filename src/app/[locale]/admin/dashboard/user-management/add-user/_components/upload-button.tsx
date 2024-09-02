@@ -21,7 +21,7 @@ const UploadButton = (props: Props) => {
         className={buttonVariants({
           size: 'lg',
           className:
-            'w-fit bg-admin-primary font-semibold gap-2 md:px-6 px-2.5 admin-custom-shadow cursor-pointer'
+            'w-fit font-semibold gap-2 md:px-6 px-2.5 admin-custom-shadow cursor-pointer'
         })}
         htmlFor="file"
       >

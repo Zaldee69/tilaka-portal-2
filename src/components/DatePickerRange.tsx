@@ -32,7 +32,7 @@ export function DatePickerRange({ placeholder }: Props) {
 
   return (
     <div className="relative flex !w-full flex-col">
-      <CalendarIcon className="mr-2 h-5 w-5 flex-none text-black absolute top-2.5 left-3 z-10" />
+      <CalendarIcon className="mr-2 h-5 w-5 flex-none text-black absolute top-2.5 left-3 z-[1]" />
       <DatePicker
         name="date_created"
         selected={date.begin}
