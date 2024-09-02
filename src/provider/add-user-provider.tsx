@@ -57,9 +57,7 @@ const AddUserProvider = ({ children }: Props) => {
             </AlertDialogHeader>
 
             <AlertDialogFooter className="!justify-center items-center">
-              <AlertDialogAction className=" bg-admin-primary admin-custom-shadow">
-                OK
-              </AlertDialogAction>
+              <AlertDialogAction>OK</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
