@@ -20,7 +20,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import Pagination from '@/components/Pagination';
@@ -107,6 +107,10 @@ const DataTable = ({
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [contentPerPage, setContentPerPage] = useState<number>(5);
 
+  const locale = useLocale();
+
+  console.log(locale);
+
   return (
     <div>
       <RejectConfirmationModal isOpen={isOpen} setIsOpen={setIsOpen} d={d} />
@@ -126,11 +130,18 @@ const DataTable = ({
                   >
                     {getBadgeLabelAndColor(row.status, 'row', d).label}
                   </Badge>
-                  <h5>{row.name}</h5>
+                  <h5>
+                    {locale === 'en' ? (
+                      <>
+                        {row.name} {d('signature')}
+                      </>
+                    ) : (
+                      <>
+                        {d('signature')} {row.name}
+                      </>
+                    )}
+                  </h5>
                   <p className="text-xs">{row.date}</p>
-                  <p className="text-xs">
-                    {d('signature')} {row.name}
-                  </p>
                   <p className="text-xs">{row.price}</p>
                   <p className="text-xs">{row.totalPrice}</p>
                 </div>
@@ -177,7 +188,15 @@ const DataTable = ({
                 <TableRow key={row.name}>
                   <TableCell>{row.date}</TableCell>
                   <TableCell>
-                    {d('signature')} {row.name}
+                    {locale === 'en' ? (
+                      <>
+                        {row.name} {d('signature')}
+                      </>
+                    ) : (
+                      <>
+                        {d('signature')} {row.name}
+                      </>
+                    )}
                   </TableCell>
                   <TableCell>{row.price}</TableCell>
                   <TableCell>{row.totalPrice}</TableCell>

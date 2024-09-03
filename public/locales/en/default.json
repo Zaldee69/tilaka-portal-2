@@ -479,7 +479,7 @@
     "status": {
       "active": "Active",
       "inactive": "Inactive",
-      "waitForRegistration": "Wait For Registration",
+      "waitForRegistration": "Waiting for Registration",
       "expired": "Expired",
       "pending": "Pending",
       "accepted": "Accepted",
@@ -530,7 +530,7 @@
   },
   "PurchaseQuota": {
     "title": "Purchase Quota",
-    "packageName": "Signature Quota Package",
+    "packageName": "Signing Quota Package",
     "purchaseHistory": "Purchase History",
     "signingQuota": "Signing Quota"
   },
@@ -543,9 +543,9 @@
     "myCart": "My Cart",
     "totalPrice": "Total Price",
     "search": "Search",
-    "signature": "Signature",
+    "signature": "Signing Quota",
     "status": {
-      "waitingForPayment": "Waiting For Payment",
+      "waitingForPayment": "Waiting for Payment",
       "success": "Success",
       "cancel": "Cancel"
     }

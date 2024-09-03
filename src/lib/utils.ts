@@ -140,6 +140,7 @@ export const parseCSV = (file: File) => {
       Papa.parse(normalizedText, {
         delimiter: ',', // Use comma after normalization
         header: true,
+        skipEmptyLines: true,
         complete: (results) => {
           console.log(results);
           resolve(results.data);
