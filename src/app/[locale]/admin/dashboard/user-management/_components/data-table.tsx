@@ -223,7 +223,7 @@ const DataTable = ({
                           toast.success('Undangan berhasil dikirim')
                         }
                         size="sm"
-                        className="gap-2 font-semibold text-xs px-1.5 rounded-sm"
+                        className="gap-2 font-semibold text-xs px-3 rounded-sm"
                       >
                         <SendIcon pathClassName="fill-white" width={20} />
                         {d('resendInvitation')}
