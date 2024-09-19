@@ -20,6 +20,7 @@ import {
   DialogFooter,
   DialogHeader
 } from '@/components/ui/dialog';
+import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import {
   AccountCircleIcon,
@@ -51,33 +52,117 @@ const RejectConfirmationModal = ({
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
   d: (key: string) => string;
-}) => (
-  <Dialog open={isOpen} onOpenChange={setIsOpen}>
-    <DialogContent className="max-w-md">
-      <DialogHeader className="flex items-center">
-        <div className="bg-red-600/10 w-fit p-3 rounded-2xl">
-          <CancelScheduleIcon />
-        </div>
-        <DialogDescription className="text-center text-black">
-          <h4 className="mb-1 mt-4"> {d('table.cancelDialog.title')}</h4>
-          <p className="mb-3">{d('table.cancelDialog.subtitle')}</p>
-        </DialogDescription>
-        <DialogFooter className="gap-3 justify-center">
-          <Button
-            onClick={() => setIsOpen(false)}
-            variant="secondary"
-            className="bg-white modal-button-shadow px-14 font-semibold"
-          >
-            {d('table.cancelDialog.cancelButton')}
-          </Button>
-          <Button variant="destructive" className="font-semibold px-14">
-            {d('table.cancelDialog.confirmButton')}
-          </Button>
-        </DialogFooter>
-      </DialogHeader>
-    </DialogContent>
-  </Dialog>
-);
+}) => {
+  const [charCount, setCharCount] = useState(0); 
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (e.target.value.length <= 200) {
+      setInputValue(e.target.value);
+      setCharCount(e.target.value.length);
+    }
+  };
+
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogContent className="max-w-md">
+        <DialogHeader className="flex items-center">
+          <div className="bg-red-600/10 w-fit p-3 rounded-2xl">
+            <CancelScheduleIcon />
+          </div>
+          <DialogDescription className="text-center text-black">
+            <h4 className="mb-1 mt-4"> {d('table.cancelDialog.title')}</h4>
+          </DialogDescription>
+          <div className="relative w-full flex justify-center">
+            <Textarea
+              placeholder={d('table.cancelDialog.placeholderInputReason')}
+              value={inputValue}
+              onChange={(e) => handleInputChange(e)}
+              maxLength={200}
+              className="w-[95%] border-gray-400 resize-none p-3 my-4"
+              rows={2}
+            />
+            <div className="absolute bottom-5 right-[5%] text-gray-500 text-sm">
+              ({charCount}/200)
+            </div>
+          </div>
+          <DialogFooter className="gap-3 justify-center">
+            <Button
+              onClick={() => setIsOpen(false)}
+              variant="secondary"
+              className="bg-white modal-button-shadow px-14 font-semibold"
+            >
+              {d('table.cancelDialog.cancelButton')}
+            </Button>
+            <Button variant="destructive" className="font-semibold px-14">
+              {d('table.cancelDialog.confirmButton')}
+            </Button>
+          </DialogFooter>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+const DenyConfirmationModal = ({
+  isOpen,
+  setIsOpen,
+  d
+}: {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+  d: (key: string) => string;
+}) => {
+  const [charCount, setCharCount] = useState(0);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (e.target.value.length <= 200) {
+      setInputValue(e.target.value);
+      setCharCount(e.target.value.length);
+    }
+  };
+
+  return (
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogContent className="max-w-md">
+        <DialogHeader className="flex items-center">
+          <div className="bg-yellow-600/10 w-fit p-3 rounded-2xl">
+            <CancelScheduleIcon />
+          </div>
+          <DialogDescription className="text-center text-black">
+            <h4 className="mb-1 mt-4">{d('table.denyDialog.title')}</h4>
+          </DialogDescription>
+          <div className="relative w-full flex justify-center">
+            <Textarea
+              placeholder={d('table.denyDialog.placeholderInputReason')}
+              value={inputValue}
+              onChange={(e) => handleInputChange(e)}
+              maxLength={200}
+              className="w-[95%] border-gray-400 resize-none p-3 my-4"
+              rows={2}
+            />
+            <div className="absolute bottom-5 right-[5%] text-gray-500 text-sm">
+              ({charCount}/200)
+            </div>
+          </div>
+          <DialogFooter className="gap-3 justify-center">
+            <Button
+              onClick={() => setIsOpen(false)}
+              variant="secondary"
+              className="bg-white modal-button-shadow px-14 font-semibold"
+            >
+              {d('table.denyDialog.cancelButton')}
+            </Button>
+            <Button variant="destructive" className="font-semibold px-14">
+              {d('table.denyDialog.confirmButton')}
+            </Button>
+          </DialogFooter>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
+  );
+};
 
 const getBadgeLabelAndColor = (
   status: string,
@@ -151,12 +236,14 @@ const DataTable = ({
 }) => {
   const d = useTranslations('Dashboard');
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isDenyOpen, setIsDenyOpen] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [contentPerPage, setContentPerPage] = useState<number>(5);
 
   return (
     <div>
       <RejectConfirmationModal isOpen={isOpen} setIsOpen={setIsOpen} d={d} />
+      <DenyConfirmationModal isOpen={isDenyOpen} setIsOpen={setIsDenyOpen} d={d} />
 
       <div className="md:hidden">
         {data.length
@@ -211,7 +298,7 @@ const DataTable = ({
                               </DropdownMenuItem>
                             ) : (
                               row.status !== 'done' && (
-                                <DropdownMenuItem>
+                                <DropdownMenuItem onClick={() => setIsDenyOpen(true)}>
                                   {d('table.actions.deny')}
                                 </DropdownMenuItem>
                               )
@@ -415,7 +502,7 @@ const DataTable = ({
                                 </DropdownMenuItem>
                               ) : (
                                 row.status !== 'done' && (
-                                  <DropdownMenuItem>
+                                  <DropdownMenuItem onClick={() => setIsDenyOpen(true)}>
                                     {d('table.actions.deny')}
                                   </DropdownMenuItem>
                                 )

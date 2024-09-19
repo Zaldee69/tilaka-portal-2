@@ -30,7 +30,7 @@
   },
   "Dashboard": {
     "sidebar": {
-      "signPdfButton": "Tandatangan",
+      "signPdfButton": "Tanda Tangan",
       "dashboard": "Beranda",
       "document": "Dokumen",
       "verifyPdf": "Verifikasi PDF",
@@ -63,13 +63,21 @@
       },
       "actions": {
         "view": "Lihat",
-        "sign": "Tandatangan",
+        "sign": "Tanda Tangan",
         "cancel": "Batalkan",
         "deny": "Tolak"
       },
       "cancelDialog": {
         "title": "Batalkan Dokumen",
-        "subtitle": "Tandatangan dan dokumen akan dibatalkan.",
+        "subtitle": "Tanda tangan dan dokumen akan dibatalkan.",
+        "placeholderInputReason": "Masukkan alasan pembatalan",
+        "cancelButton": "Kembali",
+        "confirmButton": "Ya, Batalkan"
+      },
+      "denyDialog": {
+        "title": "Tolak Dokumen",
+        "subtitle": "Tanda tangan dan dokumen akan ditolak.",
+        "placeholderInputReason": "Masukkan alasan penolakan",
         "cancelButton": "Kembali",
         "confirmButton": "Ya, Batalkan"
       }
@@ -92,18 +100,18 @@
       },
       "actions": {
         "view": "Lihat",
-        "sign": "Tandatangan",
+        "sign": "Tanda Tangan",
         "cancel": "Batalkan",
         "deny": "Tolak"
       },
       "cancelDialog": {
         "title": "Batalkan Dokumen",
-        "subtitle": "Tandatangan dan dokumen akan dibatalkan.",
+        "subtitle": "Tanda tangan dan dokumen akan dibatalkan.",
         "cancelButton": "Kembali",
         "confirmButton": "Ya, Batalkan"
       }
     },
-    "sigantureBalance": "Kuota Tandatangan Tersedia",
+    "sigantureBalance": "Kuota Tanda Tangan Tersedia",
     "usage": "Kuota Terpakai",
     "activeUser": "Pengguna Aktif",
     "history": "Riwayat",
@@ -115,10 +123,10 @@
     "DocCompleted": "Dokumen Selesai",
     "UserWillExpired": "Pengguna akan Expired",
     "mainAccount": "Akun Utama",
-    "signing": "Tandatangan",
+    "signing": "Tanda Tangan",
     "signature": "Tanda Tangan",
     "initial": "Paraf",
-    "changeSignature": "Ubah Tandatangan",
+    "changeSignature": "Ubah Tanda Tangan",
     "changeMainAccount": "Ganti Akun Utama",
     "viewAllDoc": "Lihat Semua Dokumen",
     "viewAll": "Lihat Semua",
@@ -127,7 +135,7 @@
     "help": "Butuh Bantuan?",
     "activity": "Berikut ringkasan aktivitasmu bersama Tilaka",
     "validUntil": "Aktif sampai",
-    "floatingCTA": "Tandatangan Dokumen",
+    "floatingCTA": "Tanda Tangan Dokumen",
     "addUser": "Tambah Pengguna",
     "userRegistration": "Daftar",
     "signatureHistory": "Riwayat Tanda Tangan",
@@ -233,7 +241,7 @@
     "certificateContent": {
       "title": "Akun Tertaut",
       "subtitle": "Untuk melakukan perubahan data pengguna, silahkan menghubungi Administrator Perusahaan",
-      "changeSignature": "Ubah Tandatangan",
+      "changeSignature": "Ubah Tanda Tangan",
       "seeCertificate": "Lihat Sertifikat",
       "loggedIn": "Sedang Login",
       "mainAccount": "Akun Utama",
@@ -255,10 +263,10 @@
   },
   "SigningDialog": {
     "navbar": {
-      "title": "Tandatangan Dokumen",
+      "title": "Tanda Tangan Dokumen",
       "uploadDocument": "Upload Dokumen",
-      "setSignature": "Atur Posisi Tandatangan",
-      "sign": "Tandatangan",
+      "setSignature": "Atur Posisi Tanda Tangan",
+      "sign": "Tanda Tangan",
       "completed": "Selesai"
     },
     "step1": {
@@ -266,7 +274,7 @@
       "dragYourDoc": "Tarik dokumen Anda kesini, atau",
       "maxFileSize": "Ukuran file maksimal 30MB dan tidak terproteksi (di-password)",
       "recipient": "Penerima",
-      "selfSign": "Tandatangan Sendiri",
+      "selfSign": "Tanda Tangan Sendiri",
       "addSigner": "Tambahkan Penandatangan atau Penerima",
       "input": "Masukkan Tilaka Name atau Email",
       "info": "Tilaka name atau email yang ditambahkan dapat berperan sebagai Penandatangan atau Penerima (hanya lihat)",
@@ -282,11 +290,11 @@
       "remainingCharacter": "Sisa karakter"
     },
     "step2": {
-      "header": "Kamu telah meposisikan <signature></signature> tempat Tandatangan untuk <signers></signers> Penandatangan",
-      "header2": "Atur posisi tandatangan pada dokumen untuk setiap penandatangan",
-      "setSignature": "Atur Tandatangan",
+      "header": "Kamu telah meposisikan <signature></signature> tempat Tanda Tangan untuk <signers></signers> Penandatangan",
+      "header2": "Atur posisi tanda tangan pada dokumen untuk setiap penandatangan",
+      "setSignature": "Atur Tanda Tangan",
       "set": "Atur",
-      "signature": "Tandatangan",
+      "signature": "Tanda Tangan",
       "initials": "Paraf",
       "signatureSetting": "Pengaturan Tanda Tangan",
       "displaySignature": "Tampilkan Tanda Tangan",
@@ -302,26 +310,26 @@
         "stamp": "Tambah e-Meterai"
       },
       "sendDocModal": {
-        "title": "Kirim Permintaan Tandatangan",
+        "title": "Kirim Permintaan Tanda Tangan",
         "subtitle": "Permintaan tanda tangan akan dikirim sesuai dengan penandatanganan dan posisi tanda tangan yang telah ditentukan",
         "cancel": "Batal",
         "send": "Kirim"
       },
       "signDocConfirmationModal": {
-        "title": "Permintaan Tandatangan Berhasil",
+        "title": "Permintaan Tanda Tangan Berhasil",
         "subtitle": "Klik 'Tandatangani Dokumen' untuk melakukan penandatanganan",
         "signNow": "Tandatangani Dokumen",
         "signLater": "Nanti Saja"
       }
     },
-    "reviewDoc": "Silahkan review dokumen dan tandatangan sesuai tempat yang tersedia",
+    "reviewDoc": "Silahkan review dokumen dan tanda tangan sesuai tempat yang tersedia",
     "viewDoc": "Lihat Dokumen",
-    "startSigning": "Tandatangan Dokumen",
+    "startSigning": "Tanda Tangan Dokumen",
     "signingOptionModal": {
-      "title": "Pilihan Tandatangan",
+      "title": "Pilihan Tanda Tangan",
       "subtitle": "Berikut ringkasan yang perlu diselesaikan pada dokumen ini",
-      "button1": "Tandatangan Satu Persatu",
-      "button2": "Tandatangan Sekaligus"
+      "button1": "Tanda Tangan Satu Persatu",
+      "button2": "Tanda Tangan Sekaligus"
     },
     "signingDoneDrawer": {
       "title": "Semua selesai!",
@@ -331,7 +339,7 @@
       "cancel": "Batal"
     },
     "otpDialog": {
-      "title": "Konfirmasi Tandatangan",
+      "title": "Konfirmasi Tanda Tangan",
       "subtitle": "Masukkan 6-digit kode OTP yang telah dikirim ke <br></br>isuwinxxx@gmail.com",
       "didntReceiveOTP": "Tidak menerima kode OTP?",
       "send": "Kirim",
@@ -341,18 +349,18 @@
       "loading": "Proses Verifikasi"
     },
     "frDialog": {
-      "title": "Konfirmasi Tandatangan",
+      "title": "Konfirmasi Tanda Tangan",
       "subtitle": "Arahkan wajah Anda ke kamera",
       "useOTP": "Gunakan Otentikasi OTP"
     },
     "signingSuccessToast": {
-      "title": "Tandatangan Berhasil",
+      "title": "Tanda Tangan Berhasil",
       "subtitle": "Dokumen telah ditandatangani dan dibagikan ke email tujuan"
     },
     "signingAuthenticationDialog": "Pilih metode otentikasi Anda untuk melanjutkan proses penandatangan dokumen",
     "authentication": "Otentikasi",
     "setAs": "Tetapkan sebagai metode otentikasi",
-    "signHere": "Tandatangan Disini"
+    "signHere": "Tanda Tangan Disini"
   },
   "PdfVerification": {
     "docInformation": "Informasi Dokumen",
@@ -418,7 +426,7 @@
   },
   "changeSignatureDialog": {
     "title": "Ubah Tanda Tangan",
-    "subtitle": "Untuk kualitas tandatangan yang baik, unggah gambar dengan format .JPG/.JPEG/.PNG dengan background transparan atau putih",
+    "subtitle": "Untuk kualitas tanda tangan yang baik, unggah gambar dengan format .JPG/.JPEG/.PNG dengan background transparan atau putih",
     "createSignature": "Buat Tanda Tangan",
     "uploadImage": "Upload Gambar",
     "nameInput": "Nama Lengkap",
@@ -442,7 +450,9 @@
     "action": "Aksi",
     "sign": "Menandatangani",
     "time": "Waktu",
-    "open": "Membuka"
+    "open": "Membuka",
+    "reject": "Menolak",
+    "cancel": "Membatalkan"
   },
   "History": {
     "certificate": {
@@ -458,7 +468,7 @@
       "expired": "Kedaluwarsa"
     },
     "signing": {
-      "title": "Riwayat Tandatangan",
+      "title": "Riwayat Tanda Tangan",
       "document": "Nama Dokumen",
       "date": "Tanggal",
       "initiator": "Pembuat",
@@ -530,9 +540,9 @@
   },
   "PurchaseQuota": {
     "title": "Beli Kuota",
-    "packageName": "Paket Kuota Tandatangan",
+    "packageName": "Paket Kuota Tanda Tangan",
     "purchaseHistory": "Riwayat Pembelian",
-    "signingQuota": "Kuota Tandatangan"
+    "signingQuota": "Kuota Tanda Tangan"
   },
   "PurchaseHistory": {
     "title": "Riwayat Pembelian",
@@ -543,11 +553,79 @@
     "myCart": "Keranjang Saya",
     "totalPrice": "Total Bayar",
     "search": "Cari",
-    "signature": "Tandatangan",
+    "signature": "Tanda Tangan",
     "status": {
       "waitingForPayment": "Menunggu Pembayaran",
       "success": "Berhasil",
       "cancel": "Batal"
     }
+  },
+  "TnC": {
+    "termsAndConditions": "Syarat & ketentuan tilaka",
+    "instructions": "Silahkan dibaca dan di scroll hingga paragraf terakhir",
+    "welcomeMessage": "Selamat datang di Layanan TILAKA!",
+    "companyStatement": "Dengan ini, PT Tilaka Nusa Teknologi (“PSrE TILAKA” atau “Kami”) ingin menyampaikan bahwa selaku pemilik dan pengelola dari Layanan Tanda Tangan Elektronik yang dapat digunakan baik dengan mengakses secara langsung melalui URL: ",
+    "thirdPartyInfo": "atau melalui aplikasi yang dibuat, dikelola, dikembangkan, atau dimiliki oleh pihak ketiga yang memiliki hubungan kontraktual dengan PSrE TILAKA (“Layanan TILAKA”) memiliki syarat dan ketentuan (“S&K”) yang harus Pemilik dan/atau Pemohon (“Anda”) setujui sebelum menggunakan Layanan TILAKA. Anda berkewajiban untuk membaca, memahami, dan menyetujui isi dari S&K ini sebelum melakukan melakukan permohonan penerbitan, permohonan penerbitan ulang, permohonan penggantian kunci, menerima, dan/atau menggunakan Sertifikat Pemilik (“Mengakses Layanan TILAKA”). Dalam hal Anda tidak menyetujui sebagian atau seluruh ketentuan yang diatur dalam S&K ini, maka Anda tidak diperkenankan untuk Mengakses Layanan TILAKA.",
+    "effectiveDate": "S&K ini berlaku efektif setelah ditampilkan pada salah satu halaman pada Layanan TILAKA saat Anda mengajukan permohonan penerbitan, permohonan penerbitan ulang, dan/atau permohonan penggantian kunci Sertifikat Pemilik. Atas permohonan permohonan penerbitan, permohonan penerbitan ulang, permohonan penggantian kunci Sertifikat Pemilik yang dilakukan setelah S&K ini berlaku efektif, maka ketentuan pada S&K ini berlaku untuk Pemilik.",
+    "electronicDocumentAcknowledgment": "Anda dengan ini mengetahui, mengerti, dan menyetujui bahwa S&K ini merupakan Dokumen Elektronik dan tindakan Anda memberikan tanda “centang” saat permohonan permohonan penerbitan, permohonan penerbitan ulang, dan/atau permohonan penggantian kunci Sertifikat Pemilik merupakan persetujuan Anda secara aktif untuk mengikatkan diri dan tunduk pada ketentuan yang terdapat pada S&K ini. Oleh karena itu, S&K ini telah berlaku sah dan mengikat Anda secara hukum dan terus berlaku sepanjang anda Mengakses Layanan TILAKA.",
+    "definition": "Definisi",
+    "accountDefinition": "Akun adalah suatu kode alfanumerik yang diterbitkan oleh PSrE TILAKA yang berfungsi untuk mengidentifikasi Anda dalam menggunakan Layanan TILAKA.",
+    "personalDataDefinition": "Data Pribadi adalah data tentang orang perseorangan yang teridentifikasi atau dapat diidentifikasi secara tersendiri atau dikombinasi dengan informasi lainnya baik secara langsung maupun tidak langsung melalui sistem elektronik atau nonelektronik.",
+    "electronicDocumentDefinition": "Dokumen Elektronik adalah setiap Informasi Elektronik yang dibuat, diteruskan, dikirimkan, diterima, atau disimpan dalam bentuk analog, digital, elektromagnetik, optikal, atau sejenisnya, yang dapat dilihat, ditampilkan dan/atau didengar melalui komputer atau sistem elektronik, termasuk atau sistem elektronik, termasuk tetapi tidak terbatas pada tulisan, suara, gambar, peta, rancangan, foto atau sejenisnya, huruf, tanda, angka, kode akses, simbol atau perforasi yang memiliki makna atau arti atau dapat dipahami oleh orang yang mampu memahaminya.",
+    "calendarDayDefiniton": "Hari Kalender adalah semua hari dalam satu tahun sesuai kalender gregorius tanpa kecuali termasuk hari sabtu, minggu dan hari libur nasional yang ditetapkan sewaktu-waktu oleh Pemerintah.",
+    "electronicContractDefiniton": "Kontrak Elektronik adalah Perjanjian yang dibuat melalui sistem elektronik.",
+    "subscriberDefiniton": "Pemilik adalah Warga Negara Indonesia yang berada dalam ruang lingkup Pelanggan dan merupakan subjek dari Sertifikat Pemilik.",
+    "applicantDefiniton": "Pemohon adalah Warga Negara Indonesia yang berada dalam ruang lingkup Pelanggan yang mengajukan permohonan penerbitan atau penerbitan ulang atau penggantian kunci Sertifikat dalam ruang lingkup Pelanggan. Setelah Sertifikat diterbitkan, Pemohon disebut sebagai Pemilik.",
+    "customerDefiniton": "Pelanggan adalah Korporasi atau Personal yang berlangganan Layanan TILAKA.",
+    "psreDefinition": "PT Tilaka Nusa Teknologi (“PSrE TILAKA”) adalah PSrE dengan status pengakuan berinduk yang Sertifikatnya telah ditandatangani oleh PSrE Induk.",
+    "businessMitraDefiniton": "Mitra Bisnis adalah perorangan, badan hukum, dan/atau badan usaha yang memiliki hubungan hukum baik secara langsung maupun tidak langsung dengan PSrE TILAKA dan dapat dibuktikan oleh suatu dokumen yang dapat menunjukkan hubungan hukum tersebut.",
+    "tilakaRepositoryDefinition": "Repositori Tilaka adalah suatu halaman pada website PSrE TILAKA yang berisi semua dokumen publik milik PSrE TILAKA, yang dapat diakses melalui ",
+    "certificateDefinition": "Sertifikat adalah Sertifikat yang bersifat elektronik yang memuat tanda tangan elektronik dan identitas yang menunjukkan status subjek hukum para pihak dalam transaksi elektronik.",
+    "subscriberCertificateDefiniton": "Sertifikat Pemilik adalah Sertifikat yang diterbitkan oleh PSrE TILAKA.",
+    "termsForUsers": "Ketentuan Bagi Anda",
+    "userAgreement": "Anda setuju untuk Mengakses Layanan TILAKA hanya untuk tujuan sebagaimana ditentukan dalam S&K ini dan daftar Dokumen Publik sebagaimana disebutkan dalam S&K ini. Anda dengan ini menjamin untuk tidak akan menggunakan Layanan TILAKA untuk tujuan penipuan, menyebabkan ketidaknyamanan kepada orang lain, atau melakukan tindakan lainnya yang dapat atau dianggap dapat menimbulkan kerugian dalam bentuk apapun terhadap orang atau badan hukum lainnya.",
+    "accountUsage": "Dalam rangka menggunakan Layanan TILAKA, Anda akan memiliki Akun yang hanya boleh digunakan oleh Anda dan tidak dapat dialihkan kepada orang lain dengan alasan ataupun keadaan apapun. Maka dari itu, Anda berkewajiban untuk menjaga kerahasiaan nama Akun dan kata sandi yang akan digunakan sehubungan dengan penggunaan Layanan TILAKA.",
+    "personalDataSubmission": "Anda setuju untuk memberikan semua informasi dan/atau Data Pribadi yang diminta oleh PSrE TILAKA dengan disertai dengan dokumen pendukung yang dibutuhkan sehubungan dengan kegiatan Mengakses Layanan TILAKA.",
+    "verificationClause": "Anda setuju bahwa PSrE TILAKA berhak untuk melakukan verifikasi secara independen terhadap semua informasi dan/atau Data Pribadi sesuai dengan prosedur yang berlaku pada PSrE TILAKA.",
+    "dataAccuracyGuarantee": "Anda dengan ini menjamin bahwa segala informasi dan/atau Data Pribadi  yang disampaikan kepada TILAKA sehubungan dengan kegiatan Mengakses Layanan TILAKA adalah benar, jelas, akurat dan lengkap. Anda berkewajiban untuk menginformasikan kepada PSrE TILAKA dalam hal terdapat perubahan, penambahan, atau pembaruan atas informasi dan/atau Data Pribadi. PSrE TILAKA berhak untuk menolak permohonan penerbitan Sertifikat Pemilik, menolak permohonan penerbitan ulang Sertifikat Pemilik, menolak permohonan penggantian kunci Sertifikat Pemilik,  dan/atau menolak melakukan perubahan, penambahan, atau pembaruan atas informasi dan/atau Data Pribadi yang tersimpan pada Layanan TILAKA, jika ditemukan atau patut diduga bahwa informasi dan/atau Data Pribadi yang diberikan oleh Anda tidak sesuai dengan ketentuan S&K ini dan Dokumen Publik sebagaimana disebutkan dalam S&K ini.",
+    "certificateContentAgreement": "Anda setuju atas isi yang tercantum dalam Sertifikat Pemilik yang diterbitkan oleh PSrE TILAKA, baik dari proses permohonan penerbitan, permohonan penerbitan ulang, dan/atau permohonan penggantian kunci Sertifikat Pemilik dalam hal:",
+    "certificateContentReview": "Anda telah memeriksa dan menyetujui informasi yang terkandung dalam Sertifikat Pemilik; atau",
+    "noResponseClause": "Anda tidak memberikan tanggapan dalam jangka waktu 9 (sembilan) Hari Kalender sejak PSrE TILAKA mengirimkan email terkait penerbitan Sertifikat Pemilik.",
+    "keyReplacementClause": "Dalam hal permohonan penggantian kunci Sertifikat Pemilik, Anda dengan ini mengetahui dan setuju bahwa:",
+    "keyChangeImpact": "Penggantian kunci Sertifikat Pemilik mengakibatkan PSrE TILAKA akan melakukan penerbitan Sertifikat Pemilik baru dengan kunci publik, serial number, dan key identifier yang baru, sementara informasi pribadi Pemilik yang tercantum pada Sertifikat Pemilik yang digunakan untuk menandatangani permohonan penggantian kunci Sertifikat Pemilik baru ini akan tetap digunakan pada Sertifikat Pemilik baru yang akan diterbitkan PSrE TILAKA tersebut;",
+    "keyChangeGeneration": "Penggantian kunci Sertifikat Pemilik mengakibatkan PSrE TILAKA akan membangkitkan pasangan kunci baru yang terasosiasi dengan Sertifikat Pemilik yang digunakan untuk menandatangani permohonan penggantian kunci Sertifikat Pemilik baru ini; dan/atau",
+    "newCertificateValidity": "Masa berlaku Sertifikat Pemilik baru akan berbeda dengan Sertifikat Pemilik yang Anda gunakan untuk menandatangani permohonan penggantian kunci Sertifikat Pemilik baru ini.",
+    "prohibitedUsage": "Anda setuju untuk tidak menggunakan Layanan TILAKA dengan cara sebagai berikut:",
+    "illegalUse": "Menggunakan Layanan TILAKA untuk tujuan yang melanggar hukum atau ketentuan peraturan perundang-undangan yang berlaku;",
+    "damageOrTampering": "Melakukan tindakan yang disebabkan oleh kelalaian atau kesengajaan olehnya, yang pada pokoknya merusak, menghilangkan, menyembunyikan, menyebabkan perubahan, penambahan, pengurangan, dan/atau membuat tidak dapat digunakannya Layanan TILAKA baik sebagian maupun seluruhnya;",
+    "violationOfRights": "Melakukan tindakan yang baik dengan sengaja atau karena kelalaiannya menyebabkan pelanggaran atas hak PSrE TILAKA dalam hal yang termasuk namun tidak terbatas pada pelanggaran privasi, hak cipta, merek, paten, rahasia dagang, atau hak kekayaan intelektual lainnya, hak yang timbul dari hubungan kontraktual antara PSrE TILAKA dengan pihak ketiga lainnya, dan/atau hak lain yang dimiliki PSrE TILAKA baik untuk masa sekarang maupun di kemudian hari yang dilindungi oleh peraturan perundang-undangan yang berlaku; dan",
+    "copyModify": "Melakukan tindakan menyalin, memodifikasi, mengadaptasi, menerjemahkan, membuat karya turunan dari, melakukan perekayasaan balik, atau membongkar bagian manapun baik sebagian atau seluruhnya atas Layanan TILAKA.",
+    "serviceSuspension": "Anda setuju bahwa PSrE TILAKA berhak untuk menghentikan sementara atau permanen dengan atau tanpa disertai dengan pencabutan Akun dan/atau Sertifikat Pemilik milik Anda dalam hal terdapat kegiatan untuk meningkatkan pelayanan yang terdapat pada Layanan TILAKA atau pelanggaran dari Anda terhadap ketentuan dari S&K ini.",
+    "informationDisclosure": "Dalam rangka kegiatan Anda Mengakses Layanan TILAKA, Anda mengetahui dan setuju bahwa  PSrE TILAKA akan akan memberitahukan sebagian atau seluruh informasi yang terdapat dalam Sertifikat Pemilik kepada pihak pengandal dan/atau pihak lainnya, hal mana demikian akan dilakukan oleh PSrE TILAKA dengan tunduk pada ketentuan yang tercantum pada Dokumen Publik sebagaimana disebutkan dalam S&K ini.",
+    "publicDocumentsCompliance": "Dalam rangka Mengakses Layanan TILAKA, Anda setuju untuk tunduk pada ketentuan yang terdapat pada Dokumen Publik yang terdapat pada Repositori Tilaka serta di tautan yang terdapat pada bagian akhir S&K ini yang terdiri dari:",
+    "cps": "Certification Practice Statement",
+    "privacyPolicy": "Kebijakan Privasi;",
+    "subscriberAgreement": "Perjanjian Pemilik Sertifikat; dan",
+    "warrantyPolicy": "Kebijakan Jaminan",
+    "partnerAppUsage": "Dalam hal Anda menggunakan Layanan TILAKA melalui aplikasi yang dibuat, dikelola, dikembangkan, atau dimiliki oleh Mitra Bisnis (“aplikasi mitra bisnis”), maka Anda harus mengetahui dan menyetujui bahwa Kami tidak memiliki kendali apapun terhadap konten-konten yang terdapat pada aplikasi tersebut sebelum Anda memilih untuk menggunakan Layanan TILAKA. Akses atau penggunaan Anda terhadap aplikasi mitra bisnis sebelum menggunakan Layanan TILAKA tersebut tunduk pada syarat dan ketentuan serta kebijakan privasi yang ditentukan oleh Mitra Bisnis",
+    "appUsageAgreement": "Dalam hal Anda menggunakan Layanan TILAKA melalui aplikasi mitra bisnis, Anda dengan ini mengetahui dan setuju bahwa:",
+    "documentStorage": "Mitra Bisnis dapat menyimpan hasil unggahan Dokumen Elektronik berupa Kartu Tanda Penduduk (“KTP”) yang Anda gunakan dalam rangka melakukan Permohonan Penerbitan Sertifikat Pemilik; dan",
+    "nikStorage": "Untuk kebutuhan pencatatan log internal terhadap Permohonan Penerbitan Sertifikat Pemilik yang Anda lakukan, Mitra Bisnis dapat menyimpan informasi nomor induk kependudukan (“NIK”) yang Anda berikan.",
+    "liabilityWaiver": "Dalam hal Anda menggunakan Layanan TILAKA melalui aplikasi mitra bisnis, Anda dengan ini melepaskan tanggung jawab Kami terhadap segala tindakan yang dilakukan oleh Mitra Bisnis terhadap isi atau bagian apapun dari aplikasi mitra bisnis tersebut termasuk bagaimana aplikasi mitra bisnis tersebut memperoleh, mengumpulkan, mengolah, menyimpan, menampilkan, mengumumkan, mengirimkan, dan memusnahkan Data Pribadi Anda sebelum, saat, dan setelah Anda menggunakan Layanan TILAKA.",
+    "liabilityAndIndemnity": "Dalam hal karena kelalaian atau kesengajaannya dalam melaksanakan ketentuan dari S&K ini menyebabkan kerugian yang diterima oleh PSrE TILAKA, Anda, atau pihak ketiga lainnya, maka, Anda dengan ini sepakat untuk melepaskan, membebaskan, memberikan ganti rugi, dan membela PSrE TILAKA, termasuk direktur, komisaris, karyawan dan/atau rekanan atas hal-hal yang termasuk namun tidak terbatas pada permintaan, klaim, kerugian, tuntutan, tanggung jawab, kewajiban, kerusakan, ongkos dan biaya yang timbul.",
+    "confidentialityAndSecurity": "Kerahasiaan dan Keamanan",
+    "disclosureForLegalCompliance": "Anda setuju bahwa PSrE TILAKA dapat mengungkapkan atau memberikan akses terhadap informasi, Dokumen Elektronik, Kontrak Elektronik, dan/atau Data Pribadi Anda dalam rangka memenuhi ketentuan hukum, peraturan perundang-undangan dan/atau keputusan pengadilan, hal tersebut dilakukan dalam rangka proses penegakan atau pengambilan tindakan pencegahan lebih lanjut sehubungan dengan kegiatan tidak berwenang, dugaan tindak pidana, pelanggaran hukum dan/atau pelanggaran terhadap peraturan perundang-undangan yang berlaku.",
+    "IntellectualPropertyRights": "Hak Kekayaan Intelektual",
+    "intellectualProperty": "Nama, kode program, model bisnis, desain, merek dagang, warna, gambar, video, audio, teknologi, dan hal lainnya sehubungan dengan Layanan TILAKA yang belum, dalam proses maupun telah terdaftar atas nama PSrE TILAKA, dilindungi oleh hak kekayaan intelektual termasuk namun tidak terbatas pada hak cipta, merek, paten dan hak kekayaan intelektual yang diatur berdasarkan hukum Negara Republik Indonesia. Tindakan Anda dalam hal mengakses dan menggunakan Layanan TILAKA, tidak mengakibatkan perpindahan baik sebagian atau seluruh Hak Kekayaan Intelektual sehubungan dengan Layanan TILAKA tersebut Anda.",
+    "contact": "Hubungi TILAKA",
+    "contactInformation": "Anda dapat menghubungi PSrE TILAKA melalui surat elektronik (email) ke alamat ",
+    "nextContactInformation": "atau dengan mengirimkan dokumen fisik melalui kantor PSrE TILAKA melalui alamat Belleza Shopping Arcade Lantai 3 Unit SA 0380, Jl. Arteri Permata Hijau Nomor 34, RT.004/RW.002, Grogol Utara, Kebayoran Lama, Jakarta Selatan, 12210.",
+    "disputeResolution": "Sengketa",
+    "disputeResolutionDetails": "Segala sengketa terkait dengan penafsiran atau pelaksanaan dari S&K ini, para pihak sepakat untuk menyelesaikan secara musyawarah untuk mufakat. Apabila penyelesaian secara musyawarah untuk mencapai sepakat tersebut tidak tercapai, maka para pihak sepakat untuk menyelesaikannya melalui Pengadilan Negeri Jakarta Selatan sesuai domisili PSrE TILAKA.",
+    "dataAccuracy": "Saya menyatakan bahwa data yang saya isi adalah benar dan dapat dipertanggungjawabkan",
+    "agreed": "Saya telah menyetujui",
+    "and": "dan",
+    "back": "Kembali",
+    "confirm": "Konfirmasi"
   }
 }

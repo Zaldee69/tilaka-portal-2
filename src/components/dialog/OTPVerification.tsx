@@ -66,7 +66,7 @@ const OTPVerification = (props: Props) => {
       resetSignatureDraft();
       localStorage.removeItem('activeStep');
       router.push('/dashboard/documents');
-      toast.success('Tandatangan Berhasil', {
+      toast.success('Tanda Tangan Berhasil', {
         description: 'Dokumen telah ditandatangi dan dibagikan ke email tujuan'
       });
     }, 10000);

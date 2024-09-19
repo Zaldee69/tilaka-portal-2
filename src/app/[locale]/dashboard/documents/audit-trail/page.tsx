@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -17,14 +18,28 @@ import {
   TableRow
 } from '@/components/ui/table';
 
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger
+} from '@/components/ui/dropdown-menu';
+
 import { Link } from '@/navigation';
 import { useTranslations } from 'next-intl';
 import { cn } from '@/lib/utils';
 import { PermIdentityIcon } from '../../../../../../public/icons/icons';
+import { EyeIcon, EyeOffIcon } from 'lucide-react';
 
 const Page = () => {
   const t = useTranslations('Dashboard');
   const a = useTranslations('auditTrail');
+
+  const [reason, setReason] = useState('Dokumen perlu direvisi');
+
+  const handleEyeClick = (message: string) => {
+    setReason(message);
+  };
 
   return (
     <div className="md:p-5 mx-auto mt-3">
@@ -54,6 +69,7 @@ const Page = () => {
                 <TableHead>{a('name')}</TableHead>
                 <TableHead>Email</TableHead>
                 <TableHead>{a('action')}</TableHead>
+                <TableHead></TableHead>
                 <TableHead>{a('time')}</TableHead>
               </TableRow>
             </TableHeader>
@@ -73,6 +89,7 @@ const Page = () => {
                 </TableCell>
                 <TableCell>wahab@gmail.com</TableCell>
                 <TableCell>{a('sign')}</TableCell>
+                <TableCell></TableCell>
                 <TableCell>08 Mei 2023 16:46:31</TableCell>
               </TableRow>
               <TableRow>
@@ -90,6 +107,75 @@ const Page = () => {
                 </TableCell>
                 <TableCell>wahono@gmail.com</TableCell>
                 <TableCell>{a('open')}</TableCell>
+                <TableCell></TableCell>
+                <TableCell>08 Mei 2023 16:46:31</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>
+                  <div className="flex gap-3">
+                    <p className="font-semibold text-sm">Wahab</p>
+                    <span
+                      className={cn(
+                        'text-[10px] bg-[#BFDFFF] text-primary uppercase text-center px-1 rounded'
+                      )}
+                    >
+                      {a('owner')}
+                    </span>
+                  </div>
+                </TableCell>
+                <TableCell>wahab@gmail.com</TableCell>
+                <TableCell className="text-red-500">{a('reject')}</TableCell>
+                <TableCell>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <EyeIcon
+                        className="w-5 h-5 text-gray-600 cursor-pointer"
+                        onClick={() =>
+                          handleEyeClick(
+                            'Rejected because of missing documents'
+                          )
+                        }
+                      />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem>{reason}</DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                </TableCell>
+                <TableCell>08 Mei 2023 16:46:31</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>
+                  <div className="flex gap-3">
+                    <p className="font-semibold text-sm">Wahono</p>
+                    <span
+                      className={cn(
+                        'text-[10px] bg-[#E0E0E0] text-gray-2 uppercase text-center px-1 rounded'
+                      )}
+                    >
+                      {a('signer')}
+                    </span>
+                  </div>
+                </TableCell>
+                <TableCell>wahono@gmail.com</TableCell>
+                <TableCell className="text-red-500">{a('cancel')}</TableCell>
+                <TableCell>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <EyeIcon
+                        className="w-5 h-5 text-gray-600 cursor-pointer"
+                        onClick={() =>
+                          handleEyeClick(
+                            'Cancelled due to incorrect information'
+                          )
+                        }
+                      />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                      <DropdownMenuItem>{reason}</DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu> 
+                </TableCell>
                 <TableCell>08 Mei 2023 16:46:31</TableCell>
               </TableRow>
             </TableBody>
