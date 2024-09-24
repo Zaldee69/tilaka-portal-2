@@ -1,4 +1,4 @@
-import QuotaCard from '@/components/card/QuotaCard';
+import QuotaCard from '@/components/card/quota-card';
 import { Progress } from '@/components/ui/progress';
 import React from 'react';
 import {
@@ -14,16 +14,16 @@ import {
   StampIcon,
   TilakaIcon
 } from '../../../../public/icons/icons';
-import DocInformationCard from '@/components/card/DocInformationCard';
+import DocInformationCard from '@/components/card/document-information-card';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { useTranslations } from 'next-intl';
-import Collapsible from '@/components/Collapsible';
-import DataTable from '@/components/DataTable';
+import Collapsible from '@/components/collapsible';
+import DataTable from '@/components/data-table';
 import { Link as CustomLink, Link } from '@/navigation';
 import NextLink from 'next/link';
 import { SquareArrowOutUpRight } from 'lucide-react';
-import ChangeAutheticationModeDialog from '@/components/dialog/ChangeAutheticationMode';
-import ChangeSignatureAttribute from '@/components/dialog/ChangeSignatureAttribute';
+import ChangeAutheticationModeDialog from '@/components/dialog/change-authenticated-mode';
+import ChangeSignatureAttribute from '@/components/dialog/change-signature-attribute';
 
 const ImportantTodayTable = ({ t }: { t: (key: string) => string }) => (
   <div className="bg-white custom-shadow rounded-2xl mt-10 p-3 border border-gray-6">

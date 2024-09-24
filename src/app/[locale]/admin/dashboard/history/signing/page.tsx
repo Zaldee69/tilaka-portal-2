@@ -7,11 +7,11 @@ import {
   FilterAltIcon,
   SearchIcon
 } from '../../../../../../../public/icons/icons';
-import { DatePickerRange } from '@/components/DatePickerRange';
+import { DatePickerRange } from '@/components/date-picker-range';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
-import MobileFilter from './_components/MobileFilter';
-import DataTable from './_components/DataTable';
+import MobileFilter from './_components/mobile-filter';
+import DataTable from './_components/data-table';
 import {
   Select,
   SelectContent,

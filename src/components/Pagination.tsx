@@ -1,4 +1,4 @@
-import { useOnClickOutside } from '@/hooks/useClickOutside';
+import { useOnClickOutside } from '@/hooks/use-click-outside';
 import { generateArrayOfPageNumber } from '@/lib/utils';
 import {
   ChevronFirst,

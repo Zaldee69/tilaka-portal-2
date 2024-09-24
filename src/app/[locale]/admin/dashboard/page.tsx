@@ -1,4 +1,4 @@
-import QuotaCard from '@/components/card/QuotaCard';
+import QuotaCard from '@/components/card/quota-card';
 import { Progress } from '@/components/ui/progress';
 import React from 'react';
 import {
@@ -17,19 +17,19 @@ import {
   WarningIcon,
   WomanIllustrationIcon
 } from '../../../../../public/icons/icons';
-import DocInformationCard from '@/components/card/DocInformationCard';
+import DocInformationCard from '@/components/card/document-information-card';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { useTranslations } from 'next-intl';
-import Collapsible from '@/components/Collapsible';
-import DataTable from '@/components/DataTable';
-import DataTableAdmin from '@/components/DataTableAdmin';
+import Collapsible from '@/components/collapsible';
+import DataTable from '@/components/data-table';
+import DataTableAdmin from '@/components/data-table-admin';
 import { Link as CustomLink, Link } from '@/navigation';
 import NextLink from 'next/link';
 import { SquareArrowOutUpRight } from 'lucide-react';
-import ChangeAutheticationModeDialog from '@/components/dialog/ChangeAutheticationMode';
-import ChangeVerificationModeDialog from '@/components/dialog/ChangeVerificationMode';
-import ChangeSignatureAttribute from '@/components/dialog/ChangeSignatureAttribute';
-import UserQuotaCard from '@/components/card/UserQuotaCard';
+import ChangeAutheticationModeDialog from '@/components/dialog/change-authenticated-mode';
+import ChangeVerificationModeDialog from '@/components/dialog/change-verification-mode';
+import ChangeSignatureAttribute from '@/components/dialog/change-signature-attribute';
+import UserQuotaCard from '@/components/card/user-quota-card';
 
 const MainAccountSection = ({ t }: { t: (key: string) => string }) => (
   <Collapsible onlyShowOnMobile autoOpen title={t('mainAccount')}>

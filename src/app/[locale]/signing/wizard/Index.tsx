@@ -1,10 +1,10 @@
 'use client';
 import React, { useEffect } from 'react';
 import { Wizard } from 'react-use-wizard';
-import Step1 from './Step1';
-import Step2 from './Step2';
-import Step3 from './Step3';
-import Step4 from './Step4';
+import Step1 from './step-1';
+import Step2 from './step-2';
+import Step3 from './step-3';
+import Step4 from './step-4';
 import useSigningStore from '@/zustand/store';
 
 const Index = () => {

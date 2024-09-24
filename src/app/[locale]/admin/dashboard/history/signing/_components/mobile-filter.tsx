@@ -10,16 +10,16 @@ import {
   DrawerTrigger
 } from '@/components/ui/drawer';
 import { Button, buttonVariants } from '@/components/ui/button';
+import { SearchIcon } from '../../../../../../../../public/icons/icons';
 import { Input } from '@/components/ui/input';
 import { DatePickerRange } from '@/components/date-picker-range';
 import { Settings2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
-import { SearchIcon } from '../../../../../../../public/icons/icons';
 
 const MobileFilter = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const t = useTranslations('UserManagement');
+  const t = useTranslations('History.signing');
 
   return (
     <Drawer open={isOpen} onOpenChange={setIsOpen}>
@@ -53,9 +53,9 @@ const MobileFilter = () => {
         </div>
 
         <div className="px-4 mt-3">
-          <h5>{t('username')}</h5>
+          <h5>{t('document')}</h5>
           <Input
-            placeholder={t('username')}
+            placeholder={t('document')}
             className="h-10 pl-12 pr-2 w-full mt-2"
             icon={<SearchIcon svgClassName="mt-2" />}
             iconPosition="left"
@@ -63,9 +63,18 @@ const MobileFilter = () => {
         </div>
 
         <div className="px-4 mt-3">
-          <h5>Email</h5>
+          <h5>{t('initiator')}</h5>
           <Input
-            placeholder="Email"
+            placeholder={t('initiator')}
+            className="h-10 pl-12 pr-2 w-full mt-2"
+            icon={<SearchIcon svgClassName="mt-2" />}
+            iconPosition="left"
+          />
+        </div>
+        <div className="px-4 mt-3">
+          <h5>{t('signer')}</h5>
+          <Input
+            placeholder={t('signer')}
             className="h-10 pl-12 pr-2 w-full mt-2"
             icon={<SearchIcon svgClassName="mt-2" />}
             iconPosition="left"
@@ -73,30 +82,18 @@ const MobileFilter = () => {
         </div>
         <div className="px-4 mt-3">
           <h5>Status</h5>
-          <div className="grid grid-cols-2 gap-2 mt-2">
+          <div className="grid grid-cols-3 gap-2 mt-2">
             <Button size="sm" variant="outline" className="text-black">
-              {t('status.active')}
+              On Progress
             </Button>
             <Button size="sm" variant="outline" className="text-black">
-              {t('status.inactive')}
+              Draft
             </Button>
             <Button size="sm" variant="outline" className="text-black">
-              {t('status.waitForRegistration')}
+              Done
             </Button>
             <Button size="sm" variant="outline" className="text-black">
-              {t('status.expired')}
-            </Button>
-            <Button size="sm" variant="outline" className="text-black">
-              {t('status.pending')}
-            </Button>
-            <Button size="sm" variant="outline" className="text-black">
-              {t('status.rejected')}
-            </Button>
-            <Button size="sm" variant="outline" className="text-black">
-              {t('status.verificationFailed')}
-            </Button>
-            <Button size="sm" variant="outline" className="text-black">
-              {t('status.reVerificationRejected')}
+              Denied
             </Button>
           </div>
         </div>
