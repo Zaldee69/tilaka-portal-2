@@ -8,6 +8,7 @@ import { TnCContextProvider } from '@/components/dialog/term-and-condition/TncCo
 import Navbar from '@/components/navbar/Navbar';
 import Sidebar from '@/components/sidebar';
 import { SidebarContextProvider } from '@/components/sidebar/SidebarContextProvider';
+import SessionWrapper from '@/providers/session-provider';
 
 const DashboarLayout = ({
   children,
@@ -21,21 +22,23 @@ const DashboarLayout = ({
   return (
     <SidebarContextProvider>
       <TnCContextProvider>
-        <main className="relative">
-          <div className="flex">
-            <Sidebar />
-            <CertExpiredDialog />
-            <CertRevokedDialog />
-            <TnCDialog />
-            <NoInternetDialog />
-            <DeviceNotSupported />
-            <AutoLoggedOutDialog />
-            <div className="w-full">
-              <Navbar />
-              <div>{children}</div>
+        <SessionWrapper>
+          <main className="relative">
+            <div className="flex">
+              <Sidebar />
+              <CertExpiredDialog />
+              <CertRevokedDialog />
+              <TnCDialog />
+              <NoInternetDialog />
+              <DeviceNotSupported />
+              <AutoLoggedOutDialog />
+              <div className="w-full">
+                <Navbar />
+                <div>{children}</div>
+              </div>
             </div>
-          </div>
-        </main>
+          </main>
+        </SessionWrapper>
       </TnCContextProvider>
     </SidebarContextProvider>
   );

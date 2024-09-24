@@ -18,20 +18,24 @@ import {
   ExternalLink,
   XCircle
 } from 'lucide-react';
-import { Button, buttonVariants } from '../ui/button';
+import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { RadioGroup, RadioGroupItem } from '../ui/radio-group';
 import { Separator } from '../ui/separator';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '../LanguageSwitcher';
-import { Link, usePathname } from '@/navigation';
+import { usePathname } from '@/navigation';
+import { signOut, useSession } from 'next-auth/react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const NavbarMenu = () => {
   const [showMenu, setShowMenu] = useState<
     'account-list' | 'notification' | 'search' | null
   >(null);
   const ref = useRef(null);
+
+  const { data: session } = useSession();
 
   const handleClickOutside = () => {
     setShowMenu(null);
@@ -118,10 +122,14 @@ const NavbarMenu = () => {
               {' '}
               <CorporateIconSmall />{' '}
             </span>
-            <div className="md:block hidden">
-              <p className="font-semibold truncate max-w-60">
-                johndoe@yopmail.com
-              </p>
+            <div className="md:block hidden text-start">
+              {session ? (
+                <p className="font-semibold truncate max-w-60">
+                  {session?.user.id}
+                </p>
+              ) : (
+                <Skeleton className="w-[100px] h-[20px] rounded-full" />
+              )}
               <p className="text-xs font-light text-start truncate max-w-60">
                 PT. John Doe Capital
               </p>
@@ -217,16 +225,14 @@ const AccountListSelect = ({ logoutTitle }: { logoutTitle: string }) => {
         </ScrollArea>
       )}
 
-      <Link
-        href="/"
-        className={buttonVariants({
-          className: '!w-fit !px-4',
-          variant: 'ghost'
-        })}
+      <Button
+        onClick={() => signOut()}
+        className="!w-fit !px-4"
+        variant="ghost"
       >
         <ExternalLink size={22} className="text-gray-400" />
         <p className="font-semibold ml-2">{logoutTitle}</p>
-      </Link>
+      </Button>
     </div>
   );
 };

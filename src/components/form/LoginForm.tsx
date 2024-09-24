@@ -11,7 +11,7 @@ import {
   FormMessage
 } from '@/components/ui/form';
 import { Input } from '../ui/input';
-import { ChevronRight, EyeIcon, EyeOffIcon, Loader2, X } from 'lucide-react';
+import { EyeIcon, EyeOffIcon, Loader2, X } from 'lucide-react';
 import { Button, buttonVariants } from '../ui/button';
 import { MailIcon, UserIcon } from '../../../public/icons/icons';
 import { useTranslations } from 'next-intl';
@@ -19,6 +19,8 @@ import useSchema, { tilakaNameRegex } from '@/hooks/useSchema';
 import { z } from 'zod';
 import { Link, useRouter } from '@/navigation';
 import { toast } from 'sonner';
+import { signIn } from 'next-auth/react';
+import { useGenerateFingerprint } from '@/hooks/use-generate-fingerprint';
 
 export const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -31,6 +33,8 @@ const LoginForm = () => {
   });
 
   const t = useTranslations('Login');
+
+  const fingerprint = useGenerateFingerprint();
 
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -61,21 +65,24 @@ const LoginForm = () => {
     }
   });
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     setIsLoading(true);
-    if (
-      form.getValues('tilakaName') === 'johndoe1' &&
-      form.getValues('password') === 'Password123#'
-    ) {
+    const result = await signIn('credentials', {
+      tilaka_name: form.getValues('tilakaName'),
+      password: form.getValues('password'),
+      device_token: fingerprint,
+      redirect: false
+    });
+
+    if (result?.ok) {
+      toast.success('Login Berhasil');
       setTimeout(() => {
-        toast.success('Login Berhasil');
         router.push('/dashboard');
-      }, 3000);
+      }, 1000);
     } else {
-      setTimeout(() => {
-        setIsLoading(false);
-        toast.error('Kata Sandi atau Tilaka Name salah');
-      }, 3000);
+      console.log(result);
+      setIsLoading(false);
+      toast.error('Kata Sandi atau Tilaka Name salah');
     }
   };
 

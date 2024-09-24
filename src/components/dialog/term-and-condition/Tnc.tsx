@@ -64,14 +64,12 @@ const TnCDialog = () => {
         <DialogContent className="px-2 pb-3 md:pb-6 md:px-6">
           <DialogHeader>
             <DialogTitle className="uppercase">
-              {x('termsAndConditions')} 
+              {x('termsAndConditions')}
             </DialogTitle>
           </DialogHeader>
           <div>
             <div className="text-center bg-[#0AB7E9] rounded-md text-white py-2 mb-3">
-              <p className="text-sm md:text-base px-3">
-                {x('instructions')}
-              </p>
+              <p className="text-sm md:text-base px-3">{x('instructions')}</p>
             </div>
             <div
               ref={contentRef}
@@ -80,7 +78,7 @@ const TnCDialog = () => {
             >
               <div>
                 <p className="mt-3 mb-0 text-lg leading-6 font-bold">
-                {x('welcomeMessage')}
+                  {x('welcomeMessage')}
                 </p>
                 <p className="mt-3 mb-0 leading-6">
                   {x('companyStatement')}
@@ -93,9 +91,7 @@ const TnCDialog = () => {
                   </a>{' '}
                   {x('thirdPartyInfo')}
                 </p>
-                <p className="mt-3 mb-1 leading-6">
-                  {x('effectiveDate')}
-                </p>
+                <p className="mt-3 mb-1 leading-6">{x('effectiveDate')}</p>
                 <p className="mt-3 mb-0 leading-6">
                   {x('electronicDocumentAcknowledgment')}
                 </p>
@@ -155,9 +151,7 @@ const TnCDialog = () => {
                   {x('termsForUsers')}
                 </p>
                 <ol className="m-0 pl-0 list-decimal">
-                  <li className="ml-4 indent-0 pl-2">
-                    {x('userAgreement')}
-                  </li>
+                  <li className="ml-4 indent-0 pl-2">{x('userAgreement')}</li>
                   <li className="mt-0 ml-4 indent-0 pl-2">
                     {x('accountUsage')}
                   </li>
@@ -261,16 +255,12 @@ const TnCDialog = () => {
                 <p className="leading-6 text-lg font-bold">
                   {x('confidentialityAndSecurity')}
                 </p>
-                <p>
-                  {x('disclosureForLegalCompliance')}
-                </p>
+                <p>{x('disclosureForLegalCompliance')}</p>
                 <br />
                 <p className="leading-6 text-lg font-bold">
                   {x('IntellectualPropertyRights')}
                 </p>
-                <p>
-                  {x('intellectualProperty')}
-                </p>
+                <p>{x('intellectualProperty')}</p>
                 <p>&nbsp;</p>
                 <p className="leading-6 text-lg font-bold">{x('contact')}</p>
                 <p>
@@ -284,10 +274,10 @@ const TnCDialog = () => {
                   {x('nextContactInformation')}
                 </p>
                 <p>&nbsp;</p>
-                <p className="leading-6 text-lg font-bold">{x("disputeResolution")}</p>
-                <p>
-                  {x('disputeResolutionDetails')}
+                <p className="leading-6 text-lg font-bold">
+                  {x('disputeResolution')}
                 </p>
+                <p>{x('disputeResolutionDetails')}</p>
                 <p>&nbsp;</p>
                 <p>
                   CP/CPS —&gt;&nbsp;

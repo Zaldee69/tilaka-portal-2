@@ -53,7 +53,7 @@ const RejectConfirmationModal = ({
   setIsOpen: (isOpen: boolean) => void;
   d: (key: string) => string;
 }) => {
-  const [charCount, setCharCount] = useState(0); 
+  const [charCount, setCharCount] = useState(0);
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -243,7 +243,11 @@ const DataTable = ({
   return (
     <div>
       <RejectConfirmationModal isOpen={isOpen} setIsOpen={setIsOpen} d={d} />
-      <DenyConfirmationModal isOpen={isDenyOpen} setIsOpen={setIsDenyOpen} d={d} />
+      <DenyConfirmationModal
+        isOpen={isDenyOpen}
+        setIsOpen={setIsDenyOpen}
+        d={d}
+      />
 
       <div className="md:hidden">
         {data.length
@@ -298,7 +302,9 @@ const DataTable = ({
                               </DropdownMenuItem>
                             ) : (
                               row.status !== 'done' && (
-                                <DropdownMenuItem onClick={() => setIsDenyOpen(true)}>
+                                <DropdownMenuItem
+                                  onClick={() => setIsDenyOpen(true)}
+                                >
                                   {d('table.actions.deny')}
                                 </DropdownMenuItem>
                               )
@@ -502,7 +508,9 @@ const DataTable = ({
                                 </DropdownMenuItem>
                               ) : (
                                 row.status !== 'done' && (
-                                  <DropdownMenuItem onClick={() => setIsDenyOpen(true)}>
+                                  <DropdownMenuItem
+                                    onClick={() => setIsDenyOpen(true)}
+                                  >
                                     {d('table.actions.deny')}
                                   </DropdownMenuItem>
                                 )

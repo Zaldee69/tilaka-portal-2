@@ -185,7 +185,7 @@ const MainAccountSection = ({ t }: { t: (key: string) => string }) => (
         </span>
       </ChangeSignatureAttribute>
     </div>
-    <div className="px-3">
+    <div className="px-3 pb-6">
       <CustomLink
         href="/dashboard/settings"
         className={buttonVariants({
@@ -314,7 +314,7 @@ const Page: React.FC = () => {
         <DocumentInfoCards t={t} />
         <ImportantTodayTable t={t} />
       </div>
-      <div className="bg-white custom-shadow md:shadow-none right-0 md:sticky top-20 rounded-2xl md:mt-[52px] border border-gray-6 lg:mb-0 xl:w-[32%] h-fit md:pb-5">
+      <div className="bg-white custom-shadow md:shadow-none right-0 md:sticky top-20 rounded-2xl md:mt-[52px] border border-gray-6 lg:mb-0 xl:w-[32%] h-fit">
         <MainAccountSection t={t} />
       </div>
       <div className="sticky bottom-5 flex justify-center md:hidden">

@@ -34,8 +34,8 @@ const PdfViewer = ({ file }: { file: string }) => {
         <p className="font-medium my-2 text-sm">PAdES_BASELINE_T</p>
         <p className="text-gray-2 text-xs">{t('validationDetails')}</p>
         <div className="bg-[#FFFAE7] p-2 rounded-md text-sm mt-2 mb-3">
-          Rantai sertifikat untuk tanda tangan tidak terpercaya, sertifikat tidak
-          diterbitkan oleh CA Berinduk (Kominfo) atau tidak masuk ke dalam
+          Rantai sertifikat untuk tanda tangan tidak terpercaya, sertifikat
+          tidak diterbitkan oleh CA Berinduk (Kominfo) atau tidak masuk ke dalam
           daftar terpercaya. Rantai sertifikat untuk timestamp tidak terpercaya,
           sertifikat tidak diterbitkan oleh CA Berinduk (Kominfo) atau tidak
           masuk ke dalam daftar terpercaya. Algoritma SHA1 tidak lagi disarankan
@@ -78,8 +78,8 @@ const PdfViewer = ({ file }: { file: string }) => {
         <p className="font-medium my-2 text-sm">PAdES_BASELINE_T</p>
         <p className="text-gray-2 text-xs">{t('validationDetails')}</p>
         <div className="bg-[#FFFAE7] p-2 rounded-md text-sm mt-2 mb-3">
-          Rantai sertifikat untuk tanda tangan tidak terpercaya, sertifikat tidak
-          diterbitkan oleh CA Berinduk (Kominfo) atau tidak masuk ke dalam
+          Rantai sertifikat untuk tanda tangan tidak terpercaya, sertifikat
+          tidak diterbitkan oleh CA Berinduk (Kominfo) atau tidak masuk ke dalam
           daftar terpercaya. Rantai sertifikat untuk timestamp tidak terpercaya,
           sertifikat tidak diterbitkan oleh CA Berinduk (Kominfo) atau tidak
           masuk ke dalam daftar terpercaya. Algoritma SHA1 tidak lagi disarankan
