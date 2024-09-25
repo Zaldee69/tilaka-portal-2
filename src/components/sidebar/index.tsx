@@ -8,8 +8,8 @@ import {
 } from '../../../public/icons/icons';
 import { Button, buttonVariants } from '../ui/button';
 import Image from 'next/image';
-import SidebarLinks from './SidebarLinks';
-import { SidebarContext } from './SidebarContextProvider';
+import SidebarLinks from './sidebar-links';
+import { SidebarContext } from './sidebar-context-provider';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useSpring, animated } from '@react-spring/web';

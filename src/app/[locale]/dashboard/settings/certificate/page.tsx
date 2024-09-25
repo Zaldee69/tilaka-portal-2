@@ -23,7 +23,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowDownToLine } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import RevokeCertDialog from './RevokeCertDialog';
+import RevokeCertDialog from './revoke-cert-dialog';
 
 const certificates = [
   {

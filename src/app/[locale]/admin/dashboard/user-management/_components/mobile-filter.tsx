@@ -11,7 +11,7 @@ import {
 } from '@/components/ui/drawer';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { DatePickerRange } from '@/components/DatePickerRange';
+import { DatePickerRange } from '@/components/date-picker-range';
 import { Settings2 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { SearchIcon } from '../../../../../../../public/icons/icons';

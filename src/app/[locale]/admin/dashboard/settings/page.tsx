@@ -4,10 +4,10 @@ import React from 'react';
 import { CertIcon, EditIcon } from '../../../../../../public/icons/icons';
 import { Link } from '@/navigation';
 import { Check, Dot } from 'lucide-react';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
-import ChangePasswordDialog from '@/components/dialog/ChangePassword';
-import ChangeAutheticationModeDialog from '@/components/dialog/ChangeAutheticationMode';
-import ChangeSignatureAttribute from '@/components/dialog/ChangeSignatureAttribute';
+import LanguageSwitcher from '@/components/language-switcher';
+import ChangePasswordDialog from '@/components/dialog/change-password';
+import ChangeAutheticationModeDialog from '@/components/dialog/change-authenticated-mode';
+import ChangeSignatureAttribute from '@/components/dialog/change-signature-attribute';
 
 interface UserProfileProps {
   name: string;
