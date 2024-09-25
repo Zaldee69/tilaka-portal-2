@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
-import Index from './wizard/Index';
+import Index from './wizard';
 
 const Page = ({
   params,
