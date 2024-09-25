@@ -1,0 +1,156 @@
+def secrets = [
+//env
+  [path: 'tnt/development/tilaka-portal/env', engineVersion: 2, secretValues: [
+    [envVar: 'nextauthsecretenv', vaultKey: 'NEXTAUTH_SECRET  ']]],
+]
+
+def configuration = [vaultUrl: 'http://vault.tilaka.id:8200',  vaultCredentialId: 'token-vault', engineVersion: 2]
+
+pipeline {
+  agent {
+    label 'master'
+  }
+  environment {
+    HTTPS_PROTOCOL = 'https://'
+    REGISTRY_URL = 'registry.tilaka.id'
+    CREDENTIAL = 'gitlab_registry'
+    IMAGE_NAME = 'sa/tilaka-portal'
+    CONTAINER_NAME = 'tilaka-portal'
+    DOCKER_COMPOSE_PATH = '/home/gitlab-runner/jenkinsdeploy/tilaka-portal/docker-compose.yaml'
+    DEPLOY_DIR = '/home/gitlab-runner/jenkinsdeploy/tilaka-portal'
+    // Telegram configre
+    TOKEN = credentials('telegramToken')
+    CHAT_ID = credentials('telegramChatid')
+    DATE = "${new Date().format('yyyy-MM-dd HH:mm:ss')}"
+    GIT_COMMIT = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+    HOST = sh(script: 'hostname', returnStdout: true).trim()
+    //GIT_COMMIT_TAG = sh(script: 'git describe --tags', returnStdout: true).trim()
+    // Telegram Message Pre Build
+    CURRENT_BUILD_NUMBER = "${currentBuild.number}"
+    GIT_MESSAGE = sh(returnStdout: true, script: "git log -n 1 --format=%s ${GIT_COMMIT}").trim()
+    GIT_AUTHOR = sh(returnStdout: true, script: "git log -n 1 --format=%ae ${GIT_COMMIT}").trim()
+    GIT_INFO = "Last Message: ${GIT_MESSAGE}\nAuthor: ${GIT_AUTHOR}\nGit-Commit: ${GIT_COMMIT}"
+    TEXT_PRE_BUILD = "${GIT_INFO}\nDATE&TIME: ${DATE}\nBuild Number: ${CURRENT_BUILD_NUMBER}\nHostnameServer: ${HOST}\nJenkinsDeploy: ${JOB_NAME} is Building 🏗️ "
+    TEXT_PRE_BUILD2 = "${GIT_INFO}\nBuild Number: ${CURRENT_BUILD_NUMBER}\nHostnameServer: ${HOST}\nJenkinsDeploy: ${JOB_NAME}"
+    // Telegram Message Success and Failure
+    TEXT_SUCCESS_BUILD = "${TEXT_PRE_BUILD2} Build SUCCESS ✅"
+    TEXT_FAILURE_BUILD = "${TEXT_PRE_BUILD2} Build FAILURE ❌"
+    TEXT_ABORTED_BUILD = "${TEXT_PRE_BUILD2} Build ABORTED ⛔️"
+    SONAR_TOKEN = credentials('sonar-token')
+    SONARQUBESERVER = 'sonarqube'
+  }
+  parameters {
+    string(defaultValue: "development", description: 'What is the branch name for build the App?', name: 'BRANCH_NAME')
+    string(defaultValue: "gitlab-runner", description: 'What is Name Server?', name: 'SERVER_USER')
+  }
+
+    options { disableConcurrentBuilds(abortPrevious: true) }
+  stages {
+    stage('Checkout tnt-config') {
+      steps {
+        sh 'mkdir -p tnt-config'
+        dir('tnt-config') {
+          git branch: 'master',
+          credentialsId: 'jenkins_private_key',
+          url: 'git@gitlab.tilaka.id:devops/infrastructure/tnt-config.git'
+        }
+      }
+    }
+    // stage('SonarQube Analysis') {
+    //   steps {
+    //     script{
+    //       def scannerHome = tool 'SonarScanner';
+    //       withSonarQubeEnv(SONARQUBESERVER) {
+    //         sh "${scannerHome}/bin/sonar-scanner"
+    //       }
+    //     }
+    //   }
+    // }
+    // stage('Quality Gate Check') {
+    //   when {
+    //     expression {
+    //       return false // Skip this stage
+    //       }
+    //   }
+    //   steps {
+    //       waitForQualityGate abortPipeline: true
+    //   }
+    // }
+    stage('Copy Config to Image Registry') {
+      steps {
+        script {
+          def branchName = env.BRANCH_NAME.replace('/', '-')
+          sh '''
+          cp tnt-config/surroundingapps/tnt-tilaka-portal/development/.env .env
+          cp tnt-config/surroundingapps/tnt-tilaka-portal/development/docker-compose-template.yaml .
+          rm -rf tnt-config
+        '''
+        }
+      }
+    }
+    // stage('Credential Injection') {
+    //   steps {
+    //     withVault([configuration: configuration, vaultSecrets: secrets]) {
+    //     //app.json
+    //       sh "sed -i 's|{{nextpublicrecaptchasitekeyenv}}|${env.nextpublicrecaptchasitekeyenv}|g' .env"
+    //     }
+    //   }  
+    // }
+    stage('Notification') {
+      steps {
+        sh "curl --location --request POST 'https://api.telegram.org/bot${TOKEN}/sendMessage' --form text='${TEXT_PRE_BUILD}' --form chat_id='${CHAT_ID}'"
+      }
+    }
+    stage('Docker Image build and push to Registry Gitlab') {
+      steps {
+        script {
+          docker.build("${REGISTRY_URL}/${IMAGE_NAME}:${BRANCH_NAME}", "-f Dockerfile .")
+          docker.withRegistry(HTTPS_PROTOCOL+REGISTRY_URL,CREDENTIAL) {
+          docker.image("${REGISTRY_URL}/${IMAGE_NAME}:${BRANCH_NAME}").push("${BRANCH_NAME}")
+          }
+        }
+      }
+    }
+    stage('Copy Docker-compose to server') {
+      steps {
+        script {
+          // SSH ke server dan memperbarui docker-compose.yml dengan image baru
+          sh """
+          rsync -azvP -e 'ssh -p 31337' docker-compose-template.yaml ${SERVER_USER}@${SERVER_IP}:${DEPLOY_DIR}
+          ssh ${SERVER_USER}@${SERVER_IP} -p 31337 "
+          cd ${DEPLOY_DIR} &&
+          cp docker-compose-template.yaml docker-compose.yaml
+          cat '${DOCKER_COMPOSE_PATH}'
+          sed -i 's+container_name: .*+container_name: ${CONTAINER_NAME}+g' ${DOCKER_COMPOSE_PATH}
+          sed -i 's+image: registry.tilaka.id/sa/tilaka-portal.*+image: registry.tilaka.id/sa/tilaka-portal:${BRANCH_NAME}+g' ${DOCKER_COMPOSE_PATH}
+          cat '${DOCKER_COMPOSE_PATH}'
+          docker pull ${REGISTRY_URL}/${IMAGE_NAME}:${BRANCH_NAME}
+          docker-compose -f ${DOCKER_COMPOSE_PATH} down
+          docker-compose -f ${DOCKER_COMPOSE_PATH} up -d
+          "
+          """
+        }
+      }
+    }
+  }
+  post {
+    always {
+      sh 'docker rmi $(docker images -f "dangling=true" -q) -f || true'
+    }
+    success {
+      script{
+        sh "curl --location --request POST 'https://api.telegram.org/bot${TOKEN}/sendMessage' --form text='${TEXT_SUCCESS_BUILD}' --form chat_id='${CHAT_ID}'"
+      }
+    }
+    failure {
+      script{
+        sh "curl --location --request POST 'https://api.telegram.org/bot${TOKEN}/sendMessage' --form text='${TEXT_FAILURE_BUILD}' --form chat_id='${CHAT_ID}'"
+      }
+    }
+    aborted {
+      script{
+        sh "curl --location --request POST 'https://api.telegram.org/bot${TOKEN}/sendMessage' --form text='${TEXT_ABORTED_BUILD}' --form chat_id='${CHAT_ID}'"
+      }
+    }
+  }
+}
