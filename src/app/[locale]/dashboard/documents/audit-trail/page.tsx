@@ -174,7 +174,7 @@ const Page = () => {
                     <DropdownMenuContent>
                       <DropdownMenuItem>{reason}</DropdownMenuItem>
                     </DropdownMenuContent>
-                  </DropdownMenu> 
+                  </DropdownMenu>
                 </TableCell>
                 <TableCell>08 Mei 2023 16:46:31</TableCell>
               </TableRow>

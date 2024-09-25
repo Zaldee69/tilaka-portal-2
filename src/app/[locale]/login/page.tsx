@@ -4,10 +4,10 @@ import {
   NextIntlClientProvider,
   useMessages
 } from 'next-intl';
-import LoginForm from '@/components/form/LoginForm';
+import LoginForm from '@/components/form/login-form';
 import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
+import LanguageSwitcher from '@/components/language-switcher';
 
 export default function Home({
   params,

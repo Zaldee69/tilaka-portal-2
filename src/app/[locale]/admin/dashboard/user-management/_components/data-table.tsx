@@ -22,7 +22,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { Link } from '@/navigation';
 
-import Pagination from '@/components/Pagination';
+import Pagination from '@/components/pagination';
 import { toast } from 'sonner';
 import {
   PermIdentityIcon,

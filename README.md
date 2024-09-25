@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Commit Message Guidelines
 
-## Getting Started
+This project follows the **Conventional Commits** specification for commit messages. This helps automate semantic versioning, generating changelogs, and keeping a clean commit history.
 
-First, run the development server:
+## Format
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Each commit message consists of a **header**, an **optional body**, and an **optional footer**. The header has a specific format:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Header Fields
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **type**: Defines the type of change that you're committing. Must be one of the following:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+  - `feat`: A new feature
+  - `fix`: A bug fix
+  - `docs`: Documentation only changes
+  - `style`: Changes that do not affect the meaning of the code (e.g., formatting, missing semicolons)
+  - `refactor`: A code change that neither fixes a bug nor adds a feature
+  - `test`: Adding or updating tests
+  - `chore`: Changes to the build process or auxiliary tools and libraries such as documentation generation
 
-## Learn More
+- **scope**: A short, optional description of the part of the codebase the change relates to. Example: `auth`, `ui`, `api`. This is optional but recommended.
 
-To learn more about Next.js, take a look at the following resources:
+- **subject**: A short description of the change (imperative tense, no period at the end). It should be clear and concise.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Body (Optional)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The body provides additional contextual information about the commit. Use it to explain **what** and **why** rather than **how**. Each line should be no longer than 100 characters.
 
-## Deploy on Vercel
+### Footer (Optional)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The footer is used to reference issues or breaking changes. Commonly used keywords are:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `BREAKING CHANGE`: A note about a significant change that breaks backward compatibility.
+- `Closes #<issue number>`: Closes an issue when the commit is merged.
+
+### Examples
+
+- `fix(ui)`: correct button alignment issue on mobile
+- `fix(api)`: resolve 500 error on user profile fetch
+- `refactor(user-page)`: optimize user data fetching logic
+- `chore(deps)`: update dependencies to latest versions
+
+### Invalid Commit Examples
+
+- `Update button styles`: This does not specify a type.
+- `fix: authentication issue`: The scope is missing and the subject is too vague.
+
+Make sure to follow this format when making commits, so our commit history remains clean and structured, and we can generate accurate changelogs and versioning.

@@ -16,7 +16,7 @@ import {
   SelectValue
 } from '@/components/ui/select';
 import { cn } from '@/lib/utils';
-import { DatePickerRange } from '@/components/DatePickerRange';
+import { DatePickerRange } from '@/components/date-picker-range';
 import DataTable from './_components/data-table';
 import { useTranslations } from 'next-intl';
 import MobileFilter from './_components/mobile-filter';

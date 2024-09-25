@@ -1,4 +1,4 @@
-import QuotaCard from '@/components/card/QuotaCard';
+import QuotaCard from '@/components/card/quota-card';
 import { Progress } from '@/components/ui/progress';
 import React from 'react';
 import {
@@ -14,16 +14,16 @@ import {
   StampIcon,
   TilakaIcon
 } from '../../../../public/icons/icons';
-import DocInformationCard from '@/components/card/DocInformationCard';
+import DocInformationCard from '@/components/card/document-information-card';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { useTranslations } from 'next-intl';
-import Collapsible from '@/components/Collapsible';
-import DataTable from '@/components/DataTable';
+import Collapsible from '@/components/collapsible';
+import DataTable from '@/components/data-table';
 import { Link as CustomLink, Link } from '@/navigation';
 import NextLink from 'next/link';
 import { SquareArrowOutUpRight } from 'lucide-react';
-import ChangeAutheticationModeDialog from '@/components/dialog/ChangeAutheticationMode';
-import ChangeSignatureAttribute from '@/components/dialog/ChangeSignatureAttribute';
+import ChangeAutheticationModeDialog from '@/components/dialog/change-authenticated-mode';
+import ChangeSignatureAttribute from '@/components/dialog/change-signature-attribute';
 
 const ImportantTodayTable = ({ t }: { t: (key: string) => string }) => (
   <div className="bg-white custom-shadow rounded-2xl mt-10 p-3 border border-gray-6">
@@ -185,7 +185,7 @@ const MainAccountSection = ({ t }: { t: (key: string) => string }) => (
         </span>
       </ChangeSignatureAttribute>
     </div>
-    <div className="px-3">
+    <div className="px-3 pb-6">
       <CustomLink
         href="/dashboard/settings"
         className={buttonVariants({
@@ -314,7 +314,7 @@ const Page: React.FC = () => {
         <DocumentInfoCards t={t} />
         <ImportantTodayTable t={t} />
       </div>
-      <div className="bg-white custom-shadow md:shadow-none right-0 md:sticky top-20 rounded-2xl md:mt-[52px] border border-gray-6 lg:mb-0 xl:w-[32%] h-fit md:pb-5">
+      <div className="bg-white custom-shadow md:shadow-none right-0 md:sticky top-20 rounded-2xl md:mt-[52px] border border-gray-6 lg:mb-0 xl:w-[32%] h-fit">
         <MainAccountSection t={t} />
       </div>
       <div className="sticky bottom-5 flex justify-center md:hidden">

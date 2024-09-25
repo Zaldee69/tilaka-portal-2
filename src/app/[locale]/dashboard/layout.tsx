@@ -1,13 +1,14 @@
-import AutoLoggedOutDialog from '@/components/dialog/AutoLoggedOut';
-import CertExpiredDialog from '@/components/dialog/CertExpired';
-import CertRevokedDialog from '@/components/dialog/CertRevoked';
-import DeviceNotSupported from '@/components/dialog/DeviceNotSupported';
-import NoInternetDialog from '@/components/dialog/NoInternet';
-import TnCDialog from '@/components/dialog/term-and-condition/Tnc';
-import { TnCContextProvider } from '@/components/dialog/term-and-condition/TncContextProvider';
-import Navbar from '@/components/navbar/Navbar';
+import AutoLoggedOutDialog from '@/components/dialog/auto-logged-out';
+import CertExpiredDialog from '@/components/dialog/certificate-expired';
+import CertRevokedDialog from '@/components/dialog/certificate-revoked';
+import DeviceNotSupported from '@/components/dialog/device-not-supported';
+import NoInternetDialog from '@/components/dialog/no-internet';
+import TnCDialog from '@/components/dialog/term-and-condition';
+import { TnCContextProvider } from '@/components/dialog/term-and-condition/tnc-context-provider';
+import Navbar from '@/components/navbar';
 import Sidebar from '@/components/sidebar';
-import { SidebarContextProvider } from '@/components/sidebar/SidebarContextProvider';
+import { SidebarContextProvider } from '@/components/sidebar/sidebar-context-provider';
+import SessionWrapper from '@/providers/session-provider';
 
 const DashboarLayout = ({
   children,
@@ -21,21 +22,23 @@ const DashboarLayout = ({
   return (
     <SidebarContextProvider>
       <TnCContextProvider>
-        <main className="relative">
-          <div className="flex">
-            <Sidebar />
-            <CertExpiredDialog />
-            <CertRevokedDialog />
-            <TnCDialog />
-            <NoInternetDialog />
-            <DeviceNotSupported />
-            <AutoLoggedOutDialog />
-            <div className="w-full">
-              <Navbar />
-              <div>{children}</div>
+        <SessionWrapper>
+          <main className="relative">
+            <div className="flex">
+              <Sidebar />
+              <CertExpiredDialog />
+              <CertRevokedDialog />
+              <TnCDialog />
+              <NoInternetDialog />
+              <DeviceNotSupported />
+              <AutoLoggedOutDialog />
+              <div className="w-full">
+                <Navbar />
+                <div>{children}</div>
+              </div>
             </div>
-          </div>
-        </main>
+          </main>
+        </SessionWrapper>
       </TnCContextProvider>
     </SidebarContextProvider>
   );

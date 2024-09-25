@@ -1,6 +1,6 @@
 'use client';
-import PdfPagination from '@/components/PdfPagination';
-import PdfRenderer from '@/components/PdfRenderer';
+import PdfPagination from '@/components/pdf-pagination';
+import PdfRenderer from '@/components/pdf-renderer';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';

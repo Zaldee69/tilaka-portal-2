@@ -1,6 +1,6 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
-import UploadDropZone from './UploadDropZone';
+import UploadDropZone from './upload-drop-zone';
 
 const Page = () => {
   const t = useTranslations('Dashboard');

@@ -1,7 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
 
-import DataTable from '@/components/DataTable';
+import DataTable from '@/components/data-table';
 
 import {
   Select,
@@ -14,8 +14,8 @@ import {
 import { Input } from '@/components/ui/input';
 
 import { FilterAltIcon, SearchIcon } from '../../../../../public/icons/icons';
-import MobileFilter from './MobileFilter';
-import { DatePickerRange } from '@/components/DatePickerRange';
+import MobileFilter from './mobile-filter';
+import { DatePickerRange } from '@/components/date-picker-range';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
