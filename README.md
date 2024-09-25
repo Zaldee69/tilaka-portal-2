@@ -36,6 +36,9 @@ The footer is used to reference issues or breaking changes. Commonly used keywor
 ### Examples
 
 - `fix(ui)`: correct button alignment issue on mobile
+- `fix(api)`: resolve 500 error on user profile fetch
+- `refactor(user-page)`: optimize user data fetching logic
+- `chore(deps)`: update dependencies to latest versions
 
 ### Invalid Commit Examples
 
