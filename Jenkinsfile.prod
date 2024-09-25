@@ -89,18 +89,14 @@ pipeline {
         }
       }
     }
-    // stage('Credential Injection') {
-    //   steps {
-    //     withVault([configuration: configuration, vaultSecrets: secrets]) {
-    //     //app.json
-    //       sh "sed -i 's|{{authclientidenv}}|${env.authclientidenv}|g' .env"
-    //       sh "sed -i 's|{{authclientsecretenv}}|${env.authclientsecretenv}|g' .env"
-    //       sh "sed -i 's|{{jwtloginsecretenv}}|${env.jwtloginsecretenv}|g' .env"
-    //     //config.json
-    //       sh "sed -i 's|{{passwordmariadb}}|${env.passwordmariadb}|g' config/config.json"
-    //     }
-    //   }  
-    // }
+    stage('Credential Injection') {
+      steps {
+        withVault([configuration: configuration, vaultSecrets: secrets]) {
+        //app.json
+          sh "sed -i 's|{{nextauthsecretenv}}|${env.nextauthsecretenv}|g' .env"
+        }
+      }  
+    }
     stage('Notification') {
       steps {
         sh "curl --location --request POST 'https://api.telegram.org/bot${TOKEN}/sendMessage' --form text='${TEXT_PRE_BUILD}' --form chat_id='${CHAT_ID}'"
@@ -130,8 +126,7 @@ pipeline {
           sed -i 's+image: registry.tilaka.id/sa/tilaka-portal.*+image: registry.tilaka.id/sa/tilaka-portal:${BRANCH_NAME}+g' ${DOCKER_COMPOSE_PATH}
           cat '${DOCKER_COMPOSE_PATH}'
           docker pull ${REGISTRY_URL}/${IMAGE_NAME}:${BRANCH_NAME}
-          docker-compose -f ${DOCKER_COMPOSE_PATH} down
-          docker-compose -f ${DOCKER_COMPOSE_PATH} up -d
+          docker-compose -f ${DOCKER_COMPOSE_PATH} up -d --force-recreate
           "
           """
         }
